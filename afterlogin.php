@@ -1,6 +1,6 @@
 <?php
 session_start();
-$at = $_SESSION['accesstoken'] ;
+$at = $_SESSION['firstname'] ;
 
 print $at;
 
