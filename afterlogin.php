@@ -12,8 +12,10 @@ print $at;
       AFTER LOGIN
     </title> 
   </head> 
+
+  <!--    
 <body> 
-    
+
 <div id="fb-root"></div>
 <div id="user-info"></div>
 <p><button id="fb-auth">Login</button></p>
@@ -93,6 +95,7 @@ function updateButton(response) {
 
 </script>
 </body> 
+-->
 </html>
 
 
