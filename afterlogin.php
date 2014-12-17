@@ -10,7 +10,7 @@ $v="yo mamma";
 echo 'this is it man'.$at.'Link 2'.$v.' haha';
 
 print_r($at);
-
+print $at['first_name'];
 
 ?>
 
