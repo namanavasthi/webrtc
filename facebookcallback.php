@@ -41,8 +41,8 @@ session_start();
 	$_SESSION['code'] = $code;
  	$_SESSION["facebook"] = "true";
 
-    #$accesstoken=$_SESSION['accesstoken'];
-    #$_SESSION['accesstoken'] = $_POST['accesstoken']
+   
+    $_SESSION['accesstoken'] = $_POST['accesstoken']
 
 
 	$url1 = 'https://graph.facebook.com/me/?';
