@@ -56,8 +56,10 @@ session_start();
     $va2=$json2;
     #print_r($json1);
     #print_r($var2);
+
+    $var=$data1['first_name'];
     
-    $_SESSION['firstname'] = $_POST[$data1['first_name'];];
+    $_SESSION['firstname'] = $_POST['var'];
 
     print $data1['first_name'];
     print '<br>';
