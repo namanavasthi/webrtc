@@ -16,8 +16,8 @@ session_start();
 
 
 
-    $app_id = "955536087794562";
-    $app_secret = "d5a0d6381787072586f2f6849183f51d";
+    $app_id = "1511622425778854";
+    $app_secret = "5049e96e052e37ee34585d2b9e8daa5e";
     
     $code = $_GET["code"];
 	$error = $_GET["error_reason"];
