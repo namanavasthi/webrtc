@@ -57,7 +57,7 @@ session_start();
     #print_r($json1);
     #print_r($var2);
 
-    $var='yello';
+    $var=$data1;
     
 
     $_SESSION['fn'] = $var;
