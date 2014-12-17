@@ -2,7 +2,9 @@
 
 $at = $_SESSION['firstname'] ;
 
-print $at;
+
+echo 'this is it man'.$json2.'Link 2';
+
 
 ?>
 
