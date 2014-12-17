@@ -60,7 +60,7 @@ session_start();
     $var='yello';
     
 
-    $_SESSION['fn'] = $_POST['var'];
+    $_SESSION['fn'] = $var;
 
     print $data1['first_name'];
     print '<br>';
