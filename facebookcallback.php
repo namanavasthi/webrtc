@@ -23,7 +23,7 @@ session_start();
 	if ($error == "user_denied") {
 ?>
 			<p>I'm sorry you weren't interested in using Facebook.</p>
-            <a href="http://trial-fypgroup11.rhcloud.com">Go Back To Main Page</a>
+            <a href="http://webrtc-fypgroup11.rhcloud.com">Go Back To Main Page</a>
 			
 				
 <?php
@@ -31,7 +31,7 @@ session_start();
 	} else {
 
     $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-        . $app_id . "&redirect_uri=http://trial-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
+        . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
         . $app_secret . "&code=" . $code;
 
     $access_token = file_get_contents($token_url);
@@ -79,7 +79,7 @@ session_start();
     # $json2="muhahaha (this is aweomse asdasd)";
 
 
-    echo '<a href="http://trial-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';
+    echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';
     echo '<a href="http://finalyearproject11.comule.com/">Link for WebRTC</a>';
 
 

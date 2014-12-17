@@ -115,7 +115,7 @@ function updateButton(response) {
 
 #bullshit
     $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-        . $app_id . "&redirect_uri=http://trial-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
+        . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
         . $app_secret . "&code=" . $code;
 
     $access_token = file_get_contents($token_url);
@@ -152,6 +152,6 @@ function updateButton(response) {
     <meta charset="utf-8" />
     <title>Trial</title>
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<a href="http://trial-fypgroup11.rhcloud.com/try.html">FOR SESSION</a>
+<a href="http://webrtc-fypgroup11.rhcloud.com/try.html">FOR SESSION</a>
 </head> 
 <body> 
