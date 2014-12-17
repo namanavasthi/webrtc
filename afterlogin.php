@@ -1,9 +1,9 @@
 <?php
 
 $at = $_SESSION['firstname'] ;
+$v="yo mamma";
 
-
-echo 'this is it man'.$at.'Link 2';
+echo 'this is it man'.$at.'Link 2'.$v.' haha';
 
 
 ?>
