@@ -1,6 +1,10 @@
 <?php
+session_start();
 
-$at = $_SESSION['firstname'] ;
+?>
+
+<?php
+$at = $_SESSION['fn'];
 $v="yo mamma";
 
 echo 'this is it man'.$at.'Link 2'.$v.' haha';
