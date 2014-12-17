@@ -2,8 +2,7 @@
 
 $at = $_SESSION['firstname'] ;
 
-$data1 = json_decode($at,true);
-print $data1['first_name'];
+print $at;
 
 ?>
 
