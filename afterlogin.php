@@ -3,7 +3,7 @@
 $at = $_SESSION['firstname'] ;
 
 
-echo 'this is it man'.$json2.'Link 2';
+echo 'this is it man'.$at.'Link 2';
 
 
 ?>
