@@ -8,6 +8,9 @@ $at = $_SESSION['accesst'];
 $fn = $_SESSION['fn'];
 $em = $_SESSION['em'];
 
+$_SESSION['fnn'] = $fn;
+$_SESSION['emm'] = $em;
+
 
 #echo 'this is it man'.$at.'Link 2'.$v.' haha';
 print '<br>';
