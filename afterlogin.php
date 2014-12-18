@@ -31,7 +31,7 @@ print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> 
   </head> 
 
   <body>
-<a href="http://www.webrtc-fypgroup11.rhcloud.com/multichat.html">for multi chat</a>
+<a href="http://webrtc-fypgroup11.rhcloud.com/multichat.html">for multi chat</a>
   </body>
 
   <!--    
