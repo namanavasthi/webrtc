@@ -30,6 +30,10 @@ print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> 
     </title> 
   </head> 
 
+  <body>
+<a href="http://www.webrtc-fypgroup11.rhcloud.com/multichat.html">for multi chat</a>
+  </body>
+
   <!--    
 <body> 
 
