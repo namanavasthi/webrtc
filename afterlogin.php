@@ -8,8 +8,7 @@ $at = $_SESSION['accesst'];
 $fn = $_SESSION['fn'];
 $em = $_SESSION['em'];
 
-$_SESSION['fnn'] = $fn;
-$_SESSION['emm'] = $em;
+$_SESSION['accesst'] = $at;
 
 
 #echo 'this is it man'.$at.'Link 2'.$v.' haha';
