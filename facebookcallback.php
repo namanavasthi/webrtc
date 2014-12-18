@@ -41,8 +41,8 @@ session_start();
 	$_SESSION['code'] = $code;
  	$_SESSION["facebook"] = "true";
 
-    #$accesstoken=$_SESSION['accesstoken'];
-    $_SESSION['accesstoken'] = $_POST['accesstoken'];
+    
+    #$_SESSION['accesstoken'] = $_POST['accesstoken'];
 
 
 	$url1 = 'https://graph.facebook.com/me/?';
@@ -57,10 +57,16 @@ session_start();
     #print_r($json1);
     #print_r($var2);
 
-    $var=$data1;
-    
 
-    $_SESSION['fn'] = $var;
+
+
+    $var=$data1;
+    $_SESSION['accesst'] = $var;
+    $_SESSION['fn'] = $var['first_name'];         #this is for session passing
+    $_SESSION['em'] = $var['email'];
+
+
+
 
     print $data1['first_name'];
     print '<br>';

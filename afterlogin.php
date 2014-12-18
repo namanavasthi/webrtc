@@ -4,13 +4,22 @@ session_start();
 ?>
 
 <?php
-$at = $_SESSION['fn'];
-$v="yo mamma";
+$at = $_SESSION['accesst'];
+$fn = $_SESSION['fn'];
+$em = $_SESSION['em'];
 
-echo 'this is it man'.$at.'Link 2'.$v.' haha';
 
+#echo 'this is it man'.$at.'Link 2'.$v.' haha';
+print '<br>';
+print '<br>';
 print_r($at);
-print $at['first_name'];
+print '<br>';
+#print $at['first_name'];
+print $fn;
+print '<br>';
+print $em;
+print '<br>';
+print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
 
 ?>
 
