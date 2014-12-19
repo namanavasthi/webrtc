@@ -1,5 +1,5 @@
 <?php
-
-print($_COOKIE);
+print '<br>';
+print_r($_COOKIE);
 
 ?>
