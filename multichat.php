@@ -1,6 +1,9 @@
 
 
 <?php
+
+include("usercookie.php");
+
 #$at = $_SESSION['accesst'];
 #$f = $_SESSION['accesst'];
 //$e = $_SESSION['em'];

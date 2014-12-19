@@ -13,16 +13,16 @@ $_SESSION['accesst'] = $at;
 
 
 #echo 'this is it man'.$at.'Link 2'.$v.' haha';
-print '<br>';
-print '<br>';
-print_r($at);
-print '<br>';
+//print '<br>';
+//print '<br>';
+//print_r($at);
+//print '<br>';
 #print $at['first_name'];
-print $fn;
-print '<br>';
-print $em;
-print '<br>';
-print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
+//print $fn;
+//print '<br>';
+//print $em;
+//print '<br>';
+//print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
 
 ?>
 
