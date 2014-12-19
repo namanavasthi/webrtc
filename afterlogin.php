@@ -34,7 +34,7 @@ $_SESSION['accesst'] = $at;
   </head> 
 
   <body>
-<a href="http://webrtc-fypgroup11.rhcloud.com/multichat.html">for multi chat</a>
+<a href="http://webrtc-fypgroup11.rhcloud.com/multichat.php">for multi chat</a>
   </body>
 
   <!--    

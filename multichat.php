@@ -2,24 +2,22 @@
 
 <?php
 
-include("usercookie.php");
-
-#$at = $_SESSION['accesst'];
-#$f = $_SESSION['accesst'];
-//$e = $_SESSION['em'];
+$at = $_SESSION['accesst'];
+$f = $_SESSION['accesst'];
+$e = $_SESSION['em'];
 
 
 
-//print '<br>';
-//print '<br>';
+print '<br>';
+print '<br>';
 
-//print '<br>';
+print '<br>';
 
-//print $f;
-//print '<br>';
-//print $e;
-//print '<br>';
-//print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
+print $f;
+print '<br>';
+print $e;
+print '<br>';
+print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
 
 
 include("usercookie.php");
