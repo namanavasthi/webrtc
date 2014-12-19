@@ -41,6 +41,12 @@ session_start();
 	$_SESSION['code'] = $code;
  	$_SESSION["facebook"] = "true";
 
+
+
+
+
+
+
     
     #$_SESSION['accesstoken'] = $_POST['accesstoken'];
 
@@ -64,6 +70,14 @@ session_start();
     $_SESSION['accesst'] = $var;
     $_SESSION['fn'] = $var['first_name'];         #this is for session passing
     $_SESSION['em'] = $var['email'];
+
+
+
+
+    //creating a cookie for this user
+    $expire=time()+60*60*24;
+    setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
+    setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
 
 
 
