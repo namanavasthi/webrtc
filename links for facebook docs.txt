@@ -1,6 +1,0 @@
-https://developers.facebook.com/docs/graph-api/reference/v2.1/friendlist/
-https://developers.facebook.com/docs/facebook-login/permissions/v2.1
-https://developers.facebook.com/docs/graph-api/reference/v2.1/user/friends
-https://developers.facebook.com/docs/graph-api/reference/v2.1/user
-
-http://stackoverflow.com/questions/9882949/how-to-display-the-list-of-users-friends-in-facebook-php
