@@ -21,7 +21,7 @@ setcookie('userdata[email]',$em,$expiry,'','','',TRUE);
 
 
 //connect to the server
-$connect = mysql_connect("localhost","root","");
+$connect = mysql_connect("https://openshift.redhat.com/app/console/application/5491897cfcf93349ce0001b6-webrtc","adminPfy2zVu","BXXbBfmR7fWS");
 
 //connect to the datatbase
 mysql_select_db("webrtc");
