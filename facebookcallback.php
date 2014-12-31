@@ -60,7 +60,7 @@ session_start();
     $data2 = json_decode($json2,true);
     $va1=$json1;
     $va2=$json2;
-    print_r($data1);
+    print_r($data1);      ////////////////////////////
     #print_r($var2);
     $var=$data1;
     $friends=$data2;
@@ -85,6 +85,34 @@ session_start();
 
 
     // inserting into database
+    $em=$data1['email'];
+    $uname=$data1["id"];
+    $fname=$data1["first_name"];
+    $lname=$data1["last_name"];
+    $a= hash ( "md5" , $em);
+
+    $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+
+    if (!$connect) {
+    die("Connection failed: " .mysql_error());
+    } 
+    echo 'Connected successfully';
+
+    //connect to the datatbase
+    mysql_select_db("webrtc");
+
+    $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
+
+    $result = mysql_query($query);
+
+    //query the database
+    // $query = mysql_query("SELECT * FROM users");
+
+    <script language="javascript" type="text/javascript">
+    
+    window.location="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php";
+    
+    </script>
 
 
 
@@ -95,13 +123,8 @@ session_start();
 
 
 
-
-
-
-
-
-    echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';
-    echo '<a href="http://finalyearproject11.comule.com/">Link for WebRTC</a>';
+    // echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';
+    // echo '<a href="http://finalyearproject11.comule.com/">Link for WebRTC</a>';
 
 
 
