@@ -14,7 +14,35 @@ include("usercookie.php");
 
   <body>
     <?php
-          header('refresh:2; url=http://webrtc-fypgroup11.rhcloud.com/afterlogin.php');
+      // header('refresh:2; url=http://webrtc-fypgroup11.rhcloud.com/afterlogin.php');
+      $b=true;
+      while($b)
+      {
+        $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+
+        if (!$connect) {
+        die("Connection failed: " .mysql_error());
+        } 
+        // echo 'Connected successfully';
+
+        //connect to the datatbase
+        mysql_select_db("webrtc");
+
+        $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
+
+        $result = mysql_query($query);
+
+        //query the database
+        $query = mysql_query("SELECT * FROM users WHERE firstname=="Palakh"");
+
+        print_r($query);
+        sleep(5);
+
+      }
+
+
+
+
     ?>
 <a href="http://webrtc-fypgroup11.rhcloud.com/multichat.php">for multi chat</a>
   </body>
