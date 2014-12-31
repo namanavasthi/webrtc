@@ -28,9 +28,9 @@ include("usercookie.php");
         //connect to the datatbase
         mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
+        // $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
 
-        $result = mysql_query($query);
+        // $result = mysql_query($query);
 
         //query the database
         $query = mysql_query("SELECT * FROM users WHERE firstname=='Archna'");
