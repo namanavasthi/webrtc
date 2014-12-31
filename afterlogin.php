@@ -43,7 +43,7 @@ include("usercookie.php");
         
 
       }
-
+      print"outside while";
 
 
 
