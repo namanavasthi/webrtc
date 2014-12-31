@@ -112,7 +112,7 @@ echo"<body>
 ?>
 
 <body>
-<p> name : <?php echo $_COOKIE['userdata[[name]]']; ?> </p>
+
 <?php
 if(isset($_COOKIE['userdata'])){
 	foreach($_COOKIE['userdata'] as $name=>$value){
