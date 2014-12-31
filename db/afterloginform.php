@@ -22,12 +22,13 @@ print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 
 
 //connect to the server
-// $connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
-$connect="hehe";
+$connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
 
-if ($connect->connect_error) {
-    die("Connection failed: " . $connect->connect_error);
+if (!$connect) {
+    die("Connection failed: " .mysql_error());
 } 
+echo 'Connected successfully';
+
 
 //connect to the datatbase
 mysql_select_db("webrtc");
