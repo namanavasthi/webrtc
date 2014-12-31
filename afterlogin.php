@@ -34,11 +34,13 @@ include("usercookie.php");
         //query the database
         $query = mysql_query("SELECT * FROM users WHERE firstname=='Archna'");
 
-        print_r($query);
-        sleep(5);
-
+        $rows = mysql_fetch_array($query);
+        print_r($rows);
         if(!is_null($query))
           $b=FALSE;
+        sleep(5);
+
+        
 
       }
 
