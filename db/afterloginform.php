@@ -22,7 +22,8 @@ print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 
 
 //connect to the server
-$connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
+// $connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
+$connect="hehe";
 
 if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
