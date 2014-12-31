@@ -29,85 +29,88 @@ session_start();
 				
 <?php
 		
-	} else {
-
-    $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-        . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
-        . $app_secret . "&code=" . $code;
-
-    $access_token = file_get_contents($token_url);
-
-	$_SESSION['accesstoken'] = $access_token;
-	$_SESSION['code'] = $code;
- 	$_SESSION["facebook"] = "true";
-
-
-
-
-
-
-
-    
-    #$_SESSION['accesstoken'] = $_POST['accesstoken'];
-
-
-	$url1 = 'https://graph.facebook.com/me/?';
-	$url2 = 'https://graph.facebook.com/me/friends?';
-    $json1 = file_get_contents($url1.$access_token);
-    $data1 = json_decode($json1,true);
-
-    $json2 = file_get_contents($url2.$access_token);
-    $data2 = json_decode($json2,true);
-    $va1=$json1;
-    $va2=$json2;
-    print_r($data1);      ////////////////////////////
-    #print_r($var2);
-    $var=$data1;
-    $friends=$data2;
-
-    //creating a cookie for this user
-    $expire=time()+60*60*24;
-    setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
-    setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
-
-    print $data1['first_name'];
-    print '<br>';
-    print $data1['email'];
-    print '<br>';
-
-    print 'Friends On WebRTC Trial : ';
-    print '<br>';
-    foreach($friends['data'] as $key=>$value)
+	} 
+    else 
     {
-        print $value['name'];
+
+        $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
+            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
+            . $app_secret . "&code=" . $code;
+
+        $access_token = file_get_contents($token_url);
+
+        $_SESSION['accesstoken'] = $access_token;
+        $_SESSION['code'] = $code;
+        	$_SESSION["facebook"] = "true";
+
+
+
+
+
+
+
+
+        #$_SESSION['accesstoken'] = $_POST['accesstoken'];
+
+
+        $url1 = 'https://graph.facebook.com/me/?';
+        $url2 = 'https://graph.facebook.com/me/friends?';
+        $json1 = file_get_contents($url1.$access_token);
+        $data1 = json_decode($json1,true);
+
+        $json2 = file_get_contents($url2.$access_token);
+        $data2 = json_decode($json2,true);
+        $va1=$json1;
+        $va2=$json2;
+        print_r($data1);      ////////////////////////////
+        #print_r($var2);
+        $var=$data1;
+        $friends=$data2;
+
+        //creating a cookie for this user
+        $expire=time()+60*60*24;
+        setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
+        setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
+
+        print $data1['first_name'];
         print '<br>';
+        print $data1['email'];
+        print '<br>';
+
+        print 'Friends On WebRTC Trial : ';
+        print '<br>';
+        foreach($friends['data'] as $key=>$value)
+        {
+            print $value['name'];
+            print '<br>';
+        }
+
+
+        // inserting into database
+        $em=$data1['email'];
+        $uname=$data1["id"];
+        $fname=$data1["first_name"];
+        $lname=$data1["last_name"];
+        $a= hash ( "md5" , $em);
+
+        $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+
+        if (!$connect) {
+        die("Connection failed: " .mysql_error());
+        } 
+        echo 'Connected successfully';
+
+        //connect to the datatbase
+        mysql_select_db("webrtc");
+
+        $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
+
+        $result = mysql_query($query);
+
+        //query the database
+        // $query = mysql_query("SELECT * FROM users");
     }
-
-
-    // inserting into database
-    $em=$data1['email'];
-    $uname=$data1["id"];
-    $fname=$data1["first_name"];
-    $lname=$data1["last_name"];
-    $a= hash ( "md5" , $em);
-
-    $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-
-    if (!$connect) {
-    die("Connection failed: " .mysql_error());
-    } 
-    echo 'Connected successfully';
-
-    //connect to the datatbase
-    mysql_select_db("webrtc");
-
-    $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
-
-    $result = mysql_query($query);
-
-    //query the database
-    // $query = mysql_query("SELECT * FROM users");
-
+?>
     <script language="javascript" type="text/javascript">
     
     window.location="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php";
@@ -130,9 +133,12 @@ session_start();
 
 
 			
-	    } 
+	    <!-- }  -->
 
-?>
+    </body>
+</html>
+
+
 
 
 
