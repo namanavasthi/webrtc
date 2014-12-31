@@ -22,31 +22,24 @@ print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 
 
 //connect to the server
-// $connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
+$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
 
 
 
 
 
-define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
-define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+// define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+// define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+// define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+// define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+// define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
-$dbh = new PDO($dsn, DB_USER, DB_PASS);
+// $dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+// $dbh = new PDO($dsn, DB_USER, DB_PASS);
 
-print $dbh;
-print $dsn;
-
-
-
-
-
-
-
+// print $dbh;
+// print $dsn;
 
 
 
@@ -61,7 +54,14 @@ print $dsn;
 
 
 
-if (!$dbh) {
+
+
+
+
+
+
+
+if (!$connect) {
     die("Connection failed: " .mysql_error());
 } 
 echo 'Connected successfully';
