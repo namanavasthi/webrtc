@@ -37,7 +37,7 @@ include("usercookie.php");
 
         $rows = mysql_fetch_array($query);
         echo "yooo".$rows."";
-        if(!is_null($query))
+        if($query!='')
           $b=0;
         sleep(5);
 
