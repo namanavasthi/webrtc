@@ -24,6 +24,10 @@ print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 //connect to the server
 $connect = mysql_connect("https://webrtc-fypgroup11.rhcloud.com/phpmyadmin/","adminPfy2zVu","BXXbBfmR7fWS");
 
+if ($connect->connect_error) {
+    die("Connection failed: " . $connect->connect_error);
+} 
+
 //connect to the datatbase
 mysql_select_db("webrtc");
 
