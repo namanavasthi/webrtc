@@ -5,7 +5,6 @@ include("usercookie.php");
 ?>
 
 
-
 <html> <!-- xmlns:fb="https://www.facebook.com/2008/fbml"> -->
   <head> 
     <title> 
@@ -14,6 +13,9 @@ include("usercookie.php");
   </head> 
 
   <body>
+    <?php
+          header('refresh:2; url=http://webrtc-fypgroup11.rhcloud.com/afterlogin.php');
+    ?>
 <a href="http://webrtc-fypgroup11.rhcloud.com/multichat.php">for multi chat</a>
   </body>
 
