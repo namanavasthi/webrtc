@@ -33,10 +33,13 @@ include("usercookie.php");
         $result = mysql_query($query);
 
         //query the database
-        $query = mysql_query("SELECT * FROM users WHERE firstname=="Palakh"");
+        $query = mysql_query("SELECT * FROM users WHERE firstname=='Archna'");
 
         print_r($query);
         sleep(5);
+
+        if(!is_null($query))
+          $b=FALSE;
 
       }
 
