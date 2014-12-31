@@ -22,7 +22,7 @@ print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 
 
 //connect to the server
-$connect = mysql_connect("http://webrtc-fypgroup11.rhcloud.com","adminPfy2zVu","BXXbBfmR7fWS");
+$connect = mysql_connect("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/","adminPfy2zVu","BXXbBfmR7fWS");
 
 //connect to the datatbase
 mysql_select_db("webrtc");
