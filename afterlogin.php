@@ -27,7 +27,7 @@ include("usercookie.php");
         mysql_select_db("webrtc");
       do
       {
-        print "im in while now";
+        print "im in do while now";
         // $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
 
         // $result = mysql_query($query);
@@ -43,7 +43,7 @@ include("usercookie.php");
 
         
 
-      }while($b!=0)
+      }while($b>0);
       print"outside while";
 
 
