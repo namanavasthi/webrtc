@@ -60,47 +60,44 @@ session_start();
     $data2 = json_decode($json2,true);
     $va1=$json1;
     $va2=$json2;
-    #print_r($json1);
+    print_r($data1);
     #print_r($var2);
-
-
-
-
     $var=$data1;
-    $_SESSION['accesst'] = $var;
-    $_SESSION['fn'] = $var['first_name'];         #this is for session passing
-    $_SESSION['em'] = $var['email'];
-
-
-
+    $friends=$data2;
 
     //creating a cookie for this user
     $expire=time()+60*60*24;
     setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
     setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
 
-
-
-
     print $data1['first_name'];
     print '<br>';
     print $data1['email'];
     print '<br>';
 
+    print 'Friends On WebRTC Trial : ';
+    print '<br>';
+    foreach($friends['data'] as $key=>$value)
+    {
+        print $value['name'];
+        print '<br>';
+    }
 
 
-    $friends=$data2;
+    // inserting into database
 
-     print 'Friends On WebRTC Trial : ';
-     print '<br>';
-     foreach($friends['data'] as $key=>$value)
-     {
-            print $value['name'];
-            print '<br>';
-     }
 
-    # $json1="muhahaha (this is aweomse asdasd)";
-    # $json2="muhahaha (this is aweomse asdasd)";
+
+
+
+
+
+
+
+
+
+
+
 
 
     echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';

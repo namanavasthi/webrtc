@@ -4,27 +4,7 @@ include("usercookie.php");
 
 ?>
 
-<?php
-$at = $_SESSION['accesst'];
-$fn = $_SESSION['fn'];
-$em = $_SESSION['em'];
 
-$_SESSION['accesst'] = $at;
-
-
-#echo 'this is it man'.$at.'Link 2'.$v.' haha';
-//print '<br>';
-//print '<br>';
-//print_r($at);
-//print '<br>';
-#print $at['first_name'];
-//print $fn;
-//print '<br>';
-//print $em;
-//print '<br>';
-//print 'without any variable just with _SESSION value : '.$_SESSION['fn']. '<br> and the email id is : '.$_SESSION['em']. '';
-
-?>
 
 <html> <!-- xmlns:fb="https://www.facebook.com/2008/fbml"> -->
   <head> 
