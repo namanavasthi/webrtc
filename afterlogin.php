@@ -26,7 +26,7 @@ $_SESSION['accesst'] = $at;
 
 ?>
 
-<html xmlns:fb="https://www.facebook.com/2008/fbml">
+<html> <!-- xmlns:fb="https://www.facebook.com/2008/fbml"> -->
   <head> 
     <title> 
       AFTER LOGIN
@@ -120,62 +120,7 @@ function updateButton(response) {
 </script>
 </body> 
 -->
-</html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-
-#bullshit
-    $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-        . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
-        . $app_secret . "&code=" . $code;
-
-    $access_token = file_get_contents($token_url);
-
-    $_SESSION['accesstoken'] = $access_token;
-    $_SESSION['code'] = $code;
-    $_SESSION["facebook"] = "true";
-
-#end of bullshit
-
-    $url2 = 'https://graph.facebook.com/me/friends?';
-    $json2 = file_get_contents($url2.$access_token);
-    $data2 = json_decode($json2,true);
-
-
-    $friends=$data2;
-
-     print 'Friends On WebRTC Trial : ';
-     print '<br>';
-     foreach($friends['data'] as $key=>$value)
-     {
-            print $value['name'];
-            print '<br>';
-     }
-
-
-   
-
-
-?>
-
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Trial</title>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<a href="http://webrtc-fypgroup11.rhcloud.com/try.html">FOR SESSION</a>
+<!-- <a href="http://webrtc-fypgroup11.rhcloud.com/try.html">FOR SESSION</a> -->
 </head> 
 <body> 
