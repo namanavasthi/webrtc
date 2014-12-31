@@ -62,7 +62,7 @@ session_start();
         $data2 = json_decode($json2,true);
         $va1=$json1;
         $va2=$json2;
-        print_r($data1);      ////////////////////////////
+        // print_r($data1);      ////////////////////////////
         #print_r($var2);
         $var=$data1;
         $friends=$data2;
@@ -72,18 +72,18 @@ session_start();
         setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
         setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
 
-        print $data1['first_name'];
-        print '<br>';
-        print $data1['email'];
-        print '<br>';
+        // print $data1['first_name'];
+        // print '<br>';
+        // print $data1['email'];
+        // print '<br>';
 
-        print 'Friends On WebRTC Trial : ';
-        print '<br>';
-        foreach($friends['data'] as $key=>$value)
-        {
-            print $value['name'];
-            print '<br>';
-        }
+        // print 'Friends On WebRTC Trial : ';
+        // print '<br>';
+        // foreach($friends['data'] as $key=>$value)
+        // {
+        //     print $value['name'];
+        //     print '<br>';
+        // }
 
 
         // inserting into database
@@ -98,7 +98,7 @@ session_start();
         if (!$connect) {
         die("Connection failed: " .mysql_error());
         } 
-        echo 'Connected successfully';
+        // echo 'Connected successfully';
 
         //connect to the datatbase
         mysql_select_db("webrtc");
