@@ -25,7 +25,7 @@ include("usercookie.php");
 
         //connect to the datatbase
         mysql_select_db("webrtc");
-      while(!is_null($b))
+      do
       {
         print "im in while now";
         // $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
@@ -38,12 +38,12 @@ include("usercookie.php");
         $rows = mysql_fetch_array($query);
         print_r($rows);
         if(!is_null($query))
-          is_null($b);
+          $b=0;
         sleep(5);
 
         
 
-      }
+      }while($b!=0)
       print"outside while";
 
 
