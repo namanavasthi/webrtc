@@ -124,7 +124,7 @@ if(isset($_COOKIE['userdata'])){
 ?>
 <p> <?php print_r($_COOKIE); ?></p>
 
-<a href="http://localhost/myfiles/main.php">blahblah</a>
+<a href="http://webrtc-fypgroup11.rhcloud.com/db/main.php">blahblah</a>
 
 
 </body>
