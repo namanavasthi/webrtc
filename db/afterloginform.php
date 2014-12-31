@@ -14,14 +14,14 @@ $expiry = time()+60*60*24;
 setcookie('userdata[name]',$fname,$expiry,'','','',TRUE);
 setcookie('userdata[email]',$em,$expiry,'','','',TRUE);
 
-print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!"
+print"LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!";
 
 ///
 
 
 
 //connect to the server
-$connect = mysql_connect("https://openshift.redhat.com/app/console/application/5491897cfcf93349ce0001b6-webrtc","adminPfy2zVu","BXXbBfmR7fWS");
+$connect = mysql_connect("http://webrtc-fypgroup11.rhcloud.com","adminPfy2zVu","BXXbBfmR7fWS");
 
 //connect to the datatbase
 mysql_select_db("webrtc");
