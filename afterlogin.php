@@ -36,7 +36,7 @@ include("usercookie.php");
         $query = mysql_query("SELECT * FROM users WHERE firstname=='Archna'");
 
         $rows = mysql_fetch_array($query);
-        echo .$rows;
+        echo "yooo".$rows."";
         if(!is_null($query))
           $b=0;
         sleep(5);
