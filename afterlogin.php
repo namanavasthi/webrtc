@@ -15,7 +15,7 @@ include("usercookie.php");
   <body>
     <?php
       // header('refresh:2; url=http://webrtc-fypgroup11.rhcloud.com/afterlogin.php');
-      $b=true;
+      $b=1;
       $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
         if (!$connect) {
@@ -25,8 +25,9 @@ include("usercookie.php");
 
         //connect to the datatbase
         mysql_select_db("webrtc");
-      while($b)
+      while(!is_null($b))
       {
+        print "im in while now";
         // $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
 
         // $result = mysql_query($query);
@@ -37,7 +38,7 @@ include("usercookie.php");
         $rows = mysql_fetch_array($query);
         print_r($rows);
         if(!is_null($query))
-          $b=FALSE;
+          is_null($b);
         sleep(5);
 
         
