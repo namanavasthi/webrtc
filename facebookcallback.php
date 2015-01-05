@@ -46,7 +46,7 @@ session_start();
 
         $_SESSION['accesstoken'] = $access_token;
         $_SESSION['code'] = $code;
-        	$_SESSION["facebook"] = "true";
+        $_SESSION["facebook"] = "true";
 
 
 
@@ -119,11 +119,7 @@ session_start();
         // $query = mysql_query("SELECT * FROM users");
     }
 ?>
-<?php
-// header("HTTP/1.1 301 Moved Permanently");
-header("Location: http://webrtc-fypgroup11.rhcloud.com/afterlogin.php");
-exit();
-?> 
+
 
 
 
