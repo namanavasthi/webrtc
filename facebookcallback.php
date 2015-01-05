@@ -98,7 +98,7 @@ session_start();
         if (!$connect) {
         die("Connection failed: " .mysql_error());
         } 
-        // echo 'Connected successfully';
+        echo 'Connected successfully';
 
         //connect to the datatbase
         mysql_select_db("webrtc");
@@ -106,6 +106,8 @@ session_start();
         $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
 
         $result = mysql_query($query);
+
+        echo "query executed succesfully";
 
         //query the database
         // $query = mysql_query("SELECT * FROM users");
@@ -126,8 +128,8 @@ session_start();
 
 
 
-    // echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>';
-    // echo '<a href="http://finalyearproject11.comule.com/">Link for WebRTC</a>';
+    <!-- echo '<a href="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php?data1='.$json1.'&data2='.$json2.'">Link 2</a>'; -->
+    <!-- echo '<a href="http://finalyearproject11.comule.com/">Link for WebRTC</a>'; -->
 
 
 
