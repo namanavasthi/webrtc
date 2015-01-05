@@ -11,6 +11,11 @@ session_start();
 <body> 
     <p>im in baby</p>
 
+
+</body>
+</html>
+
+
 <?php 
 
 
@@ -113,15 +118,8 @@ session_start();
         // $query = mysql_query("SELECT * FROM users");
     }
 ?>
-    <script language="javascript" type="text/javascript">
-    document.write("before the shit");
-    window.location="http://webrtc-fypgroup11.rhcloud.com/afterlogin.php";
-    document.write("after the shit");
-    </script>
-
-
-    <?php
-header("HTTP/1.1 301 Moved Permanently");
+<?php
+// header("HTTP/1.1 301 Moved Permanently");
 header("Location: http://webrtc-fypgroup11.rhcloud.com/afterlogin.php");
 exit();
 ?> 
@@ -143,9 +141,6 @@ exit();
 
 			
 	    <!-- }  -->
-
-    </body>
-</html>
 
 
 
