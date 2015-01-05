@@ -96,6 +96,7 @@ session_start();
         $uname=$data1["id"];
         $fname=$data1["first_name"];
         $lname=$data1["last_name"];
+        $fullname=$data["name"];
         $a= hash ( "md5" , $em);
 
         $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
@@ -108,7 +109,7 @@ session_start();
         //connect to the datatbase
         mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,emailid,hashemail,username) VALUES('$fname','$lname','$em','$a','$uname')";
+        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username) VALUES('$fname','$lname','$fullname','$em','$a','$uname')";
 
         $result = mysql_query($query);
 
