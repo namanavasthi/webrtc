@@ -21,7 +21,7 @@ include("usercookie.php");
         if (!$connect) {
         die("Connection failed: " .mysql_error());
         } 
-        echo 'Connected successfully';
+        echo 'Connected successfully muhahaha';
 
         //connect to the datatbase
         mysql_select_db("webrtc");
