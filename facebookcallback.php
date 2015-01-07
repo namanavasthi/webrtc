@@ -37,6 +37,7 @@ session_start();
 	} 
     else 
     {
+        $check=0;
 
         $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
             . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
@@ -117,7 +118,13 @@ session_start();
 
         //query the database
         // $query = mysql_query("SELECT * FROM users");
+        $check=1;
+        if($check==1)
+            header("Location: http://webrtc-fypgroup11.rhcloud.com/afterlogin.php");
+            exit();
+
     }
+
 ?>
 
 
