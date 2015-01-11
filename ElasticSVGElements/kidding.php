@@ -1,26 +1,14 @@
 <?php
 session_start();
 ?>
-<?php
 
-// if(isset($_COOKIE['userdata'])){
-// 	foreach($_COOKIE['userdata'] as $name=>$value){
-// 		$name=htmlspecialchars($name);
-// 		$value=htmlspecialchars($value);
-// 		echo "$name : $value <br />\n";
-
-// print_r($_COOKIE['userdata']);
-?>
 
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Elastic SVG Elements | Sidebar menu</title>
-		<meta name="description" content="Adding elasticity with SVG shape animations" />
-		<meta name="keywords" content="svg, morph, snap.svg, effect, animation, css, shape" />
-		<meta name="author" content="Codrops" />
+		<title>HOME PAGE</title>
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
