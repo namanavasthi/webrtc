@@ -9,7 +9,7 @@ session_start();
 // 		$value=htmlspecialchars($value);
 // 		echo "$name : $value <br />\n";
 
-print_r($_COOKIE);
+print_r($_COOKIE['userdata']);
 ?>
 
 <html lang="en" class="no-js">
