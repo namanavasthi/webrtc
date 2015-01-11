@@ -129,9 +129,10 @@ session_start();
                     $name=htmlspecialchars($name);
                     $value=htmlspecialchars($value);
                     echo "$name : $value <br />\n";
-                    echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
+                    
                 }
             }   
+            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
 
         }
            

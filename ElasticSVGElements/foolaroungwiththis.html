@@ -251,10 +251,7 @@
 include("usercookie.php");
 ?>
 
-<?php
-print_r($_COOKIE);
-echo"yo mamma";
-?>
+
 
 <!-- main content of the page goes here -->
 
@@ -263,7 +260,16 @@ echo"yo mamma";
 				<div class="intro-content">
 					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
-					<a href="http://www.google.com"><h1><span><?php echo $name?></span><span>Web Designer</span></h1></a>
+					<a href="http://www.google.com"><h1><span><?php
+if(isset($_COOKIE['userdata'])){
+                foreach($_COOKIE['userdata'] as $name=>$value){
+                    $name=htmlspecialchars($name);
+                    $value=htmlspecialchars($value);
+                    echo "$name";
+                    
+                }
+            }   
+?></span><span>Web Designer</span></h1></a>
 				</div>
 			</div>
 		</div><!-- /container -->
