@@ -100,6 +100,13 @@ session_start();
         $fullname=$data["name"];
         $a= hash ( "md5" , $em);
 
+
+
+
+
+
+
+
         $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
         if (!$connect) {
