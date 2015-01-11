@@ -127,6 +127,8 @@ session_start();
         // $query = mysql_query("SELECT * FROM users");
 
         echo $_COOKIE["userdata[name]"];
+        $_POST["userdata[name]"];
+        $_POST["userdata[email]"];
 
         $check=1;
         if($check==1)
