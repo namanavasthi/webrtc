@@ -120,7 +120,7 @@ session_start();
         // $query = mysql_query("SELECT * FROM users");
         $check=1;
         if($check==1)
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/thisisit.html>muhaha</a>";
+            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
             // exit();
 
