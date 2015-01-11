@@ -118,7 +118,10 @@ session_start();
 
         //query the database
         // $query = mysql_query("SELECT * FROM users");
-        $check=1;
+
+        echo $_COOKIE["userdata[name]"];
+
+        $check=0;
         if($check==1)
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
