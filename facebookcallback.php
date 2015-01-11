@@ -121,9 +121,20 @@ session_start();
 
         echo $_COOKIE["userdata[name]"];
 
-        $check=0;
+        $check=1;
         if($check==1)
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
+        {
+            if(isset($_COOKIE['userdata'])){
+                foreach($_COOKIE['userdata'] as $name=>$value){
+                    $name=htmlspecialchars($name);
+                    $value=htmlspecialchars($value);
+                    echo "$name : $value <br />\n";
+                    echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
+                }
+            }   
+
+        }
+           
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
             // exit();
 
