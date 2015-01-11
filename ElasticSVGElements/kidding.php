@@ -3,11 +3,13 @@ session_start();
 ?>
 <?php
 
-						if(isset($_COOKIE['userdata'])){
-	foreach($_COOKIE['userdata'] as $name=>$value){
-		$name=htmlspecialchars($name);
-		$value=htmlspecialchars($value);
-		echo "$name : $value <br />\n";
+// if(isset($_COOKIE['userdata'])){
+// 	foreach($_COOKIE['userdata'] as $name=>$value){
+// 		$name=htmlspecialchars($name);
+// 		$value=htmlspecialchars($value);
+// 		echo "$name : $value <br />\n";
+
+print_r($_COOKIE);
 ?>
 
 <html lang="en" class="no-js">
@@ -278,7 +280,7 @@ session_start();
 			<div class="side-fluid">
 				<div class="intro-content">
 					<p>name is : </p>
-					
+					<?php echo $name ?>
 					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
 					<a href="http://www.google.com"><h1><span><? echo $name ?></span><span>Web Designer</span></h1></a>
