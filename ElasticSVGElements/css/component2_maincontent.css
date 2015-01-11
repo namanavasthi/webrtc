@@ -112,7 +112,7 @@ body {
 	position: relative;
 	margin-top: 0.5em;
 	padding: 0.8em;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	letter-spacing: 1px;
 	/*font-size: 4vm;*/
 }
