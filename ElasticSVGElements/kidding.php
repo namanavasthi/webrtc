@@ -251,7 +251,23 @@ session_start();
 <!-- 
 <?php
 // include("usercookie.php");
-?> -->
+?> 
+
+
+<?php
+
+	// 					if(isset($_COOKIE['userdata'])){
+	// foreach($_COOKIE['userdata'] as $name=>$value){
+	// 	$name=htmlspecialchars($name);
+	// 	$value=htmlspecialchars($value);
+	// 	echo "$name : $value <br />\n";
+?>
+
+
+
+-->
+
+
 
 
 <!-- main content of the page goes here -->
@@ -260,13 +276,7 @@ session_start();
 			<div class="side-fluid">
 				<div class="intro-content">
 					<p>name is : </p>
-<?php
-						if(isset($_COOKIE['userdata'])){
-	foreach($_COOKIE['userdata'] as $name=>$value){
-		$name=htmlspecialchars($name);
-		$value=htmlspecialchars($value);
-		echo "$name : $value <br />\n";
-?>
+					<?php echo $_COOKIE;?>
 					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
 					<a href="http://www.google.com"><h1><span><? echo $name ?></span><span>Web Designer</span></h1></a>
