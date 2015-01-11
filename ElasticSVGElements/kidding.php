@@ -9,7 +9,7 @@ session_start();
 // 		$value=htmlspecialchars($value);
 // 		echo "$name : $value <br />\n";
 
-print_r($_COOKIE['userdata']);
+// print_r($_COOKIE['userdata']);
 ?>
 
 <html lang="en" class="no-js">
@@ -281,7 +281,7 @@ print_r($_COOKIE['userdata']);
 				<div class="intro-content">				
 					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
-					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span>Web Designer</span></h1></a>
+					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
 				</div>
 			</div>
 		</div><!-- /container -->
