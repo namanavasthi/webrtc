@@ -142,6 +142,7 @@ session_start();
                 }
             }   
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/foolaroungwiththis.html>Go to main page</a>";
+            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
         }
            
