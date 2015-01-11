@@ -278,12 +278,10 @@ print_r($_COOKIE['userdata']);
 
 		<div class="container">
 			<div class="side-fluid">
-				<div class="intro-content">
-					<p>name is : </p>
-					<?php print_r($_COOKIE['userdata']['name']); ?>
+				<div class="intro-content">				
 					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
-					<a href="http://www.google.com"><h1><span><? echo $name ?></span><span>Web Designer</span></h1></a>
+					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span>Web Designer</span></h1></a>
 				</div>
 			</div>
 		</div><!-- /container -->
