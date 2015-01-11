@@ -17,14 +17,13 @@
 
 body {
 	color: #fff;
+	/*display: inline-block;*/
 	/*background: #2f3238;*/
 	/*background: #fff;*/
-	background: repeat center center cover;
-	background-image: url("../phone-booth.jpg");
-	background-repeat: repeat-y;
+	/*background-image: url("../phone-booth.jpg");
 	background-size: 100%;
 	height: auto;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
