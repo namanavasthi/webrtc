@@ -3,26 +3,29 @@
 <body>
 	<!-- <p>some stuff</p> -->
 	<script>
-	document.write(1+1+5);
+	$(document).ready(function() {
+		document.write(1+1+5);
 		// var statusIntervalId = window.setInterval(update, 1000);
 		self.setInterval(update, 1000);
 		document.write(1+1+5+1010);
 
-function update() {
-	document.write(1+1+5);
-    $.ajax({
-        url: 'http://webrtc-fypgroup11.rhcloud.com/checkchanges.php',
-        dataType: 'text',
-        success: function(data) {
-            if (parseInt(data) == 1) {
-                document.write(1+1);
-            } else {
-                document.write(0+1);
-            }
-        }
-    }
-}
+		function update() {
+			document.write(1+1+5);
+			$.ajax({
+				url: 'http://webrtc-fypgroup11.rhcloud.com/checkchanges.php',
+				dataType: 'text',
+				success: function(data) {
+					if (parseInt(data) == 1) {
+						document.write(1+1);
+					} else {
+						document.write(0+1);
+					}
+				}
+			}
+		}
+	}
 	</script>
 
 
 </body>
+</html>
