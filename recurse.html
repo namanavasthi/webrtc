@@ -1,0 +1,23 @@
+<html>
+<body>
+	<p>some stuff</p>
+	<script>
+		var statusIntervalId = window.setInterval(update, 3000);
+
+function update() {
+    $.ajax({
+        url: 'check_status.php',
+        dataType: 'text',
+        success: function(data) {
+            if (parseInt(data) == 0) {
+                document.write(1);
+            } else {
+                document.write(0);
+            }
+        }
+    }
+}
+	</script>
+
+
+</body>
