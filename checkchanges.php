@@ -23,6 +23,10 @@ while($flag<=0){
         echo "query executed succesfully";
         $flag=2;
 	}
+	else{
+		$flag=0;
+		echo "again";
+	}
 }
 
 
