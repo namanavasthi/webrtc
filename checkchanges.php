@@ -20,6 +20,7 @@ while($flag<=0){
 	$result = $query;
 	print mysql_num_rows($result);
 	if(mysql_num_rows($result) != 0) {
+		sleep(3);
         echo "query executed succesfully";
         $flag=2;
 	}
