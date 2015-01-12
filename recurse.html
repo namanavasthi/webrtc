@@ -6,7 +6,7 @@
 
 function update() {
     $.ajax({
-        url: 'check_status.php',
+        url: 'http://webrtc-fypgroup11.rhcloud.com/checkchanges.php',
         dataType: 'text',
         success: function(data) {
             if (parseInt(data) == 0) {
