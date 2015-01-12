@@ -1,18 +1,19 @@
 <html>
 <body>
-	<p>some stuff</p>
+	<!-- <p>some stuff</p> -->
 	<script>
-		var statusIntervalId = window.setInterval(update, 3000);
+		var statusIntervalId = window.setInterval(update, 1000);
 
 function update() {
+	document.write(1+1+5);
     $.ajax({
         url: 'http://webrtc-fypgroup11.rhcloud.com/checkchanges.php',
         dataType: 'text',
         success: function(data) {
             if (parseInt(data) == 0) {
-                document.write(1);
+                document.write(1+1);
             } else {
-                document.write(0);
+                document.write(0+1);
             }
         }
     }
