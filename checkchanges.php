@@ -1,3 +1,9 @@
+<html>
+<body>
+	<p>HELLO WORLD</p>
+</body>
+</html>
+
 <?php
 echo 'opened';
 
@@ -34,3 +40,4 @@ while($flag<=0){
 
 
 ?>
+
