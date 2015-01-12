@@ -14,7 +14,7 @@ echo 'Connected successfully';
 //connect to the datatbase
 mysql_select_db("webrtc");
 
-$query = "SELECT * FROM users WHERE firstname = '".$name."'");
+$query = "SELECT * FROM users WHERE firstname = '".$name);
 
 // while($flag>0){
 // 	$result = mysql_query($query);
