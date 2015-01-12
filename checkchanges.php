@@ -25,8 +25,8 @@ while($flag<=0){
 	}
 	else{
 		$flag=0;
-		sleep(5);
 		echo "again";
+		sleep(5);
 	}
 }
 
