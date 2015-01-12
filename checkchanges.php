@@ -2,7 +2,7 @@
 echo 'opened';
 
 $flag=0;
-$name="Naman";
+$name='Naman';
 
 $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
