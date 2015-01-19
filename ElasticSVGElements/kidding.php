@@ -74,10 +74,25 @@ session_start();
 
 
 
+<script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+</script>
 
 
 
-	<body>
+
+
+
+	<!-- <body> -->
+	<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+
+
+
+	<!-- <body> -->
 
 <div class="container-fluid" style="height:720px">
 
