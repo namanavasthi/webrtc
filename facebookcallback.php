@@ -89,7 +89,7 @@ session_start();
 
         foreach($data3['data'] as $key=>$value)
         {
-            print $value['url'];
+            print $value['is_silhouette'];
             $img_url=htmlspecialchars($value['url']);
             print $img_url;
             print '<br>';
