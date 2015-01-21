@@ -153,8 +153,8 @@ session_start();
         // $photos     = $facebook->api('/' . $user . '/photos?limit=6');
 
         // print_r($photos);
-        $json_img = file_get_contents($photo);
-        print_r($json_img);
+        // $json_img = file_get_contents($photo);
+        // print_r($json_img);
 
 
 
@@ -192,7 +192,7 @@ session_start();
                 }
             }   
 
-            print_r($data1);
+            echo $url1;
 
             echo "<td>
                     <img src=\"{$data3}\">
