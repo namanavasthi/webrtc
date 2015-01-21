@@ -78,9 +78,11 @@ session_start();
 
 
         $json3 = file_get_contents($url3);
-        // print_r($json3);
+        print_r($json3);
         $data3 = json_decode($json3,true);
         print_r($data3['url']);
+
+        echo $data3['url'];
 
 
 
@@ -214,7 +216,7 @@ session_start();
                 }
             }   
 
-            echo $url3;
+            // echo $url3;
 
             echo "<td>
                     <img src=\"{$data3}\">
