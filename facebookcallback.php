@@ -77,6 +77,32 @@ session_start();
         // echo $photo;s
 
 
+
+
+        //try
+
+        $headers = get_headers($url3, 1);
+
+        if( isset($headers['Location']) )
+            echo $headers['Location']; // string
+        else
+            echo "ERROR";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         $json3 = file_get_contents($url3);
         // print_r($json3);
         $data3 = json_decode($json3,true);
