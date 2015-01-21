@@ -12,8 +12,6 @@ session_start();
     <p>im in baby</p>
 
 
-</body>
-</html>
 
 
 <?php 
@@ -61,6 +59,7 @@ session_start();
 
         $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
+        $url3 = 'https://graph.facebook.com/me/picture?';
         $json1 = file_get_contents($url1.$access_token);
         $data1 = json_decode($json1,true);
 
@@ -174,7 +173,13 @@ session_start();
 
 
 
+        <img scr= <? php echo $url3; ?> >
 
+
+
+
+</body>
+</html>
 
 
 
