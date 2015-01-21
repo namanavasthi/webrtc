@@ -85,7 +85,7 @@ session_start();
         print '<br>';
         // print_r($data3['data']);
 
-
+        echo $data3->data->is_silhouette->url;
 
         foreach($data3['data'] as $key=>$value)
         {
