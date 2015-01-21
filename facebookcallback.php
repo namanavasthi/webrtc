@@ -59,7 +59,7 @@ session_start();
 
         $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
-        $url3 = 'https://graph.facebook.com/me/picture?type=large';
+        $url3 = 'https://graph.facebook.com/me/picture?type=large&redirect=false';
 
 
         $json3 = file_get_contents($url3.$access_token);
