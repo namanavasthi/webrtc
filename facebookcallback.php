@@ -70,6 +70,8 @@ session_start();
 
         $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
 
+        $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";
+
         // $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
    
 
@@ -89,7 +91,7 @@ session_start();
         $expire=time()+60*60*24;
         setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
         setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
-        setcookie('userdata[img]',$url3,$expire,'','','',TRUE);
+        setcookie('userdata[img]',$url3_1,$expire,'','','',TRUE);
 
         // print $data1['first_name'];
         // print '<br>';
