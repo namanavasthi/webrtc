@@ -80,27 +80,19 @@ session_start();
         $json3 = file_get_contents($url3);
         // print_r($json3);
         $data3 = json_decode($json3,true);
-        print_r($data3);
+        // print_r($data3);
 
         print '<br>';
-        print_r($data3['data']);
+        // print_r($data3['data']);
 
 
 
         foreach($data3['data'] as $key=>$value)
         {
-            print $value['url'];
+            echo $value['url'];
             print '<br>';
         }
 
-
-        foreach ($data3 as $item)
-        {
-            foreach ($item->data as $asset)
-            {
-                echo $asset->url;
-            }
-        }
 
 
 
