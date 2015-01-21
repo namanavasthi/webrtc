@@ -66,7 +66,7 @@ session_start();
         $data1 = json_decode($json1,true);
 
         $user_id = $data1['id'];
-        echo $user_id;
+        // echo $user_id;
 
         $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&redirect=false";
 
@@ -74,7 +74,7 @@ session_start();
         // $sample = new sfFacebookPhoto;
         // $thephotoURL = $sample->getRealUrl($photo);
         // echo $thephotoURL;
-        echo $photo;
+        // echo $photo;s
 
 
         $json3 = file_get_contents($url3.$access_token);
@@ -200,7 +200,7 @@ session_start();
                 }
             }   
 
-            echo $url1;
+            echo $url3;
 
             echo "<td>
                     <img src=\"{$data3}\">
