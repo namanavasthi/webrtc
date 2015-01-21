@@ -82,6 +82,9 @@ session_start();
         $data3 = json_decode($json3,true);
         print_r($data3);
 
+        print '<br>';
+        print $data3['url'];
+
 
 
 
