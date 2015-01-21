@@ -89,6 +89,7 @@ session_start();
         $expire=time()+60*60*24;
         setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
         setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
+        setcookie('userdata[img]',$url3,$expire,'','','',TRUE);
 
         // print $data1['first_name'];
         // print '<br>';

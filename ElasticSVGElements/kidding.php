@@ -282,7 +282,12 @@ session_start();
 		<div class="container">
 			<div class="side-fluid">
 				<div class="intro-content">				
-					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
+					<div class="profile"><img src="<?php print_r($_COOKIE['userdata']['img']); ?>" alt="profile1"></div>
+
+					
+
+
+
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
 					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
 				</div>
