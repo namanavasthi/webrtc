@@ -94,6 +94,15 @@ session_start();
         }
 
 
+        foreach ($data3 as $item)
+        {
+            foreach ($item->data as $asset)
+            {
+                echo $asset->url;
+            }
+        }
+
+
 
 
 
