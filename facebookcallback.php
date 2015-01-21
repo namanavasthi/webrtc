@@ -62,10 +62,10 @@ session_start();
         $url3 = 'https://graph.facebook.com/me/picture?type=large&redirect=false';
 
         $photo = "https://graph.facebook.com/me/picture?access_token=".$access_token;
-        $sample = new sfFacebookPhoto;
-        $thephotoURL = $sample->getRealUrl($photo);
-        echo $thephotoURL;
-
+        // $sample = new sfFacebookPhoto;
+        // $thephotoURL = $sample->getRealUrl($photo);
+        // echo $thephotoURL;
+        echo $photo;
 
 
         $json3 = file_get_contents($url3.$access_token);
