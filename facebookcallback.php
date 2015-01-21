@@ -141,8 +141,11 @@ session_start();
                 }
             }   
             echo "<td>
-                    <img src=\"{$id}\">
+                    <img src=\"{$url3}\">
                 </td>";
+
+            echo '<img src="'.$url3.'">';
+
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/kidding.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
