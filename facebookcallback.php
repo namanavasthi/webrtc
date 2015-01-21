@@ -81,16 +81,13 @@ session_start();
 
         //try
 
-        $headers = get_headers($url3, 1);
+        // $headers = get_headers($url3, 1);
 
 
-        if( isset($headers['Location']) )
-            echo $headers['Location']; // string
-        else
-            echo "ERROR";
-
-
-
+        // if( isset($headers['Location']) )
+        //     echo $headers['Location']; // string
+        // else
+        //     echo "ERROR";
 
 
 
@@ -104,23 +101,26 @@ session_start();
 
 
 
-        $json3 = file_get_contents($url3);
-        // print_r($json3);
-        $data3 = json_decode($json3,true);
-        print_r($data3);
 
-        print '<br>';
-        // print_r($data3['data']);
 
-        echo $data3->picture->data->url;
 
-        print '<br>';
+        // $json3 = file_get_contents($url3);
+        // // print_r($json3);
+        // $data3 = json_decode($json3,true);
+        // print_r($data3);
 
-        foreach($data3['data'] as $key=>$value)
-        {
-            print $value['url'];
-            print '<br>';
-        }
+        // print '<br>';
+        // // print_r($data3['data']);
+
+        // echo $data3->picture->data->url;
+
+        // print '<br>';
+
+        // foreach($data3['data'] as $key=>$value)
+        // {
+        //     print $value['url'];
+        //     print '<br>';
+        // }
 
 
 
@@ -253,11 +253,11 @@ session_start();
                 }
             }   
 
-            echo $url3;
+            // echo $url3;
 
-            echo "<td>
-                    <img src=\"{$data3}\">
-                </td>";
+            // echo "<td>
+            //         <img src=\"{$data3}\">
+            //     </td>";
 
             echo '<img src="'.$url3.'">';
 
