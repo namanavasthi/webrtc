@@ -70,78 +70,18 @@ session_start();
 
         $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
 
-        $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
-        // $sample = new sfFacebookPhoto;
-        // $thephotoURL = $sample->getRealUrl($photo);
-        // echo $thephotoURL;
-        // echo $photo;s
-
-
-
-
-        //try
-
-        // $headers = get_headers($url3, 1);
-
-
-        // if( isset($headers['Location']) )
-        //     echo $headers['Location']; // string
-        // else
-        //     echo "ERROR";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // $json3 = file_get_contents($url3);
-        // // print_r($json3);
-        // $data3 = json_decode($json3,true);
-        // print_r($data3);
-
-        // print '<br>';
-        // // print_r($data3['data']);
-
-        // echo $data3->picture->data->url;
-
-        // print '<br>';
-
-        // foreach($data3['data'] as $key=>$value)
-        // {
-        //     print $value['url'];
-        //     print '<br>';
-        // }
-
-
-
-
-
-
-
-
-
+        // $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
+   
 
        
 
         $json2 = file_get_contents($url2.$access_token);
         $data2 = json_decode($json2,true);
 
-        // print_r($data2);
 
         $va1=$json1;
         $va2=$json2;
-        // print_r($data1);      ////////////////////////////
-        #print_r($var2);
+     
         $var=$data1;
         $friends=$data2;
 
@@ -173,12 +113,7 @@ session_start();
         $a= hash ( "md5" , $em);
 
 
-
-
-
-
-
-
+        //connect to db
         $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
         if (!$connect) {
@@ -198,47 +133,10 @@ session_start();
         //query the database
         // $query = mysql_query("SELECT * FROM users");
 
-        echo $_COOKIE["userdata[name]"];
+        // echo $_COOKIE["userdata[name]"];
+
         $_POST["userdata[name]"];
         $_POST["userdata[email]"];
-
-
-
-
-
-
-
-
-// facebook trial
-        // $user = $facebook->getUser();
-        // $photos     = $facebook->api('/' . $user . '/photos?limit=6');
-
-        // print_r($photos);
-        // $json_img = file_get_contents($photo);
-        // print_r($json_img);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         $check=1;
@@ -258,6 +156,8 @@ session_start();
             // echo "<td>
             //         <img src=\"{$data3}\">
             //     </td>";
+
+            echo '<br>';
 
             echo '<img src="'.$url3.'">';
 
