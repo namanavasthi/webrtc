@@ -80,18 +80,18 @@ session_start();
         $json3 = file_get_contents($url3);
         // print_r($json3);
         $data3 = json_decode($json3,true);
-        // print_r($data3);
+        print_r($data3);
 
         print '<br>';
         // print_r($data3['data']);
 
-        echo $data3->data->is_silhouette->url;
+        echo $data3->picture->data->url;
+
+        print '<br>';
 
         foreach($data3['data'] as $key=>$value)
         {
-            print $value['is_silhouette']['url'];
-            $img_url=htmlspecialchars($value['url']);
-            print $img_url;
+            print $value['url'];
             print '<br>';
         }
 
