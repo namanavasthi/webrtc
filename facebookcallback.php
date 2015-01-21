@@ -144,7 +144,7 @@ session_start();
 
 
 // facebook trial
-        $user = $facebook->getUser();
+        // $user = $facebook->getUser();
         // $photos     = $facebook->api('/' . $user . '/photos?limit=6');
 
         // print_r($photos);
