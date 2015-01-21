@@ -68,7 +68,7 @@ session_start();
         $user_id = $data1['id'];
         // echo $user_id;
 
-        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&redirect=false";
+        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large";
 
         $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
         // $sample = new sfFacebookPhoto;
@@ -83,7 +83,6 @@ session_start();
 
         $headers = get_headers($url3, 1);
 
-        print_r($headers);
 
         if( isset($headers['Location']) )
             echo $headers['Location']; // string
