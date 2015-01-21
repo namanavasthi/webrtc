@@ -77,9 +77,10 @@ session_start();
         // echo $photo;s
 
 
-        $json3 = file_get_contents($url3.$access_token);
-        print_r($json3);
+        $json3 = file_get_contents($url3);
+        // print_r($json3);
         $data3 = json_decode($json3,true);
+        print_r($data3);
 
        
 
