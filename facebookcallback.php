@@ -87,6 +87,11 @@ session_start();
 
 
 
+        foreach($data3['data'] as $key=>$value)
+        {
+            print $value['url'];
+            print '<br>';
+        }
 
 
 
@@ -101,7 +106,7 @@ session_start();
         $json2 = file_get_contents($url2.$access_token);
         $data2 = json_decode($json2,true);
 
-        print_r($data2);
+        // print_r($data2);
 
         $va1=$json1;
         $va2=$json2;
