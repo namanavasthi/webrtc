@@ -83,9 +83,9 @@ session_start();
         print_r($data3);
 
         print '<br>';
-        print $data3[url];
+        print $data3['url'];
 
-        print $data3->{'url'};
+        print_r($data1);
 
 
 
