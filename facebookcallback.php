@@ -147,9 +147,9 @@ session_start();
         $user = $facebook->getUser();
         $photos     = $facebook->api('/' . $user . '/photos?limit=6');
 
-        print_r($photos);
-        $json_img = file_get_contents($photos.$access_token);
-        print_r($json_img);
+        // print_r($photos);
+        // $json_img = file_get_contents($photos.$access_token);
+        // print_r($json_img);
 
 
 
