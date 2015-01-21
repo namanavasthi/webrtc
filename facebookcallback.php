@@ -63,6 +63,7 @@ session_start();
 
 
         $json3 = file_get_contents($url3.$access_token);
+        print_r($json3);
         $data3 = json_decode($json3,true);
 
         $json1 = file_get_contents($url1.$access_token);
