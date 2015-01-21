@@ -89,7 +89,7 @@ session_start();
 
         foreach($data3['data'] as $key=>$value)
         {
-            echo $value['url'];
+            print_r($value['url']);
             print '<br>';
         }
 
