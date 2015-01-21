@@ -83,6 +83,8 @@ session_start();
 
         $headers = get_headers($url3, 1);
 
+        print_r($headers);
+
         if( isset($headers['Location']) )
             echo $headers['Location']; // string
         else
