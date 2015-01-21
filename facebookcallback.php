@@ -89,7 +89,9 @@ session_start();
 
         foreach($data3['data'] as $key=>$value)
         {
-            print_r($value['url']);
+            print $value['url'];
+            $img_url=htmlspecialchars($value['url']);
+            print $img_url;
             print '<br>';
         }
 
