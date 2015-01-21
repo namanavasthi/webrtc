@@ -68,7 +68,7 @@ session_start();
         $user_id = $data1['id'];
         // echo $user_id;
 
-        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large";
+        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
 
         $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
         // $sample = new sfFacebookPhoto;
