@@ -146,8 +146,8 @@ session_start();
                 }
             }   
 
-            print_r($data3);
-            
+            print_r($data1);
+
             echo "<td>
                     <img src=\"{$data3}\">
                 </td>";
