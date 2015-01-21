@@ -198,7 +198,7 @@ session_start();
                     <img src=\"{$data3}\">
                 </td>";
 
-            echo '<img src="'.$data3.'">';
+            echo '<img src="'.$photo.'">';
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/kidding.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
