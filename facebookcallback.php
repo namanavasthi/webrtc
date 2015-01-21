@@ -62,6 +62,7 @@ session_start();
         $url3 = 'https://graph.facebook.com/me/picture?type=large&redirect=false';
 
 
+
         $json3 = file_get_contents($url3.$access_token);
         print_r($json3);
         $data3 = json_decode($json3,true);
@@ -134,6 +135,45 @@ session_start();
         echo $_COOKIE["userdata[name]"];
         $_POST["userdata[name]"];
         $_POST["userdata[email]"];
+
+
+
+
+
+
+
+
+// facebook trial
+        $user = $facebook->getUser();
+        $photos     = $facebook->api('/' . $user . '/photos?limit=6');
+
+        print_r($photos);
+        $json_img = file_get_contents($photos.$access_token);
+        print_r($json_img);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         $check=1;
         if($check==1)
