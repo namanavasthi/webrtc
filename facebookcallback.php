@@ -78,15 +78,9 @@ session_start();
 
 
         $json3 = file_get_contents($url3);
-        print_r($json3);
+        // print_r($json3);
         $data3 = json_decode($json3,true);
-        print_r($data3['url']);
-
-        echo $data3['url'];
-
-
-
-
+        print_r($data3);
 
 
 
@@ -216,13 +210,13 @@ session_start();
                 }
             }   
 
-            // echo $url3;
+            echo $url3;
 
             echo "<td>
                     <img src=\"{$data3}\">
                 </td>";
 
-            echo '<img src="'.$data3['url'].'">';
+            echo '<img src="'.$url3.'">';
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/kidding.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
