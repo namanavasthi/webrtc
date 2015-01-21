@@ -59,7 +59,7 @@ session_start();
 
         $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
-        $url3 = 'https://graph.facebook.com/me/picture?type=large&redirect=false';
+        
 
 
         $json1 = file_get_contents($url1.$access_token);
@@ -67,6 +67,8 @@ session_start();
 
         $user_id = $data1['id'];
         echo $user_id;
+
+        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&redirect=false";
 
         $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
         // $sample = new sfFacebookPhoto;
@@ -204,7 +206,7 @@ session_start();
                     <img src=\"{$data3}\">
                 </td>";
 
-            echo '<img src="'.$photo.'">';
+            echo '<img src="'.$url3.'">';
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/kidding.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
