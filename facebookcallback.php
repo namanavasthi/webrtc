@@ -83,7 +83,7 @@ session_start();
         print_r($data3);
 
         print '<br>';
-        print $data3['data'];
+        print_r($data3['data']);
 
 
 
