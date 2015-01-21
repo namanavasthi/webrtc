@@ -61,7 +61,14 @@ session_start();
         $url2 = 'https://graph.facebook.com/me/friends?';
         $url3 = 'https://graph.facebook.com/me/picture?type=large&redirect=false';
 
-        $photo = "https://graph.facebook.com/me/picture?access_token=".$access_token;
+
+        $json1 = file_get_contents($url1.$access_token);
+        $data1 = json_decode($json1,true);
+
+        $user_id = $data1['id'];
+        echo $user_id;
+
+        $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
         // $sample = new sfFacebookPhoto;
         // $thephotoURL = $sample->getRealUrl($photo);
         // echo $thephotoURL;
@@ -72,8 +79,7 @@ session_start();
         print_r($json3);
         $data3 = json_decode($json3,true);
 
-        $json1 = file_get_contents($url1.$access_token);
-        $data1 = json_decode($json1,true);
+       
 
         $json2 = file_get_contents($url2.$access_token);
         $data2 = json_decode($json2,true);
