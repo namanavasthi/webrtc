@@ -133,6 +133,27 @@ session_start();
 
         echo "query executed succesfully";
 
+
+        //palakhs db thingy
+        //added part for friends
+
+        foreach($friends['data'] as $key=>$value)
+        {
+            $friendname=$value['name'];
+            $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+            $result = mysql_query($query1);
+        }
+
+
+
+
+
+
+
+
+
+
+
         //query the database
         // $query = mysql_query("SELECT * FROM users");
 
