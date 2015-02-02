@@ -286,7 +286,7 @@ var constraints = {
             minHeight: 768,
             OfferToReceiveVideo: true
             }
-    }
+    },
      audio: {
         mandatory: {
             OfferToReceiveAudio: true
