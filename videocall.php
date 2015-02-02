@@ -218,30 +218,31 @@ document.write(ROOM);
 var ME = id();
 // options for the PeerConnection
 var server = {
-iceServers: [
-{url: "stun:23.21.150.121"},
-{url: "stun:stun.l.google.com:19302"},
-{url: "turn:numb.viagenie.ca", credential: "webrtcdemo", username: "louis%40mozilla.com"}
-]
+	iceServers: [
+	{url: "stun:23.21.150.121"},
+	{url: "stun:stun.l.google.com:19302"},
+	{url: "turn:numb.viagenie.ca", credential: "webrtcdemo", username: "louis%40mozilla.com"}
+	]
 };
 // for making the channel secure use DTLS
 var options = {
-optional: [
-{DtlsSrtpKeyAgreement: true}
-]
+	optional: [
+		{DtlsSrtpKeyAgreement: true}
+	]
 }
 // create the PeerConnection
 var pc = new PeerConnection(server, options);
 pc.onicecandidate = function (e) {
-// take the first candidate that isn't null
-if (!e.candidate) { return; }
-pc.onicecandidate = null;
-// request the other peers ICE candidate
-recv(ROOM, "candidate:" + otherType, function (candidate) {
-pc.addIceCandidate(new IceCandidate(JSON.parse(candidate)));
-});
-// send our ICE candidate
-send(ROOM, "candidate:"+type, JSON.stringify(e.candidate));
+	// take the first candidate that isn't null
+	if (!e.candidate) 
+		{ return; }
+	pc.onicecandidate = null;
+	// request the other peers ICE candidate
+	recv(ROOM, "candidate:" + otherType, function (candidate) {
+		pc.addIceCandidate(new IceCandidate(JSON.parse(candidate)));
+	});
+	// send our ICE candidate
+	send(ROOM, "candidate:"+type, JSON.stringify(e.candidate));
 };
 // grab the video elements from the document
 var video = document.getElementById("video");
@@ -249,29 +250,54 @@ var video2 = document.getElementById("otherPeer");
 // get the user's media, in this case just video
 navigator.getUserMedia({video: true,audio: true }, function (stream) {   //make changes here for audio 
 
-//https://developer.mozilla.org/en-US/docs/NavigatorUserMedia.getUserMedia
+	//https://developer.mozilla.org/en-US/docs/NavigatorUserMedia.getUserMedia
 
-// set one of the video src to the stream
-video.src = URL.createObjectURL(stream);                    
-// add the stream to the PeerConnection
-pc.addStream(stream);                                       
-// now we can connect to the other peer
-connect();
+	// set one of the video src to the stream
+	video.src = URL.createObjectURL(stream);                    
+	// add the stream to the PeerConnection
+	pc.addStream(stream);                                       
+	// now we can connect to the other peer
+	connect();
 }, errorHandler);
 // when we get the other peer's stream, add it to the second
 // video element.
 pc.onaddstream = function (e) {
-video2.src = URL.createObjectURL(e.stream);
+	video2.src = URL.createObjectURL(e.stream);
 };
 // constraints on the offer SDP. Easier to set these
 // to true unless you don't want to receive either audio
 // or video.
+
+
+
+// var constraints = {
+// 	mandatory: {
+// 		OfferToReceiveAudio: true,
+// 		OfferToReceiveVideo: true
+// 		}
+// };
+
 var constraints = {
-mandatory: {
-OfferToReceiveAudio: true,
-OfferToReceiveVideo: true
-}
+    video: {
+        mandatory: {
+            maxWidth: 1024,
+            maxHeight: 768,
+            minWidth: 1024,
+            minHeight: 768,
+            OfferToReceiveVideo: true
+            }
+    }
+     audio: {
+        mandatory: {
+            OfferToReceiveAudio: true
+            }
+    }
 };
+
+
+
+
+
 // start the connection!
 function connect () {
 if (type === "offerer") {
