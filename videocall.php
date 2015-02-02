@@ -11,7 +11,8 @@
         <style>#video,#otherPeer { width: 300px;}</style>
         
 		<meta name ="viewport" content = "width=device-width, initial-scale=1.0" >
-		<link href = "css/bootstrap.min.css" rel = "stylesheet">
+		<!-- <link href = "css/bootstrap.min.css" rel = "stylesheet"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link href = "css/styles.css" rel = "stylesheet">
 	</head>
 	<body>
@@ -73,7 +74,10 @@
 		            <video id="video" autoplay></video>
 <video id="otherPeer" autoplay></video>
 
-	
+
+
+
+
 
 <script>
 // get a reference to our FireBase database. You should create your own
@@ -171,6 +175,8 @@ otherType = "answerer";
 //document.write("<a href='#"+ROOM+"' onclick=myFunction4(ROOM)>Send link to other peer</a>");
 document.write("<a>Send link to other peer</a>");
 location.href = "videocall.php#"+ROOM+"";
+var check = window.location.hash.substr(1);                  
+document.write(check);
 
 //added stuff
 var cookie_name='cookiee';
@@ -197,6 +203,14 @@ var days='100';
 
 //window.location.href = "../url.php?room="+ROOM";
 //window.location.href = "videocall.php?room=" + ROOM;
+}
+else
+{
+document.write(ROOM);
+// var lala = id().toString();
+// var lala = "asd";
+//location.href = "videocall.php#"+ROOM+"";
+
 }
 
                                 // SSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOSSSSSSSSSSSSSSSSSSSSSSSS
@@ -292,6 +306,11 @@ send(ROOM, "answer", JSON.stringify(answer));
 </script>
 
 
+
+
+
+
+
 <script>
 var recorder = RecordRTC(mediaStream, {
    type: 'video',
@@ -310,6 +329,7 @@ recorder.stopRecording(function(videoURL) {
 // force saving recorded stream to disk
 recorder.save();
 </script>
+
 
 
 
