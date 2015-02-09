@@ -27,7 +27,7 @@ WHILE ($rows=mysql_fetch_array($query)):
 		$webrtcid=$rows['webrtcid'];
 		//echo $webrtcid;
 endwhile;
-// $webrtcid=htmlspecialchars($webrtcid);
+$webrtcid=urlencode($webrtcid);
 setcookie("webrtcid",$webrtcid);
 
 $query = mysql_query("SELECT * FROM friends WHERE friendname='$name'");
