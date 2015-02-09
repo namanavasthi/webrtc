@@ -15,16 +15,16 @@ $('document').ready(function(){
 				}
 				return "";
 			}			
-			function getCookie1(cname) {
-				var name = cname + "=";
-				var ca = document.cookie.split(';');
-				for(var i=0; i<ca.length; i++) {
-					var c = ca[i];
-					while (c.charAt(0)==' ') c = c.substring(1);
-						if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-				}
-				return null;
-			}
+			// function getCookie1(cname) {
+			// 	var name = cname + "=";
+			// 	var ca = document.cookie.split(';');
+			// 	for(var i=0; i<ca.length; i++) {
+			// 		var c = ca[i];
+			// 		while (c.charAt(0)==' ') c = c.substring(1);
+			// 			if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+			// 	}
+			// 	return null;
+			// }
 			function countdown(){
 				setTimeout(countdown,1000);
 				if(number>=0){
@@ -44,8 +44,9 @@ $('document').ready(function(){
 
 					
 					//var key="webrtc-fypgroup11.rhcloud.com/videocall.php";
-					var key=getCookie1("webrtcid");
-					document.write(key);
+					// var key=getCookie1("webrtcid");
+					var key=getCookie("webrtcid");
+					// document.write(key);
 				
 				
 				
