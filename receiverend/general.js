@@ -53,7 +53,7 @@ $('document').ready(function(){
 				if(value=="1001")	{
 						document.cookie = "flag" + "=" + "100" ;
 						alert('There are no fields to generate a report');
-						window.location.href ="//"+key;
+						window.location.href ="//webrtc-fypgroup11.rhcloud.com/videocall.php"+key;
 						//window.open("www.google.com","_self");
 					}
 				
