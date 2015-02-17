@@ -115,7 +115,7 @@ session_start();
         $fullname=$data["name"];
         $a= hash ( "md5" , $em);
         $gender=$data1["gender"];
-        $country=$data1["locale"];
+        $country=$data1["location"];
         echo $gender;
         echo $country;
 
