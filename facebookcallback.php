@@ -114,6 +114,9 @@ session_start();
         $lname=$data1["last_name"];
         $fullname=$data["name"];
         $a= hash ( "md5" , $em);
+        $gender=$data1["gender"];
+
+        echo $gender;
 
 
         //connect to db
