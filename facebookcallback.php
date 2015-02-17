@@ -78,6 +78,7 @@ session_start();
         $data_c = json_decode($json_c,true);
 
         echo $data_c;
+        echo $json_c;
 
 
 
@@ -115,6 +116,7 @@ session_start();
         //     print '<br>';
         // }
 
+        echo $data1;
 
         // inserting into database
         $em=$data1['email'];
@@ -124,7 +126,7 @@ session_start();
         $fullname=$data["name"];
         $a= hash ( "md5" , $em);
         $gender=$data1["gender"];
-        $country=$data1["location"];
+        $country=$data1["locale"];
         echo $gender;
         echo $country;
 
