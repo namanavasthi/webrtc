@@ -72,7 +72,7 @@ session_start();
 
         $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";
 
-        $url_country = "https://graph.facebook.com/".$user_id."/location";
+        $url_country = "https://graph.facebook.com/me/location";
 
         $json_c = file_get_contents($url_country.$access_token);
         $data_c = json_decode($json_c,true);
