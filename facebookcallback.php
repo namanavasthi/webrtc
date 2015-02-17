@@ -122,7 +122,7 @@ session_start();
         $a= hash ( "md5" , $em);
 
         // $country = $data1["location"];
-        $gender = $data1["gender"];
+        // $gender = $data1["gender"];
 
 
         //connect to db
