@@ -59,13 +59,11 @@ session_start();
 
         $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
-        $url_country = 'https://graph.facebook.com/me/friends?';
         
 
 
         $json1 = file_get_contents($url1.$access_token);
         $data1 = json_decode($json1,true);
-
 
         $user_id = $data1['id'];
         // echo $user_id;
@@ -73,8 +71,6 @@ session_start();
         $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
 
         $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";
-
-
 
         // $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
    
@@ -90,8 +86,6 @@ session_start();
      
         $var=$data1;
         $friends=$data2;
-
-        // echo $data1;
 
         //creating a cookie for this user
         $expire=time()+60*60*24;
@@ -120,9 +114,6 @@ session_start();
         $lname=$data1["last_name"];
         $fullname=$data["name"];
         $a= hash ( "md5" , $em);
-
-        // $country = $data1["location"];
-        // $gender = $data1["gender"];
 
 
         //connect to db
