@@ -59,11 +59,13 @@ session_start();
 
         $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
+        $url_country = 'https://graph.facebook.com/me/friends?';
         
 
 
         $json1 = file_get_contents($url1.$access_token);
         $data1 = json_decode($json1,true);
+        echo $data1;
 
         $user_id = $data1['id'];
         // echo $user_id;
@@ -71,6 +73,8 @@ session_start();
         $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
 
         $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";
+
+
 
         // $photo = "https://graph.facebook.com/".$user_id."/picture?access_token=".$access_token;
    
