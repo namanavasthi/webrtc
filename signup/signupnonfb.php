@@ -56,20 +56,21 @@
 								<input type="file" name="image">
 							
 							<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
+							<input type="submit" name="submit" value="Post comment"><br><br>
 						</form>
 
 						<br>
 						
 					
 	  				</div>
-	  				
+
 	  				<!-- <div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div> -->
 
 					
 	  				<div class="cbp-mc-column1">
 						
 	  				</div>
-	  				<!-- <input type="submit" name="submit" value="Post comment"><br><br> -->
+	  				
 	  				<div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="SUBMIT" /></div>
 				</form>
 			</div>
