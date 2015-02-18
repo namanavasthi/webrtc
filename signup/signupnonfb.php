@@ -31,7 +31,7 @@
 					<h1>SIGN UP</h1>
 			</header>	
 			<div class="main">
-				<form class="cbp-mc-form" name='myform' action='presignupcheck.php' method='post' onSubmit="return verifyEmail()" enctype='multipart/form-data'>
+				<form class="cbp-mc-form" name='myform' action='form.php' method='post' onSubmit="return verifyEmail()" enctype='multipart/form-data'>
 					<div class="cbp-mc-column1">
 						
 	  				</div>
@@ -54,9 +54,9 @@
 		  						<input type="text" name="emailid"> 
 							<label for="file">Profile Picture</label>
 								<input type="file" name="image">
-							
-							<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
 							<input type="submit" name="submit" value="Post comment"><br><br>
+							<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
+
 						</form>
 
 						<br>
