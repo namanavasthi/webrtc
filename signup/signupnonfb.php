@@ -37,42 +37,39 @@
 	  				</div>
 					
 					<div class="cbp-mc-column">
-	  				
-					<label for="first_name">First Name</label>
-	  					<input type="text" name="fname">
-						<label for="last_name">Last Name</label>
-	  					<input type="text" name="lname">
-						<label for="gender">Gender</label>
-						<input type="text" name="gender" >
-						<label for="country">Country</label>
-	  					<input type="text" name="country" >	
-						<label for="username">Username</label>
-	  					<input type="text" name="username"> 
-						<label for="emailid">Email Address</label>
-	  					<input type="text" name="emailid"> 
-						<label for="file">Profile Picture</label>
-						<input type="file" name="image">
-						<form method="post" action="verify.php">
-						   <?php
-						     require_once('recaptchalib.php');
-						     $publickey = "6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"; // you got this from the signup page
-						     echo recaptcha_get_html($publickey);
-						   ?>
-						   <input type="submit" />
-						   
+
+						<form id="comment_form" action="form.php" method="post">
+		  				
+							<label for="first_name">First Name</label>
+		  						<input type="text" name="fname">
+							<label for="last_name">Last Name</label>
+		  						<input type="text" name="lname">
+							<label for="gender">Gender</label>
+								<input type="text" name="gender" >
+							<label for="country">Country</label>
+		  						<input type="text" name="country" >	
+							<label for="username">Username</label>
+		  						<input type="text" name="username"> 
+							<label for="emailid">Email Address</label>
+		  						<input type="text" name="emailid"> 
+							<label for="file">Profile Picture</label>
+								<input type="file" name="image">
+							
+							<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
 						</form>
 
 						<br>
-						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
+						
 					
 	  				</div>
-	  				<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
+	  				
+	  				<!-- <div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div> -->
 
 					
 	  				<div class="cbp-mc-column1">
 						
 	  				</div>
-	  				
+	  				<!-- <input type="submit" name="submit" value="Post comment"><br><br> -->
 	  				<div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="SUBMIT" /></div>
 				</form>
 			</div>

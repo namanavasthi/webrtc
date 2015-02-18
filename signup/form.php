@@ -1,10 +1,13 @@
 <?php
 
-        $email;$comment;$captcha;
-        if(isset($_POST['email'])){
-          $email=$_POST['email'];
-        }if(isset($_POST['comment'])){
-          $email=$_POST['comment'];
+        // $email;$comment;$captcha;
+
+        $fname;$lname;$gender;$country;$username;$emailid;$captcha;
+
+        if(isset($_POST['emailid'])){
+          $email=$_POST['emailid'];
+        }if(isset($_POST['fname'])){
+          $fname=$_POST['fname'];
         }if(isset($_POST['g-recaptcha-response'])){
           $captcha=$_POST['g-recaptcha-response'];
         }
