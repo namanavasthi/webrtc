@@ -61,10 +61,13 @@
 						   <input type="submit" />
 						   
 						</form>
-						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
+
 						<br>
+						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
 					
 	  				</div>
+	  				<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
+
 					
 	  				<div class="cbp-mc-column1">
 						
