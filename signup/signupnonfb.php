@@ -59,8 +59,9 @@
 						     echo recaptcha_get_html($publickey);
 						   ?>
 						   <input type="submit" />
-						   <div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
+						   
 						</form>
+						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>
 						<br>
 					
 	  				</div>
