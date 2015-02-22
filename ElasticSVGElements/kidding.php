@@ -133,7 +133,7 @@ require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
             </li>
           </ul>
           <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
-          <li><a onclick="logout()" href="#">Logout</a></li>
+          <li><a onclick="logout()" href="http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/try_logout.php">Logout</a></li>
 
         </div>
 
@@ -150,8 +150,8 @@ require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
 
 
 function logout(){
-	$logoutUrl = $facebook->getLogoutURL();
-	echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
+	// $logoutUrl = $facebook->getLogoutURL();
+	// echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
 }
 
 ?>
