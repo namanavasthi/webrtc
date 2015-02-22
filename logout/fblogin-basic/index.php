@@ -65,7 +65,7 @@
 	}
 
 	//logout
-	$logout = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/index.php&logout=true';
+	$logout = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic&logout=true';
 
 	//4. if fb sess exists echo name 
 	 	if(isset($sess)){
