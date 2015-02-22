@@ -113,7 +113,7 @@ session_start();
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          	<div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+          	<!-- <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div> -->
             <li class="active"><a href="#">Home</a></li>
             <li><a href="http://www.bootply.com" target="ext">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -129,7 +129,7 @@ session_start();
               </ul>
             </li>
           </ul>
-          <li><a href="/logout" onclick="FB.logout();">Logout</a></li>
+          <li><a href="#" onclick="FB.logout();">Logout</a></li>
         </div>
 
     </div>
@@ -137,6 +137,12 @@ session_start();
 </div><!-- /navbar wrapper -->
 
 <!-- end of navbar -->
+
+<script>
+FB.logout(function(response) {
+        // Person is now logged out
+    });
+</script>
 
 
 
