@@ -1,5 +1,5 @@
 <?php
-/*	FACEBOOK LOGIN BASIC - PHP SDK V4.0
+/*	FACEBOOK LOGIN + LOGOUT - PHP SDK V4.0
  *	file 			- index.php
  * 	Developer 		- Krishna Teja G S
  *	Website			- http://packetcode.com/apps/fblogin-basic/
@@ -43,35 +43,61 @@
 	
 	//1.Stat Session
 	 session_start();
-	//2.Use app id,secret and redirect url
-	 $app_id = '955536087794562';
-	 $app_secret = 'd5a0d6381787072586f2f6849183f51d';
-	 $redirect_url='http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic';
-	 
-	 //3.Initialize application, create helper object and get fb sess
+
+	//check if users wants to logout
+	 if(isset($_REQUEST['logout'])){
+	 	unset($_SESSION['fb_token']);
+	 }
+	
+	//2.Use app id,secret and redirect url 
+	$app_id = '';
+	$app_secret = '';
+	$redirect_url='http://packetcode.com/apps/fbloginlogout/';
+
+	//3.Initialize application, create helper object and get fb sess
 	 FacebookSession::setDefaultApplication($app_id,$app_secret);
 	 $helper = new FacebookRedirectLoginHelper($redirect_url);
 	 $sess = $helper->getSessionFromRedirect();
 
+	//check if facebook session exists
+	if(isset($_SESSION['fb_token'])){
+	 	$sess = new FacebookSession($_SESSION['fb_token']);
+	}
+
+	//logout
+	$logout = 'http://packetcode.com/apps/newfblogin&logout=true';
+
 	//4. if fb sess exists echo name 
- 	if(isset($sess)){
+	 	if(isset($sess)){
+	 		//store the token in the php session
+	 		$_SESSION['fb_token']=$sess->getToken();
 	 		//create request object,execute and capture response
-		$request = new FacebookRequest($sess, 'GET', '/me');
-		// from response get graph object
-		$response = $request->execute();
-		$graph = $response->getGraphObject(GraphUser::className());
-		// use graph object methods to get user details
-		$name= $graph->getName();
-		echo "hi $name";
+	 		$request = new FacebookRequest($sess,'GET','/me');
+			// from response get graph object
+			$response = $request->execute();
+			$graph = $response->getGraphObject(GraphUser::classname());
+			// use graph object methods to get user details
+			$name = $graph->getName();
+			$id = $graph->getId();
+			$image = 'https://graph.facebook.com/'.$id.'/picture?width=300';
+			$email = $graph->getProperty('email');
+			echo "hi $name <br>";
+			echo "your email is $email <br><Br>";
+			echo "<img src='$image' /><br><br>";
+			echo "<a href='".$logout."'><button>Logout</button></a>";
+	 	}else{
+			//else echo login
+	 		echo '<a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>';
+	 	}
 
-		echo '<a href='.$helper->getLogoutUrl().'>Logout from facebook</a>';
-
-	}
-	else{
-		//else echo login
-		echo '<a href='.$helper->getLoginUrl().'>Login with facebook</a>';
-	}
 
 
 
 
+
+
+
+
+
+
+	
