@@ -18,7 +18,11 @@ echo "success";
 // $facebook->setAccessToken('');
 
 
-$logoutUrl = $helper->getLogoutURL();
+// $logoutUrl = $helper->getLogoutURL();
+
+$params = array( 'next' => 'https://www.google.com' );
+
+$logoutUrl = $facebook->getLogoutUrl($params);
 echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
 
 ?>
