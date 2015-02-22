@@ -144,6 +144,8 @@ session_start();
 <?php
 if(isset($_GET['action']) && $_GET['action'] === 'logout'){
         $facebook->destroySession();
+        $url="http://webrtc-fypgroup11.rhcloud.com/";
+        header('Location: '.$url);
         $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/' );
 		$facebook->getLogoutUrl($params);
         // $facebook->getLogoutUrl();
