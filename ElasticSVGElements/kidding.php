@@ -128,6 +128,7 @@ session_start();
               </ul>
             </li>
           </ul>
+          <li><a href="/logout" onclick="FB.logout();">Logout</a></li>
         </div>
 
     </div>
