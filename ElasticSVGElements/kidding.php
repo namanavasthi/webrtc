@@ -130,7 +130,7 @@ session_start();
             </li>
           </ul>
           <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
-          <li><a href="?action=logout">Logout</a></li>
+          <li><a href="http://www.webrtc-fypgroup11.rhcloud.com/logout.php">Logout</a></li>
 
         </div>
 
@@ -146,13 +146,13 @@ session_start();
 
 
 <?php
-if(isset($_GET['action']) && $_GET['action'] === 'logout'){
+// if(isset($_GET['action']) && $_GET['action'] === 'logout'){
 
-		$facebook = new Facebook(array(
-			‘appId’ => ‘1511622425778854’,
-			‘secret’ => ‘5049e96e052e37ee34585d2b9e8daa5e’,
-		));
-		$facebook->destroySession();
+// 		$facebook = new Facebook(array(
+// 			‘appId’ => ‘1511622425778854’,
+// 			‘secret’ => ‘5049e96e052e37ee34585d2b9e8daa5e’,
+// 		));
+// 		$facebook->destroySession();
 
 
   //       $facebook->destroySession();
