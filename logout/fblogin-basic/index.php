@@ -84,7 +84,7 @@
 			echo "hi $name <br>";
 			echo "your email is $email <br><Br>";
 			echo "<img src='$image' /><br><br>";
-			echo "<a href='".$logout."'><button>Logout</button></a>";
+			// echo "<a href='".$logout."'><button>Logout</button></a>";
 
 			// $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
 
@@ -102,7 +102,7 @@
 			// $logoutUrl = 'https://www.facebook.com/logout.php?next=http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
 			// echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
 
-			echo '<a href="'.$link.'" >Logout from facebook</a>';
+			echo '<a href="'.$link.'" ><button>Logout from facebook</button></a>';
 
 
 
