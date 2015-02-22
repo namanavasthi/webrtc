@@ -95,7 +95,7 @@
 			// echo $link;
 
 
-			$logoutUrl = 'https://www.facebook.com/logout.php?next=http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
+			$logoutUrl = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/logout.php';
 			echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
 
 
