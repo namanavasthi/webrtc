@@ -107,7 +107,7 @@
 
             // echo $link;
 
-            $next = 'http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php?&logout=true';
+            $next = 'http://webrtc-fypgroup11.rhcloud.com/?&logout=true';
             $link = $helper->getLogoutUrl($sess,$next);
 
             $cookie_name="logoutlink";
