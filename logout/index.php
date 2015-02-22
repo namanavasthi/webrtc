@@ -10,13 +10,13 @@ include 'facebook-php-sdk-v4/autoload.php';
 
 echo "after include statement";
 
-// $facebook = new Facebook(array(
-// 		'appId' => '955536087794562',
-// 		'secret' => 'd5a0d6381787072586f2f6849183f51d',
-// 		'cookie' => true
-// 	));
+$facebook = new Facebook(array(
+		'appId' => '955536087794562',
+		'secret' => 'd5a0d6381787072586f2f6849183f51d',
+		'cookie' => true
+	));
 
-$facebook = new FacebookRedirectLoginHelper('http://webrtc-fypgroup11.rhcloud.com/logout/index.php');
+// $facebook = new FacebookRedirectLoginHelper('http://webrtc-fypgroup11.rhcloud.com/logout/index.php');
 
 echo "after defining the $facebook value";
 
