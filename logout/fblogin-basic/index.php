@@ -95,7 +95,7 @@
 			// echo $link;
 
 
-			$logoutUrl = $helper->getLogoutUrl(array( 'next' => ($fbconfig['baseurl'].'logout.php') ));
+			$logoutUrl = 'https://www.facebook.com/logout.php?next=http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&access_token=' . $helper->getAccessToken();
 			echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
 
 
