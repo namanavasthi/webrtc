@@ -129,7 +129,7 @@ session_start();
               </ul>
             </li>
           </ul>
-          <li><a href="#" onclick="FB.logout();">Logout</a></li>
+          <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li>
         </div>
 
     </div>
@@ -138,11 +138,7 @@ session_start();
 
 <!-- end of navbar -->
 
-<script>
-FB.logout(function(response) {
-        // Person is now logged out
-    });
-</script>
+
 
 
 
