@@ -8,14 +8,20 @@
 
 include 'facebook-php-sdk-v4-4.0-dev/autoload.php';
 
+echo "after include statement";
+
 $facebook = new Facebook(array(
 		'appId' => '955536087794562',
 		'secret' => 'd5a0d6381787072586f2f6849183f51d',
 		'cookie' => true
 	));
 
+echo "after defining the $facebook value";
+
 $session = $facebook->getSession();
 $me=null;
+
+echo "basic ini over";
 
 if($session){
 	try{
