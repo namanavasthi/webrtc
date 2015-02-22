@@ -20,10 +20,16 @@ echo "success";
 
 $logoutUrl = $helper->getLogoutUrl();
 
+echo "success after fb api";
+
 $params = array( 'next' => 'https://www.google.com' );
+
+echo "after params before final echo";
 
 // $logoutUrl = $facebook->getLogoutUrl($params);
 echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
+
+echo "success after url echo";
 
 ?>
 
