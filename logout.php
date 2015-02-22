@@ -6,3 +6,13 @@ $facebook = new Facebook(array(
 		$facebook->destroySession();
 
 ?>
+
+<html>
+<head>
+	<title>
+		hello
+	</title>
+<head>
+<body>
+</body>
+</html>
