@@ -96,6 +96,12 @@
 
 			$next = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true';
 			$link = $helper->getLogoutUrl($sess,$next);
+
+			$cookie_name="logoutlink";
+			$cookie_value=$link;
+			setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
+
+
 			// echo $link;
 
 
