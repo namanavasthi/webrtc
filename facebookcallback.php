@@ -131,6 +131,14 @@
         }
 
 
+
+
+
+        //original callback part
+
+
+
+
          $url1 = 'https://graph.facebook.com/me/?';
         $url2 = 'https://graph.facebook.com/me/friends?';
         

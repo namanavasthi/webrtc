@@ -150,8 +150,16 @@ require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
 
 
 function logout(){
-	// $logoutUrl = $facebook->getLogoutURL();
-	// echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
+	$cookie_name="logoutlink";
+if(!isset($_COOKIE[$cookie_name])) {
+    //not possible
+} else {
+    // echo "Cookie '" . $cookie_name . "' is set!<br>";
+    $link=$_COOKIE[$cookie_name];
+    echo $link;
+}
+//return the link value to href from header
+echo '<a href="'.$link.'" ><button>Logout from facebook</button></a>';
 }
 
 ?>
