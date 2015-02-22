@@ -133,7 +133,7 @@ require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
             </li>
           </ul>
           <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
-          <li><a onclick="logout()">Logout</a></li>
+          <li><a onclick="logout()" href="#">Logout</a></li>
 
         </div>
 
