@@ -94,8 +94,12 @@
 
 			// echo $link;
 
+			$next = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true';
+			$link = $helper->getLogoutUrl($sess,$next);
+			echo $link;
 
-			$logoutUrl = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/logout.php';
+
+			$logoutUrl = 'https://www.facebook.com/logout.php?next=http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
 			echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
 
 
