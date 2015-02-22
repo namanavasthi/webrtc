@@ -83,7 +83,8 @@
 
           <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
 
-          <p><a class="btn btn-lg btn-primary" href="https://graph.facebook.com/oauth/authorize?type=web_server&amp;display=touch&amp;scope=read_friendlists,user_friends,email,manage_friendlists,read_stream,public_profile,user_photos&amp;client_id=1511622425778854&amp;redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php">Sign-in with Facebook</a>
+          <p><a class="btn btn-lg btn-primary" href="<?php echo $login ?>">Sign-in with Facebook</a>
+            <!-- echo '<a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>'; -->
             <!-- <a href="http://webrtc-fypgroup11.rhcloud.com/url.php">try this</a> -->
         </p>
         </div>
@@ -93,67 +94,7 @@
   </div>
   
 </div>
-<!-- /.carousel -->
 
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
-<!-- <div class="container marketing"> -->
-
-  <!-- Three columns of text below the carousel -->
-  <!-- <div class="row">
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>Mobile-first</h2>
-      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>One Fluid Grid</h2>
-      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>LESS is More</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-  </div> --><!-- /.row -->
-
-
-  <!-- START THE FEATURETTES -->
-
- <!--  <hr class="featurette-divider">
-
-  <div class="featurette">
-    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Responsive Design. <span class="text-muted">It'll blow your mind.</span></h2>
-    <p class="lead">In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="featurette">
-    <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>
-    <p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="featurette">
-    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Flatness.</span></h2>
-    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
-  </div>
-
-  <hr class="featurette-divider"> -->
-
-  <!-- /END THE FEATURETTES -->
 
 
   <!-- FOOTER -->
@@ -171,3 +112,77 @@
   </body>
 
 </html>
+
+
+
+
+
+
+<?php
+/*  FACEBOOK LOGIN + LOGOUT - PHP SDK V4.0
+ *  file            - index.php
+ *  Developer       - Krishna Teja G S
+ *  Website         - http://packetcode.com/apps/fblogin-basic/
+ *  Date            - 27th Sept 2014
+ *  license         - GNU General Public License version 2 or later
+*/
+
+/* INCLUSION OF LIBRARY FILEs*/
+    require_once( 'lib/Facebook/FacebookSession.php');
+    require_once( 'lib/Facebook/FacebookRequest.php' );
+    require_once( 'lib/Facebook/FacebookResponse.php' );
+    require_once( 'lib/Facebook/FacebookSDKException.php' );
+    require_once( 'lib/Facebook/FacebookRequestException.php' );
+    require_once( 'lib/Facebook/FacebookRedirectLoginHelper.php');
+    require_once( 'lib/Facebook/FacebookAuthorizationException.php' );
+    require_once( 'lib/Facebook/GraphObject.php' );
+    require_once( 'lib/Facebook/GraphUser.php' );
+    require_once( 'lib/Facebook/GraphSessionInfo.php' );
+    require_once( 'lib/Facebook/Entities/AccessToken.php');
+    require_once( 'lib/Facebook/HttpClients/FacebookCurl.php' );
+    require_once( 'lib/Facebook/HttpClients/FacebookHttpable.php');
+    require_once( 'lib/Facebook/HttpClients/FacebookCurlHttpClient.php');
+
+/* USE NAMESPACES */
+    
+    use Facebook\FacebookSession;
+    use Facebook\FacebookRedirectLoginHelper;
+    use Facebook\FacebookRequest;
+    use Facebook\FacebookResponse;
+    use Facebook\FacebookSDKException;
+    use Facebook\FacebookRequestException;
+    use Facebook\FacebookAuthorizationException;
+    use Facebook\GraphObject;
+    use Facebook\GraphUser;
+    use Facebook\GraphSessionInfo;
+    use Facebook\FacebookHttpable;
+    use Facebook\FacebookCurlHttpClient;
+    use Facebook\FacebookCurl;
+
+/*PROCESS*/
+    
+    //1.Stat Session
+     session_start();
+
+    //check if users wants to logout
+     if(isset($_REQUEST['logout'])){
+        unset($_SESSION['fb_token']);
+     }
+    
+    //2.Use app id,secret and redirect url 
+    $app_id = '955536087794562';
+    $app_secret = 'd5a0d6381787072586f2f6849183f51d';
+    $redirect_url='http://webrtc-fypgroup11.rhcloud.com/index.php';
+
+    //3.Initialize application, create helper object and get fb sess
+     FacebookSession::setDefaultApplication($app_id,$app_secret);
+     $helper = new FacebookRedirectLoginHelper($redirect_url);
+     $sess = $helper->getSessionFromRedirect();
+
+    //check if facebook session exists
+    if(isset($_SESSION['fb_token'])){
+        $sess = new FacebookSession($_SESSION['fb_token']);
+    }
+
+    $login=$helper->getLoginUrl(array('email'));
+
