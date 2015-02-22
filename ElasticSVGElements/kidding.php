@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
+
 ?>
 
 
@@ -130,7 +133,7 @@ session_start();
             </li>
           </ul>
           <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
-          <li><a href="http://www.webrtc-fypgroup11.rhcloud.com/logout.php">Logout</a></li>
+          <li><a onclick="logout()">Logout</a></li>
 
         </div>
 
@@ -139,6 +142,19 @@ session_start();
 </div><!-- /navbar wrapper -->
 
 <!-- end of navbar -->
+
+
+
+<?php
+
+
+
+function logout(){
+	$logoutUrl = $facebook->getLogoutURL();
+	echo "<a href='$logoutUrl'>LOG OUT BITCH </a>";
+}
+
+?>
 
 
 
