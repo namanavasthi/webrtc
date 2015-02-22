@@ -130,7 +130,7 @@ session_start();
             </li>
           </ul>
           <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
-          <li><a href="?action=logout" onclick="">Logout</a></li>
+          <li><a href="?action=logout">Logout</a></li>
 
         </div>
 
@@ -143,16 +143,17 @@ session_start();
 
 <?php
 if(isset($_GET['action']) && $_GET['action'] === 'logout'){
-        // $facebook->destroySession();
+        $facebook->destroySession();
         // $url="http://webrtc-fypgroup11.rhcloud.com/";
         $logout = "http://webrtc-fypgroup11.rhcloud.com";
   //       header('Location: '.$url);
   //       $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/' );
 		// $facebook->getLogoutUrl($params);
         // $facebook->getLogoutUrl();
+        header("Location: ".$logout);
         $logout = $facebook->getLogoutUrl();
 		$facebook->setAccessToken('');
-		wp_redirect( $logout );
+		// wp_redirect( $logout );
 
     }
 
