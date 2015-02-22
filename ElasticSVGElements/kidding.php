@@ -129,7 +129,9 @@ session_start();
               </ul>
             </li>
           </ul>
-          <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li>
+          <!-- <li><a href="http://m.facebook.com/logout.php?confirm=1&amp;next=http://webrtc-fypgroup11.rhcloud.com/">Logout</a></li> -->
+          <li><a href="?action=logout">Logout</a></li>
+
         </div>
 
     </div>
@@ -139,7 +141,12 @@ session_start();
 <!-- end of navbar -->
 
 
+<?php
+if(isset($_GET['action']) && $_GET['action'] === 'logout'){
+        $facebook->destroySession();
+    }
 
+?>
 
 
 
