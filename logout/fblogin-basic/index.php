@@ -88,7 +88,11 @@
 
 			$params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
 
-			echo '<a href="'.$helper->getLogoutUrl($params).'" >Logout from facebook</a>';
+			// echo '<a href="'.$helper->getLogoutUrl($params).'" >Logout from facebook</a>';
+
+			$link=$helper->getLogoutUrl($params);
+
+			echo $link;
 
 
 
