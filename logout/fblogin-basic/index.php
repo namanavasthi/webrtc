@@ -86,13 +86,18 @@
 			echo "<img src='$image' /><br><br>";
 			echo "<a href='".$logout."'><button>Logout</button></a>";
 
-			$params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
+			// $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
 
 			// echo '<a href="'.$helper->getLogoutUrl($params).'" >Logout from facebook</a>';
 
-			$link=$helper->getLogoutUrl($params);
+			// $link=$helper->getLogoutUrl($params);
 
-			echo $link;
+			// echo $link;
+
+
+			$logoutUrl = $helper->getLogoutUrl(array( 'next' => ($fbconfig['baseurl'].'logout.php') ));
+			echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
+
 
 
 
