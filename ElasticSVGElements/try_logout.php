@@ -18,7 +18,7 @@ echo "success";
 // $facebook->setAccessToken('');
 
 
-$logoutUrl = $helper->getLogoutUrl();
+$logoutUrl = $facebook->getLogoutUrl($params);
 
 echo "success after fb api";
 
