@@ -50,9 +50,9 @@
 	 }
 	
 	//2.Use app id,secret and redirect url 
-	$app_id = '';
-	$app_secret = '';
-	$redirect_url='http://packetcode.com/apps/fbloginlogout/';
+	$app_id = '955536087794562';
+	$app_secret = 'd5a0d6381787072586f2f6849183f51d';
+	$redirect_url='http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
 
 	//3.Initialize application, create helper object and get fb sess
 	 FacebookSession::setDefaultApplication($app_id,$app_secret);
