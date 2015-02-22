@@ -9,8 +9,8 @@
 include 'facebook-php-sdk-v4-4.0-dev/autoload.php';
 
 $facebook = new Facebook(array(
-		'appId' => '',
-		'secret' => '',
+		'appId' => '955536087794562',
+		'secret' => 'd5a0d6381787072586f2f6849183f51d',
 		'cookie' => true
 	));
 
