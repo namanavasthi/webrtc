@@ -20,6 +20,7 @@ $me=null;
 if($session){
 	try{
 		$me = $facebook->api('/me');
+		echo "success";
 
 	}
 	catch(FacebookApiException $e){
@@ -28,10 +29,12 @@ if($session){
 }
 
 if($me){
+	echo "y u no display logout link";
 	$logoutUrl = $facebook->getLogoutUrl();
 	echo "<a href='$logoutUrl'>Logout</a>";
 }
 else{
+	echo "y u no display login link";
 	$loginUrl = $facebook->getLoginUrl();
 	echo "<a href='$loginUrl'>Log In</a>";
 }
