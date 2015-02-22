@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
+include 'libs/facebook-php-sdk-v4-4.0-dev/autoload.php';
 
 echo "success";
 
