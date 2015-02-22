@@ -6,12 +6,7 @@
 
 <?php
 
-// include 'facebook-php-sdk-v4-4.0-dev/autoload.php';
-
-include 'libs/src/Facebook/FacebookAuthorizationException.php';
-include 'libs/src/Facebook/FacebookSession.php';
-include 'libs/src/Facebook/GraphUser.php';
-include 'libs/src/Facebook/GraphSessionInfo.php';
+include 'facebook-php-sdk-v4/autoload.php';
 
 echo "after include statement";
 
