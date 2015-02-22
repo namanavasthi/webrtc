@@ -141,21 +141,35 @@ session_start();
 <!-- end of navbar -->
 
 
+
+
+
+
 <?php
 if(isset($_GET['action']) && $_GET['action'] === 'logout'){
-        $facebook->destroySession();
-        // $url="http://webrtc-fypgroup11.rhcloud.com/";
-        $logout = "http://webrtc-fypgroup11.rhcloud.com";
-  //       header('Location: '.$url);
-  //       $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/' );
-		// $facebook->getLogoutUrl($params);
-        // $facebook->getLogoutUrl();
-        header("Location: ".$logout);
-        $logout = $facebook->getLogoutUrl();
-		$facebook->setAccessToken('');
-		// wp_redirect( $logout );
+
+		$facebook = new Facebook(array(
+			‘appId’ => ‘1511622425778854’,
+			‘secret’ => ‘5049e96e052e37ee34585d2b9e8daa5e’,
+		));
+		$facebook->destroySession();
+
+
+  //       $facebook->destroySession();
+  //       // $url="http://webrtc-fypgroup11.rhcloud.com/";
+  //       $logout = "http://webrtc-fypgroup11.rhcloud.com";
+  // //       header('Location: '.$url);
+  // //       $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/' );
+		// // $facebook->getLogoutUrl($params);
+  //       // $facebook->getLogoutUrl();
+  //       header("Location: ".$logout);
+  //       $logout = $facebook->getLogoutUrl();
+		// $facebook->setAccessToken('');
+		// // wp_redirect( $logout );
 
     }
+
+
 
 ?>
 
