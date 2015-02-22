@@ -144,19 +144,19 @@
         
 
 
-        $json1 = file_get_contents($url1.$access_token);
+        $json1 = file_get_contents($url1.$_SESSION['fb_token']);
         $data1 = json_decode($json1,true);
 
-        $user_id = $data1['id'];
+        $id = $data1['id'];
         // echo $user_id;
 
-        $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";
+        $url3 = "https://graph.facebook.com/".$id."/picture?type=large&width=80&height=80";
 
-        $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";
+        $url3_1 = "https://graph.facebook.com/".$id."/picture?type=large";
 
         $url_country = "https://graph.facebook.com/me/location";
 
-        $json_c = file_get_contents($url_country.$access_token);
+        $json_c = file_get_contents($url_country.$_SESSION['fb_token']);
         $data_c = json_decode($json_c,true);
 
         echo $data_c;
@@ -169,7 +169,7 @@
 
        
 
-        $json2 = file_get_contents($url2.$access_token);
+        $json2 = file_get_contents($url2.$_SESSION['fb_token']);
         $data2 = json_decode($json2,true);
 
 
