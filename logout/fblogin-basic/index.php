@@ -85,6 +85,13 @@
 			echo "your email is $email <br><Br>";
 			echo "<img src='$image' /><br><br>";
 			echo "<a href='".$logout."'><button>Logout</button></a>";
+
+			$params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
+
+			echo '<a href="'.$helper->getLogoutUrl($params).'" >Logout from facebook</a>';
+
+
+
 	 	}else{
 			//else echo login
 	 		echo '<a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>';
