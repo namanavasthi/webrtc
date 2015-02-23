@@ -567,3 +567,11 @@ blockquote.inline {
     border-radius: 3px;
     box-shadow: 2px 2px rgb(182, 170, 170);
 }
+
+input[type=text]
+{
+    display: none;
+}
+
+
+
