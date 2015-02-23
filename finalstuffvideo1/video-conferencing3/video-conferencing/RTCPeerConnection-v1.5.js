@@ -229,7 +229,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         },
         optional: [
             { width: { max: 80 }},
-            { frameRate: 80 },
+            { frameRate: 70 },
             { facingMode: "user" }
         ]
     };
