@@ -223,8 +223,15 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
 
     // getUserMedia
     var video_constraints = {
-        mandatory: {},
-        optional: []
+        mandatory: {
+            width: { min: 320 },
+            height: { min: 180 }
+        },
+        optional: [
+            { width: { max: 1280 }},
+            { frameRate: 30 },
+            { facingMode: "user" }
+        ]
     };
 
     window.getUserMedia = function(options) {
