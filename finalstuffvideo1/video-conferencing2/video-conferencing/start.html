@@ -95,7 +95,7 @@
             <section class="experiment">                
                 <section>
                     <span>
-                        <a href="/video-conferencing/" target="_blank" title="Open this link in new tab. Then your conference room will be private!"><code><strong id="unique-token">Click Here</strong></code></a>
+                        <a href="/video-conferencing/start.html" target="_blank" title="Open this link in new tab. Then your conference room will be private!"><code><strong id="unique-token">Click Me</strong></code></a>
                     </span>
                     
                     <input type="text" id="conference-name">
@@ -239,8 +239,7 @@
                 (function() {
                     var uniqueToken = document.getElementById('unique-token');
                     if (uniqueToken)
-                        if (location.hash.length > 2) 
-                            // no clue
+                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
                         else uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
                 })();
 
