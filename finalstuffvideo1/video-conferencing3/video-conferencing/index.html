@@ -132,7 +132,7 @@
                     onRemoteStream: function(media) {
                         var mediaElement = getMediaElement(media.video, {
                             width: (videosContainer.clientWidth / 2) - 50,
-                            buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider']
+                            buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider','take-snapshot']
                         });
                         mediaElement.id = media.streamid;
                         videosContainer.insertBefore(mediaElement, videosContainer.firstChild);
@@ -208,7 +208,7 @@
                             
                             var mediaElement = getMediaElement(video, {
                                 width: (videosContainer.clientWidth / 2) - 50,
-                                buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider']
+                                buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider','take-snapshot']
                             });
                             mediaElement.toggle('mute-audio');
                             videosContainer.insertBefore(mediaElement, videosContainer.firstChild);
