@@ -20,6 +20,11 @@ body {
     margin: 0;
 }
 
+#videos-container{
+    /*display: inline-block;*/
+    margin-top: 100px;
+}
+
 article, footer {
     display: block;
     max-width: 900px;
@@ -28,9 +33,9 @@ article, footer {
 }
 
 article {
-    background: black;
-    border: 1px solid;
-    border-color: transparent;
+    /*background: black;*/
+    /*border: 1px solid;*/
+    /*border-color: transparent;*/
     margin: 2.5em auto 0 auto;
     padding: 2em;
 	opacity: 1;
@@ -157,9 +162,9 @@ table {
 }
 
 .experiment {
-    border: 0px solid rgb(189, 189, 189);
+    /*border: 0px solid rgb(189, 189, 189);*/
     margin: 1em 3em;
-    border-radius: .2em;
+    /*border-radius: .2em;*/
 }
 
 .experiment .header {
