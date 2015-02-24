@@ -225,7 +225,9 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
     var video_constraints = {
         mandatory: {
             width: { min: 20 },
-            height: { min: 20 }
+            height: { min: 20 },
+            maxHeight : 320,
+            maxWeidth : 180
         },
         optional: [
             { width: { max: 80 }},
