@@ -224,21 +224,25 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
     // getUserMedia
     var video_constraints = {
         mandatory: {
-            width: { min: 20 },
-            height: { min: 20 },
-            maxHeight : 320,
-            maxWeidth : 180
+            // width: { min: 80 },
+            // height: { min: 80 },
+            minWidth: 1280,
+            minHeight: 720,
+            minFrameRate: 30
+            // maxHeight : 320,
+            // maxWeidth : 180
         },
         optional: [
-            { frameRate: 60 },
-            { facingMode: "user" }
+            { frameRate: 70 },
+            { facingMode: "user" },
+            { minFrameRate: 60 }
         ]
     };
 
     window.getUserMedia = function(options) {
         var n = navigator,
             media;
-        n.getMedia = n.webkitGetUserMedia || n.mozGetUserMedia;
+        n.getMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
         n.getMedia(options.constraints || {
             audio: true,
             video: video_constraints
