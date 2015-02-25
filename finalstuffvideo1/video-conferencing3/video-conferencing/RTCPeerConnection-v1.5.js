@@ -11,9 +11,9 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
 (function() {
     window.RTCPeerConnection = function(options) {
         var w = window,
-            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection, //|| w.msRTCPeerConnection || w.RTCPeerConnection,
-            SessionDescription = w.mozRTCSessionDescription || w.RTCSessionDescription,// || w.msRTCSessionDescription,
-            IceCandidate = w.mozRTCIceCandidate || w.RTCIceCandidate,// || w.msRTCIceCandidate;
+            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection,
+            SessionDescription = w.mozRTCSessionDescription || w.RTCSessionDescription,
+            IceCandidate = w.mozRTCIceCandidate || w.RTCIceCandidate;
 
         var iceServers = {
             iceServers: RTCPeerConnection.iceServers
@@ -94,11 +94,6 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
                 OfferToReceiveVideo: OfferToReceiveVideo
             };
         }
-
-
-       
-
-
         
         console.debug('sdp-constraints', JSON.stringify(sdpConstraints, null, '\t'));
 
@@ -136,9 +131,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         var bandwidth = options.bandwidth;
 
         function setBandwidth(sdp) {
-            // made changes here ////////////////////////////////////////////////////////////////////////////////////////// after !bandwidth till end of navigator ka )
-
-            if (moz || !bandwidth /* || navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) */) return sdp;
+            if (moz || !bandwidth /* || navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) */ ) return sdp;
 
             // remove existing bandwidth lines
             sdp = sdp.replace(/b=AS([^\r\n]+\r\n)/g, '');
@@ -230,26 +223,14 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
 
     // getUserMedia
     var video_constraints = {
-        mandatory: {
-            // width: { min: 80 },
-            // height: { min: 80 },
-            minWidth: 1280,
-            minHeight: 720,
-            minFrameRate: 30
-            // maxHeight : 320,
-            // maxWeidth : 180
-        },
-        optional: [
-            { frameRate: 70 },
-            { facingMode: "user" },
-            { minFrameRate: 60 }
-        ]
+        mandatory: {},
+        optional: []
     };
 
     window.getUserMedia = function(options) {
         var n = navigator,
             media;
-        n.getMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
+        n.getMedia = n.webkitGetUserMedia || n.mozGetUserMedia;
         n.getMedia(options.constraints || {
             audio: true,
             video: video_constraints
@@ -260,7 +241,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         function streaming(stream) {
             var video = options.video;
             if (video) {
-                video[moz ? 'mozSrcObject' : 'src'] = moz ? stream : window.webkitURL.createObjectURL(stream);  ///////////whats this?????????????
+                video[moz ? 'mozSrcObject' : 'src'] = moz ? stream : window.webkitURL.createObjectURL(stream);
                 video.play();
             }
             options.onsuccess && options.onsuccess(stream);
