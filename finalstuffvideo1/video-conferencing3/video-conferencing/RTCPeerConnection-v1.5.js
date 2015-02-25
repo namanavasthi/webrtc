@@ -96,14 +96,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         }
 
 
-        // made changes here //////////////////////////////////////////////////////////////////////////////////////////
-
-        sdpConstraints = {
-                OfferToReceiveAudio: OfferToReceiveAudio,
-                OfferToReceiveVideo: OfferToReceiveVideo
-            };
-
-        // made changes here //////////////////////////////////////////////////////////////////////////////////////////
+       
 
 
         
