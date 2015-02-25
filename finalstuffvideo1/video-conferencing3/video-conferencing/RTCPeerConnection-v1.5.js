@@ -11,9 +11,9 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
 (function() {
     window.RTCPeerConnection = function(options) {
         var w = window,
-            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection || w.msRTCPeerConnection || w.RTCPeerConnection,
-            SessionDescription = w.mozRTCSessionDescription || w.RTCSessionDescription || w.msRTCSessionDescription,
-            IceCandidate = w.mozRTCIceCandidate || w.RTCIceCandidate || w.msRTCIceCandidate;
+            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection, //|| w.msRTCPeerConnection || w.RTCPeerConnection,
+            SessionDescription = w.mozRTCSessionDescription || w.RTCSessionDescription,// || w.msRTCSessionDescription,
+            IceCandidate = w.mozRTCIceCandidate || w.RTCIceCandidate,// || w.msRTCIceCandidate;
 
         var iceServers = {
             iceServers: RTCPeerConnection.iceServers
