@@ -145,7 +145,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         function setBandwidth(sdp) {
             // made changes here ////////////////////////////////////////////////////////////////////////////////////////// after !bandwidth till end of navigator ka )
 
-            if (moz || !bandwidth || navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) ) return sdp;
+            if (moz || !bandwidth || /*navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) */) return sdp;
 
             // remove existing bandwidth lines
             sdp = sdp.replace(/b=AS([^\r\n]+\r\n)/g, '');
@@ -267,7 +267,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         function streaming(stream) {
             var video = options.video;
             if (video) {
-                video[moz ? 'mozSrcObject' : 'src'] = moz ? stream : window.webkitURL.createObjectURL(stream);
+                video[moz ? 'mozSrcObject' : 'src'] = moz ? stream : window.webkitURL.createObjectURL(stream);  ///////////whats this?????????????
                 video.play();
             }
             options.onsuccess && options.onsuccess(stream);
