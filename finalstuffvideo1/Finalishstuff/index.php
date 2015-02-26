@@ -321,7 +321,8 @@
 
             $name = $friends_list->getProperty('name');
 
-            echo $name;
+            // echo $name;
+            print_r($name,1);
 
 
 
