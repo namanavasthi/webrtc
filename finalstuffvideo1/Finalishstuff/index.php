@@ -275,10 +275,10 @@
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
 
+$request2 = new FacebookRequest($sess,'GET','/me/friends');
 
 
-
-            $fr = $facebook->api('/me/friends','GET');
+            $fr = $request2->api('/me/friends','GET');
 foreach ($fr['data'] as $value) {
 echo "<pre>";
          echo "Friend Name: ";
@@ -289,7 +289,7 @@ echo "<pre>";
 
 
             //create request object,execute and capture response
-      $request2 = new FacebookRequest($sess,'GET','/me/friends');
+      
       // from response get graph object
       $response2 = $request2->execute();
       $graph2 = $response2->getGraphObject(GraphUser::classname());
