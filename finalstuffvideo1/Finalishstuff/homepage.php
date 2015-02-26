@@ -130,7 +130,7 @@ include ('search.php')
 				    echo '<li>'.$linkk.'</li>';
 				}
 
-				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout</a></li>";
+				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 
 			?>
 			</ul>
