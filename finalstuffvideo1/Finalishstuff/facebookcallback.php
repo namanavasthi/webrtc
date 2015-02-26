@@ -150,7 +150,7 @@ session_start(); //ask Naman
 
 		//$query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
 		
-	$query_num_rows = mysql_num_rows($query);
+	$query_num_rows = mysql_num_rows($query1);
 	if ($query_num_rows==0)
 	{
 		foreach($friends['data'] as $key=>$value)
