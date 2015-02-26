@@ -131,11 +131,7 @@
   //4. if fb sess exists echo name 
     if(isset($sess)){
 
-      $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/facebookcallback.php&client_secret=" //made chnages here to the url
-            . $app_secret . "&code=" . $code;
-
-        $access_token = file_get_contents($token_url);
+      
 
       //store the token in the php session
       $_SESSION['fb_token']=$sess->getToken();
@@ -147,6 +143,7 @@
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
+      $access_token = $graph->getAccessToken();
       $first_name = $graph->getFirstName();
       $last_name = $graph->getLastName();
       $email = $graph->getProperty('email');
