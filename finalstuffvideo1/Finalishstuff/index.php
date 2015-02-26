@@ -276,6 +276,18 @@
 
 
 
+
+
+            $fr = $facebook->api('/me/friends','GET');
+foreach ($fr['data'] as $value) {
+echo "<pre>";
+         echo "Friend Name: ";
+         print_r($value['name']);
+         echo "<br />";
+}
+
+
+
             //create request object,execute and capture response
       $request2 = new FacebookRequest($sess,'GET','/me/friends');
       // from response get graph object
@@ -289,7 +301,7 @@
          echo "<br />";
       }
 
-            
+
 
         }
 
@@ -326,7 +338,9 @@
 
     }else{
       //else echo login
-      echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a></p>';
+      $params = array( 'scope' => 'public_profile, user_friends');
+      // echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a></p>';
+      echo '<p><a href="'.$helper->getLoginUrl($params).'" >Login with facebook</a></p>';
     }
 
 
