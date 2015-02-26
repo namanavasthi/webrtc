@@ -338,122 +338,12 @@
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
-
-
-            
-            // output response
-            // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
-            // output total friends
-            //echo count( $friends_list['data'] ); 
-           
-            //$friends = $friends_list['data'][$start]['name'];
-
-            // $total_friends = count($friends_list['data']);
-
-
-
-            // echo 'Total friends: '.$total_friends.'.<br />';
-
-          
-
-            // while ($start < $total_friends) {
-
-            //     echo "before status : <br>";
-            //     echo "inside while for ".$start." time";
-            //     echo "after status";
-
-            //     echo $friends_list['data'][$start]['name'];
-            //     echo "after friend line";
-
-            //     echo '<br />';
-
-            //     $start++;
-
-            // }
-
-
-
-            // foreach($friends_list['data'] as $key=>$value)
-            // {
-            //     $friendname=$value['name'];
-            //     echo $friendname;
-            //     echo "<br>";
-            // }
-
-
-            // $name = $friends_list['data'][$start]->getProperty('name');
-
-            // echo $name;
-            // print_r($name,1);
-
-
-
-
-
-
-
-
-            // foreach ($friends as $key => $value) {
-            //   $friends[$key] = (array)$value;
-            // }
-
-
-            // Check user's token is valid or not.
-// $me = (new \Facebook\FacebookRequest(
-// $sess, 'GET', '/me/friends'
-// ))->execute()->getGraphObject(\Facebook\GraphUser::className());
-
-// $result = $me->asArray();
-
-// // Get user's friends
-// $friends = $result['data'];
-
-// print_r($friends,1);
-
-// // Converting classes to array
-// foreach ($friends as $key => $value) {
-//     $friends[$key] = (array)$value;
-// }
-
-
-
-
-
-
-
-
-
-// $request2 = new FacebookRequest($sess,'GET','/me/friends');
-
-
-//             $fr = $request2->api('/me/friends','GET');
-// foreach ($fr['data'] as $value) {
-// echo "<pre>";
-//          echo "Friend Name: ";
-//          print_r($value['name']);
-//          echo "<br />";
-// }
-
-
-
-//             //create request object,execute and capture response
-      
-//       // from response get graph object
-//       $response2 = $request2->execute();
-//       $graph2 = $response2->getGraphObject(GraphUser::classname());
-
-//       foreach ($graph2['data'] as $value) {
-//           echo "<pre>";
-//          echo "Friend Name: ";
-//          print_r($value['name']);
-//          echo "<br />";
-//       }
-
-
-
         }
+           
+            // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
+            // exit();
 
-
+    }
 
 
 
