@@ -277,7 +277,9 @@
                 }
             }   
 
-            echo "<p><a class=btn btn-lg btn-primary href=loginnonfb.html>Login</a></p> ";
+            
+
+            echo "Please Wait while page is loading";
 
             echo "<p><a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a><p>";
             
@@ -324,6 +326,7 @@
 
     }else{
       //else echo login
+      echo "<p><a class=btn btn-lg btn-primary href=loginnonfb.html>Login</a></p> ";
       $params = array( 'scope' => 'public_profile, user_friends');
       // echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a></p>';
       echo '<p><a href="'.$helper->getLoginUrl($params).'" >Login with facebook</a></p>';
