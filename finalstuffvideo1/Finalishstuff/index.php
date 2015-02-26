@@ -275,31 +275,47 @@
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
 
-$request2 = new FacebookRequest($sess,'GET','/me/friends');
 
-
-            $fr = $request2->api('/me/friends','GET');
-foreach ($fr['data'] as $value) {
-echo "<pre>";
-         echo "Friend Name: ";
-         print_r($value['name']);
-         echo "<br />";
-}
+            $friends_list = (new FacebookRequest( $session, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
+            // output response
+            echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
+            // output total friends
+            echo count( $friends_list['data'] ); 
 
 
 
-            //create request object,execute and capture response
+
+
+
+
+
+
+
+// $request2 = new FacebookRequest($sess,'GET','/me/friends');
+
+
+//             $fr = $request2->api('/me/friends','GET');
+// foreach ($fr['data'] as $value) {
+// echo "<pre>";
+//          echo "Friend Name: ";
+//          print_r($value['name']);
+//          echo "<br />";
+// }
+
+
+
+//             //create request object,execute and capture response
       
-      // from response get graph object
-      $response2 = $request2->execute();
-      $graph2 = $response2->getGraphObject(GraphUser::classname());
+//       // from response get graph object
+//       $response2 = $request2->execute();
+//       $graph2 = $response2->getGraphObject(GraphUser::classname());
 
-      foreach ($graph2['data'] as $value) {
-          echo "<pre>";
-         echo "Friend Name: ";
-         print_r($value['name']);
-         echo "<br />";
-      }
+//       foreach ($graph2['data'] as $value) {
+//           echo "<pre>";
+//          echo "Friend Name: ";
+//          print_r($value['name']);
+//          echo "<br />";
+//       }
 
 
 
