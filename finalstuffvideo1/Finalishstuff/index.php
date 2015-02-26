@@ -127,7 +127,7 @@
   //2.Use app id,secret and redirect url 
   $app_id = '955536087794562';
   $app_secret = 'd5a0d6381787072586f2f6849183f51d';
-  $redirect_url='http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
+  $redirect_url='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php';
 
   //3.Initialize application, create helper object and get fb sess
    FacebookSession::setDefaultApplication($app_id,$app_secret);
@@ -140,7 +140,7 @@
   }
 
   //logout
-  $logout = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true';
+  $logout = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true';
 
   //4. if fb sess exists echo name 
     if(isset($sess)){
@@ -169,7 +169,7 @@
 
       // echo $link;
 
-      $next = 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true';
+      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
 
       $cookie_name="logoutlink";
