@@ -235,13 +235,13 @@
         $check=1;
         if($check==1)
         {
-            if(isset($_COOKIE['userdata'])){
-                foreach($_COOKIE['userdata'] as $name=>$value){
-                    $name=htmlspecialchars($name);
-                    $value=htmlspecialchars($value);
-                    echo "$name : $value <br />\n";
+            // if(isset($_COOKIE['userdata'])){
+            //     foreach($_COOKIE['userdata'] as $name=>$value){
+            //         $name=htmlspecialchars($name);
+            //         $value=htmlspecialchars($value);
+            //         echo "$name : $value <br />\n";
                     
-                }
+            //     }
             }   
 
             // echo $url3;
