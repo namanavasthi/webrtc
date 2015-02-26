@@ -319,10 +319,15 @@
             // }
 
 
-            $name = $friends_list['data'][$start]->getProperty('name');
+            // $name = $friends_list['data'][$start]->getProperty('name');
 
-            echo $name;
+            // echo $name;
             // print_r($name,1);
+
+
+            foreach ($friends_list['data'] as $key => $value) {
+              echo $value->name;
+            }
 
 
 
