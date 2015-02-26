@@ -88,12 +88,12 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
             }
         };
         
-        // if(moz && firefoxVersion > 34) {   ///////////////////////////////////////////////////////////////////////////////////////////
+         if(moz && firefoxVersion > 34) {   ///////////////////////////////////////////////////////////////////////////////////////////
             sdpConstraints = {
                 OfferToReceiveAudio: OfferToReceiveAudio,
                 OfferToReceiveVideo: OfferToReceiveVideo
             };
-        // } // made changes here remove comments of the if statement /////////////////////////////////////////////////////////////////
+         } // made changes here remove comments of the if statement /////////////////////////////////////////////////////////////////
         
         console.debug('sdp-constraints', JSON.stringify(sdpConstraints, null, '\t'));
 
