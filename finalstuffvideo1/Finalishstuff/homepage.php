@@ -123,15 +123,11 @@ include ('search.php')
           	<?php
 				$cookie_name="logoutlink1";
 				if(!isset($_COOKIE[$cookie_name])) {
-				    //not possible
+				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 				} else {
 				    $link=$_COOKIE[$cookie_name];
-				    $linkk="yo mamma";
-				    echo '<li>'.$linkk.'</li>';
 				}
-
 				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-
 			?>
 			</ul>
         </div>

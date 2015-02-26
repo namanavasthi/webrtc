@@ -242,6 +242,17 @@ loadedobjects+=file+" " //Remember this object as being already added to page
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
+              <ul class="nav navbar-nav navbar-right">
+          	<?php
+				//$cookie_name="logoutlink1";
+				//if(!isset($_COOKIE[$cookie_name])) {
+				//    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+				}// else {
+				//    $link=$_COOKIE[$cookie_name];
+				}
+				//echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+			?>
+			</ul>
             </li>
           </ul>
         </div>
