@@ -135,9 +135,6 @@
 
   //4. if fb sess exists echo name 
     if(isset($sess)){
-
-      
-
       //store the token in the php session
       $_SESSION['fb_token']=$sess->getToken();
       //create request object,execute and capture response
@@ -145,23 +142,6 @@
       // from response get graph object
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
-      
-
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
@@ -172,16 +152,14 @@
       $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
       $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-      // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject()->asArray();
-      // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject();
       $gender = $graph->getProperty('gender');
 
       
-      echo "hi $name <br>";
-      echo "your email is $email <br><Br>";
-      echo "hi $first_name <br>";
-      echo "hi $last_name <br>";
-      echo "$gender <br>";
+      // echo "hi $name <br>";
+      // echo "your email is $email <br><Br>";
+      // echo "hi $first_name <br>";
+      // echo "hi $last_name <br>";
+      // echo "$gender <br>";
       
 
       $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
@@ -197,9 +175,6 @@
         setcookie('userdata[name]',$first_name,$expire,'','','',TRUE);
         setcookie('userdata[email]',$email,$expire,'','','',TRUE);
         setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
-
-
-        echo "<script type='text/javascript'> window.onload=load; </script>";
 
         $em=$email;
         $uname=$id;
@@ -219,7 +194,7 @@
         if (!$connect) {
         die("Connection failed: " .mysql_error());
         } 
-        echo 'Connected successfully';
+        // echo 'Connected successfully';
 
         //connect to the datatbase
         mysql_select_db("webrtc");
@@ -228,7 +203,7 @@
 
         $result = mysql_query($query);
 
-        echo "query executed succesfully";
+        // echo "query executed succesfully";
 
         $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
@@ -283,17 +258,6 @@
 
 
 
-
-            
-
-
-
-
-
-
-
-
-
        
 
 
@@ -308,26 +272,18 @@
                 foreach($_COOKIE['userdata'] as $name=>$value){
                     $name=htmlspecialchars($name);
                     $value=htmlspecialchars($value);
-                    echo "$name : $value <br />\n";
+                    // echo "$name : $value <br />\n";
                     
                 }
             }   
 
-            // echo $url3;
-
-            // echo "<td>
-            //         <img src=\"{$data3}\">
-            //     </td>";
-
-            echo '<br>';
-
-            // echo '<img src="'.$image1.'">';
+            
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
-            // header("Location: http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
-            // header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
             
+            // header("Location: http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
+            header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
+            // echo "<script type='text/javascript'> window.onload=load; </script>";
             exit();
 
         }
