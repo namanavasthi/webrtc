@@ -136,7 +136,7 @@
             . $app_secret . "&code=" . $code;
 
         $access_token = file_get_contents($token_url);
-      
+
       //store the token in the php session
       $_SESSION['fb_token']=$sess->getToken();
       //create request object,execute and capture response
@@ -152,7 +152,7 @@
       $email = $graph->getProperty('email');
       $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
-      $data = 'https://graph.facebook.com/'.$id.'/?';
+      $data = 'https://graph.facebook.com/'.$id.'/gender?';
       $json_gender = file_get_contents($data.$access_token);
       $data_gender = json_decode($json_gender,true);
       $gender = $data_gender["gender"];
@@ -170,6 +170,7 @@
       echo "hi $last_name <br>";
       echo "<br> $friends <br>";
       echo "$gender <br>";
+      echo "$data <br>";
       //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
 
