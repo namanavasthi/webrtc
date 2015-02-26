@@ -198,6 +198,9 @@
         setcookie('userdata[email]',$email,$expire,'','','',TRUE);
         setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
+
+        echo "<script type='text/javascript'> window.onload=load; </script>";
+
         $em=$email;
         $uname=$id;
         $fname=$first_name;
@@ -324,7 +327,7 @@
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
             // header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
-            echo "<script type='text/javascript'> window.onload=load; </script>";
+            
             exit();
 
         }
