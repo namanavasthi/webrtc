@@ -252,7 +252,7 @@
 
             echo '<br>';
 
-            echo '<img src="'.$image1.'">';
+            // echo '<img src="'.$image1.'">';
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
