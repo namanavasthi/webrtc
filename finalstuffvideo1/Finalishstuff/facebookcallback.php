@@ -131,7 +131,7 @@ session_start(); //ask Naman
         //connect to the datatbase
         mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,password,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
+        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
 
         $result = mysql_query($query);
 
