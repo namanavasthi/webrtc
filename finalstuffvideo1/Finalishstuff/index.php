@@ -199,7 +199,7 @@
 
 
         <p>
-           <?php  echo ' <a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>'; ?>
+           <!-- <?php  echo ' <a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>'; ?> -->
            <a href="#">haha</a>
         </p>
 
