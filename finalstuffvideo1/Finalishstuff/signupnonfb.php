@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbdefault.css" />
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbcomponent.css" />
 		<script src="js/modernizr.custom.js"></script>
+		<link href="css/bootstrap.css" rel="stylesheet">
 		<script>
 		function verifyEmail(){
 		var status = false;     
@@ -165,5 +166,6 @@ else
 //}*/
 
 ?>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
