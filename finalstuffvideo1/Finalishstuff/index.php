@@ -140,6 +140,34 @@
       // from response get graph object
       $response = $request->execute();
       $graph = $response->getGraphObject(GraphUser::classname());
+      
+
+
+
+
+      //create request object,execute and capture response
+      $request2 = new FacebookRequest($sess,'GET','/me/friends');
+      // from response get graph object
+      $response2 = $request2->execute();
+      $graph2 = $response2->getGraphObject(GraphUser::classname());
+
+      foreach ($graph2['data'] as $value) {
+          echo "<pre>";
+         echo "Friend Name: ";
+         print_r($value['name']);
+         echo "<br />";
+      }
+
+
+
+
+
+
+
+
+
+
+
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
