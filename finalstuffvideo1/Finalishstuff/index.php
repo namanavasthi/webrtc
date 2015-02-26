@@ -317,6 +317,8 @@
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
+            header("Location: http://webrtc-fypgroup11.rhcloud.com/homepage.php");
+
 
         }
            
@@ -350,7 +352,7 @@
       // $logoutUrl = 'https://www.facebook.com/logout.php?next=http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/';
       // echo '<a href="'.$logoutUrl.'" >Logout from facebook</a>';
 
-      echo '<a href="'.$link.'" ><button>Logout from facebook</button></a>';
+      // echo '<a href="'.$link.'" ><button>Logout from facebook</button></a>';
 
 
 
