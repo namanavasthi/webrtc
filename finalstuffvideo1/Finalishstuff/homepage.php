@@ -103,7 +103,7 @@ include ('search.php')
         <a class="navbar-brand" href="#">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav glyphicon glyphicon-off">
+          <ul class="nav navbar-nav"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
 
           	<?php
