@@ -140,7 +140,7 @@
   }
 
   //logout
-  $logout = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true';
+  $logout = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true'; //remove index.php if error arrises
 
   //4. if fb sess exists echo name 
     if(isset($sess)){

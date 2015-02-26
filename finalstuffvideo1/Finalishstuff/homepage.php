@@ -104,6 +104,31 @@ include ('search.php')
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+
+
+          	<?php
+				$cookie_name="logoutlink";
+				if(!isset($_COOKIE[$cookie_name])) {
+				    //not possible
+				} else {
+				    $link=$_COOKIE[$cookie_name];
+				    echo $link;
+				}
+
+				echo '<li><a href="'.$link.'" ><button>Logout from facebook</button></a></li>';
+
+			?>
+
+
+
+
+
+
+
+
+
+
+
             <li class="active"><a href="#">Home</a></li>
             <li><a href="http://www.bootply.com" target="ext">About</a></li>
             <li><a href="#contact">Contact</a></li>
