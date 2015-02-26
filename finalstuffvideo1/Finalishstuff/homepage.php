@@ -103,7 +103,7 @@ include ('search.php')
         <a class="navbar-brand" href="#">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <ul class="nav navbar-nav">
 
 
           	<?php
@@ -116,7 +116,7 @@ include ('search.php')
 				    echo '<li>'.$linkk.'</li>';
 				}
 
-				echo '<li><a href="'.$link.'" >Logout from facebook</a></li>';
+				echo '<li><span class="glyphicon glyphicon-search" aria-hidden="true"><a href="'.$link.'" alt="Logout from Facebook">Logout</a></span></li>';
 
 			?>
 
