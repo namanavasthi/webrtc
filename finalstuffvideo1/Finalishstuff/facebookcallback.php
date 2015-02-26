@@ -38,7 +38,7 @@ session_start(); //ask Naman
         $check=0;
 
         $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
+            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/facebookcallback.php&client_secret=" //made chnages here to the url
             . $app_secret . "&code=" . $code;
 
         $access_token = file_get_contents($token_url);
