@@ -294,35 +294,32 @@
 
             echo "after 0";
 
-            // $friends_list['data'][0]->'name';
-            // $friends_list['data'][$start]->name;
-            // $friends_list['data'][0]->['name'];
-            // $friends_list['data'][0]['name'];
+            // while ($start < $total_friends) {
 
+            //     echo "before status : <br>";
+            //     echo "inside while for ".$start." time";
+            //     echo "after status";
 
-            while ($start < $total_friends) {
+            //     echo $friends_list['data'][$start]['name'];
+            //     echo "after friend line";
 
-                echo "before status : <br>";
-                echo "inside while for ".$start." time";
-                echo "after status";
+            //     echo '<br />';
 
-                echo $friends_list['data'][$start]->'name';
-                echo "after friend line";
+            //     $start++;
 
-                echo '<br />';
-
-                $start++;
-
-            }
+            // }
 
 
 
-            foreach($friends_list['data'] as $key=>$value)
-            {
-                $friendname=$value['name'];
-                echo $friendname;
-                echo "<br>";
-            }
+            // foreach($friends_list['data'] as $key=>$value)
+            // {
+            //     $friendname=$value['name'];
+            //     echo $friendname;
+            //     echo "<br>";
+            // }
+
+
+            $name = $friends_list->getProperty('name');
 
 
 
