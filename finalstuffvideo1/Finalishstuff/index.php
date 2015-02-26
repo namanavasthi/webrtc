@@ -166,12 +166,8 @@
       $email = $graph->getProperty('email');
       $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
-      $data = 'https://graph.facebook.com/'.$id.'/gender?';
-      $json_gender = file_get_contents($data.$access_token);
-      $data_gender = json_decode($json_gender,true);
-      $gender = $data_gender["gender"];
       $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-
+      $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject()->asArray();
       $url2 = 'https://graph.facebook.com/'.$id.'/friends?access_token='.$access_token.'';
       $access_token = $_SESSION['fb_token'];
       $json2 = file_get_contents($url2.$access_token);
@@ -185,19 +181,7 @@
       echo "hi $last_name <br>";
       echo "<br> $friends <br>";
       echo "$gender <br>";
-      echo "$data <br>";
-      echo "$url2 this is url 2<br>";
-      echo "$data2 <br>";
-      //echo "<img src='$image' /><br><br>";
-      // echo "<a href='".$logout."'><button>Logout</button></a>";
-
-      // $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
-
-      // echo '<a href="'.$helper->getLogoutUrl($params).'" >Logout from facebook</a>';
-
-      // $link=$helper->getLogoutUrl($params);
-
-      // echo $link;
+      
 
       $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
