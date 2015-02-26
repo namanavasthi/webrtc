@@ -13,8 +13,8 @@
 	<?php 
 	//session_start();
 	//connect to the server
-$connect = mysql_connect("localhost","root","");
-
+//$connect = mysql_connect("localhost","root","");
+$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 //connect to the datatbase
 mysql_select_db("webrtc");
 
