@@ -244,6 +244,7 @@ session_start(); //ask Naman
             // exit();
 
     }
+}
 
 ?>
 
