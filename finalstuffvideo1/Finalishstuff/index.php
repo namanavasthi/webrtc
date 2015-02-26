@@ -145,18 +145,7 @@
 
 
 
-      //create request object,execute and capture response
-      $request2 = new FacebookRequest($sess,'GET','/me/friends');
-      // from response get graph object
-      $response2 = $request2->execute();
-      $graph2 = $response2->getGraphObject(GraphUser::classname());
-
-      foreach ($graph2['data'] as $value) {
-          echo "<pre>";
-         echo "Friend Name: ";
-         print_r($value['name']);
-         echo "<br />";
-      }
+      
 
 
 
@@ -284,6 +273,23 @@
 
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
+
+
+
+            //create request object,execute and capture response
+      $request2 = new FacebookRequest($sess,'GET','/me/friends');
+      // from response get graph object
+      $response2 = $request2->execute();
+      $graph2 = $response2->getGraphObject(GraphUser::classname());
+
+      foreach ($graph2['data'] as $value) {
+          echo "<pre>";
+         echo "Friend Name: ";
+         print_r($value['name']);
+         echo "<br />";
+      }
+
+            
 
         }
 
