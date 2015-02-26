@@ -294,20 +294,26 @@
 
             echo "after 0";
 
-            // while ($start < $total_friends) {
+            $friends_list['data'][0]->'name';
+            $friends_list['data'][$start]->name;
+            $friends_list['data'][0]->['name'];
+            $friends_list['data'][0]['name'];
 
-            //     echo "before status : <br>";
-            //     echo "inside while for ".$start." time";
-            //     echo "after status";
 
-            //     echo $friends_list['data'][$start]['name'];
-            //     echo "after friend line";
+            while ($start < $total_friends) {
 
-            //     echo '<br />';
+                echo "before status : <br>";
+                echo "inside while for ".$start." time";
+                echo "after status";
 
-            //     $start++;
+                echo $friends_list['data'][$start]->'name';
+                echo "after friend line";
 
-            // }
+                echo '<br />';
+
+                $start++;
+
+            }
 
 
 
