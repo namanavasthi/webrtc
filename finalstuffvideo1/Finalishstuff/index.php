@@ -171,6 +171,7 @@
       echo "<br> $friends <br>";
       echo "$gender <br>";
       echo "$data <br>";
+      echo "$url2 <br>";
       //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
 
