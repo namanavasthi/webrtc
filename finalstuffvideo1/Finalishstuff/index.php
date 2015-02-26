@@ -276,17 +276,32 @@
 
 
 
-            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-            // output response
-            // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
-            // output total friends
-            // echo count( $friends_list['data'] ); 
+            // $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
+            // // output response
+            // // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
+            // // output total friends
+            // // echo count( $friends_list['data'] ); 
 
-            $friends = $friends_list['data'];
-            foreach ($friends as $key => $value) {
-              $friends[$key] = (array)$value;
-            }
+            // $friends = $friends_list['data'];
+            // foreach ($friends as $key => $value) {
+            //   $friends[$key] = (array)$value;
+            // }
 
+
+            // Check user's token is valid or not.
+$me = (new \Facebook\FacebookRequest(
+$sess, 'GET', '/me/friends'
+))->execute()->getGraphObject(\Facebook\GraphUser::className());
+
+$result = $me->asArray();
+
+// Get user's friends
+$friends = $result['data'];
+
+// Converting classes to array
+foreach ($friends as $key => $value) {
+    $friends[$key] = (array)$value;
+}
 
 
 
