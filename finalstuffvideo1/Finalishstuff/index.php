@@ -278,9 +278,14 @@
 
             $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
             // output response
-            echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
+            // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
             // output total friends
-            echo count( $friends_list['data'] ); 
+            // echo count( $friends_list['data'] ); 
+
+            $friends = $friends_list['data'];
+            foreach ($friends as $key => $value) {
+              $friends[$key] = (array)$value;
+            }
 
 
 
