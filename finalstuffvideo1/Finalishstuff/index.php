@@ -143,7 +143,7 @@
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
-      $access_token = $graph->getAccessToken();
+      // $access_token = $graph->getAccessToken();
       $first_name = $graph->getFirstName();
       $last_name = $graph->getLastName();
       $email = $graph->getProperty('email');
