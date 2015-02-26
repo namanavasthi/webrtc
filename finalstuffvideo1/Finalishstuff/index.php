@@ -169,7 +169,7 @@
       $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
       // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject()->asArray();
       // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject();
-      
+      $gender = $graph->getProperty('gender');
 
       
       echo "hi $name <br>";
