@@ -114,6 +114,7 @@ session_start(); //ask Naman
         $fname=$data1["first_name"];
         $lname=$data1["last_name"];
         $fullname=$data["name"];
+        $gender=$data1["gender"];
         $a= hash ( "md5" , $em);
 		
 		//for the image...VERIFY THE SIZESSSSSSSSSSSSSSSSSSSS!!!!!
