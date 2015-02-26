@@ -116,7 +116,7 @@ include ('search.php')
 				    echo '<li>'.$linkk.'</li>';
 				}
 
-				echo '<li><span class="glyphicon glyphicon-search" aria-hidden="true"><a href="'.$link.'" alt="Logout from Facebook">Logout</a></span></li>';
+				echo "<li><span class='glyphicon glyphicon-search' aria-hidden='true'><a href='".$link."' alt='Logout from Facebook'>Logout</a></span></li>";
 
 			?>
 
