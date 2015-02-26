@@ -66,7 +66,9 @@
       <div class="carousel-caption">
         <h1>Web RTC Video Conferencing</h1>
         <p></p>
-        
+        <!-- <p><a class=btn btn-lg btn-primary href=signupnonfb.php>Create an account</a>   CHANGE  THIS FOR FINAL LINK  -->
+        <!-- <a class=btn btn-lg btn-primary href=loginnonfb.html>Login</a>   ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!--> 
+        <!-- </p>  -->
 
 
         <?php
@@ -275,9 +277,7 @@
                 }
             }   
 
-            echo "<p><!--<a class="'btn btn-lg btn-primary'" href="'signupnonfb.php'">Create an account</a>   CHANGE  THIS FOR FINAL LINK -->
-        <a class="'btn btn-lg btn-primary'" href="'loginnonfb.html'">Login</a>  <!-- ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!-->
-        </p> ";
+            echo "<p><a class=btn btn-lg btn-primary href=loginnonfb.html>Login</a></p> ";
 
             echo "<p><a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a><p>";
             
