@@ -88,12 +88,12 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
             }
         };
         
-        if(moz && firefoxVersion > 34) {
+        // if(moz && firefoxVersion > 34) {   ///////////////////////////////////////////////////////////////////////////////////////////
             sdpConstraints = {
                 OfferToReceiveAudio: OfferToReceiveAudio,
                 OfferToReceiveVideo: OfferToReceiveVideo
             };
-        }
+        // } // made changes here remove comments of the if statement /////////////////////////////////////////////////////////////////
         
         console.debug('sdp-constraints', JSON.stringify(sdpConstraints, null, '\t'));
 
@@ -131,7 +131,9 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
         var bandwidth = options.bandwidth;
 
         function setBandwidth(sdp) {
-            if (moz || !bandwidth /* || navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) */ ) return sdp;
+            //made changes here delete |chrome if its not working //////////////////////////////////////////////////////////////////
+
+            if (moz || !bandwidth || navigator.userAgent.match( /Android|iPhone|Chrome|iPad|iPod|BlackBerry|IEMobile/i ) ) return sdp;
 
             // remove existing bandwidth lines
             sdp = sdp.replace(/b=AS([^\r\n]+\r\n)/g, '');
