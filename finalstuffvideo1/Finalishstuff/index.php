@@ -228,8 +228,8 @@
        
 
 
-   // $_POST["userdata[name]"];
-   //      $_POST["userdata[email]"];
+   $_POST["userdata[name]"];
+        $_POST["userdata[email]"];
 
 
         $check=1;
@@ -258,7 +258,7 @@
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
         }
-}
+
 
 
 
