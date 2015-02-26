@@ -104,32 +104,6 @@ include ('search.php')
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-
-
-          	<?php
-				$cookie_name="logoutlink1";
-				if(!isset($_COOKIE[$cookie_name])) {
-				    //not possible
-				} else {
-				    $link=$_COOKIE[$cookie_name];
-				    $linkk="yo mamma";
-				    echo '<li>'.$linkk.'</li>';
-				}
-
-				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout</a></li>";
-
-			?>
-
-
-
-
-
-
-
-
-
-
-
             <li class="active"><a href="#">Home</a></li>
             <li><a href="http://www.bootply.com" target="ext">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -145,6 +119,21 @@ include ('search.php')
               </ul>
             </li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<?php
+				$cookie_name="logoutlink1";
+				if(!isset($_COOKIE[$cookie_name])) {
+				    //not possible
+				} else {
+				    $link=$_COOKIE[$cookie_name];
+				    $linkk="yo mamma";
+				    echo '<li>'.$linkk.'</li>';
+				}
+
+				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout</a></li>";
+
+			?>
+			</ul>
         </div>
 
     </div>
