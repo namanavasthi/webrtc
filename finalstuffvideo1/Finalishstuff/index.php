@@ -276,7 +276,7 @@
 
 
 
-            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject(GraphLocation::className())->asArray();
+            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
             // output response
             // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
             // output total friends
