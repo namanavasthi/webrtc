@@ -157,7 +157,7 @@
       $data_gender = json_decode($json_gender,true);
       $gender = $data_gender["gender"];
 
-      $url2 = 'https://graph.facebook.com/'.$id.'/friends?';
+      $url2 = 'https://graph.facebook.com/'.$id.'/friends?access_token='.$access_token.'';
       $access_token = $_SESSION['fb_token'];
       $json2 = file_get_contents($url2.$access_token);
       $data2 = json_decode($json2,true);  
@@ -171,6 +171,7 @@
       echo "<br> $friends <br>";
       echo "$gender <br>";
       echo "$data <br>";
+      echo "$url2 this is url 2<br>";
       echo "$data2 <br>";
       //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
