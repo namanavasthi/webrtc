@@ -170,6 +170,7 @@
       $json_gender = file_get_contents($data.$access_token);
       $data_gender = json_decode($json_gender,true);
       $gender = $data_gender["gender"];
+      $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
 
       $url2 = 'https://graph.facebook.com/'.$id.'/friends?access_token='.$access_token.'';
       $access_token = $_SESSION['fb_token'];
@@ -241,6 +242,69 @@
 
         echo "query executed succesfully";
 
+        $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+
+    //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
+    
+        $query_num_rows = mysql_num_rows($query1);
+
+        if ($query_num_rows==0)
+        {
+          foreach ($friends_list['data'] as $key => $value) {
+              $friendname = $value->name;
+              $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+              $result = mysql_query($query1);
+          }
+        }
+
+        else {
+  $name=array();
+  $i=0;
+  $count=mysql_num_rows($query1);
+  WHILE($rows = mysql_fetch_array($query1)):
+  
+    $fullname = $rows['friendname'];
+      //include('kiddingnext.php');
+    $name[$i]=$fullname;
+    $i++;
+    
+  endwhile;
+    
+  $flag=0;
+  
+  foreach ($friends_list['data'] as $key => $value) {
+        {
+            $friendname = $value->name;
+      
+      for($j=0;$j<$count;$j++)
+      {
+        if($friendname==$name[$j])
+          $flag=0;
+        else
+        {
+          $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+          $result = mysql_query($query1);
+        }
+      }
+  
+    }
+  }
+        
+
+//MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
+
+
+
+
+            
+
+
+
+
+
+
+
+
 
        
 
@@ -276,7 +340,7 @@
 
 
 
-            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
+            
             // output response
             // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
             // output total friends
@@ -284,15 +348,13 @@
            
             //$friends = $friends_list['data'][$start]['name'];
 
-            $total_friends = count($friends_list['data']);
+            // $total_friends = count($friends_list['data']);
 
 
 
-            echo 'Total friends: '.$total_friends.'.<br />';
+            // echo 'Total friends: '.$total_friends.'.<br />';
 
-            $start = 0;
-
-            echo "after 0";
+          
 
             // while ($start < $total_friends) {
 
@@ -324,10 +386,6 @@
             // echo $name;
             // print_r($name,1);
 
-
-            foreach ($friends_list['data'] as $key => $value) {
-              echo $value->name;
-            }
 
 
 
