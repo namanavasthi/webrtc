@@ -107,7 +107,7 @@ include ('search.php')
 
 
           	<?php
-				$cookie_name="logoutlink";
+				$cookie_name="logoutlink1";
 				if(!isset($_COOKIE[$cookie_name])) {
 				    //not possible
 				} else {
@@ -115,7 +115,7 @@ include ('search.php')
 				    // echo $link;
 				}
 
-				echo '<li><a href="'.$link.'" ><button>Logout from facebook</button></a></li>';
+				echo '<li><a href="'.$link.'" >Logout from facebook</a></li>';
 
 			?>
 

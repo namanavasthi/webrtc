@@ -140,7 +140,7 @@
   }
 
   //logout
-  $logout = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true'; //remove index.php if error arrises
+  $logout = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true'; //remove index.php if error arrises
 
   //4. if fb sess exists echo name 
     if(isset($sess)){
@@ -169,10 +169,10 @@
 
       // echo $link;
 
-      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true';
+      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
 
-      $cookie_name="logoutlink";
+      $cookie_name="logoutlink1";
       $cookie_value=$link;
       setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
 
