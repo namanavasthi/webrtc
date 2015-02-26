@@ -130,6 +130,13 @@
 
   //4. if fb sess exists echo name 
     if(isset($sess)){
+
+      $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
+            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/facebookcallback.php&client_secret=" //made chnages here to the url
+            . $app_secret . "&code=" . $code;
+
+        $access_token = file_get_contents($token_url);
+      
       //store the token in the php session
       $_SESSION['fb_token']=$sess->getToken();
       //create request object,execute and capture response
@@ -145,7 +152,10 @@
       $email = $graph->getProperty('email');
       $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
-      $gender = 'https://graph.facebook.com/'.$id.'/gender?';
+      $data = 'https://graph.facebook.com/'.$id.'/?';
+      $json_gender = file_get_contents($data.$access_token);
+      $data_gender = json_decode($json_gender,true);
+      $gender = $data_gender["gender"];
 
       $url2 = 'https://graph.facebook.com/'.$id.'/friends?';
       $access_token = $_SESSION['fb_token'];
