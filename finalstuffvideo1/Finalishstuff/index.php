@@ -294,10 +294,10 @@
 
             echo "after 0";
 
-            $friends_list['data'][0]->'name';
-            $friends_list['data'][$start]->name;
-            $friends_list['data'][0]->['name'];
-            $friends_list['data'][0]['name'];
+            // $friends_list['data'][0]->'name';
+            // $friends_list['data'][$start]->name;
+            // $friends_list['data'][0]->['name'];
+            // $friends_list['data'][0]['name'];
 
 
             while ($start < $total_friends) {
