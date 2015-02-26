@@ -140,10 +140,24 @@
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
-      $image = 'https://graph.facebook.com/'.$id.'/picture?width=300';
+      $first_name = $graph->getFirstName();
+      $last_name = $graph->getLastName();
       $email = $graph->getProperty('email');
+      $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
+      $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
+
+      $url2 = 'https://graph.facebook.com/'.$id.'/friends?';
+      $access_token = $_SESSION['fb_token'];
+      $json2 = file_get_contents($url2.$access_token);
+      $data2 = json_decode($json2,true);  
+      $friends=$data2;
+
+      
       echo "hi $name <br>";
       echo "your email is $email <br><Br>";
+      echo "hi $first_name <br>";
+      echo "hi $last_name <br>";
+      echo "<br> $friends <br>";
       //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
 
@@ -160,7 +174,62 @@
 
       $cookie_name="logoutlink";
       $cookie_value=$link;
-      setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
+      setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");   // for logout button
+
+
+
+
+
+        $url2 = 'https://graph.facebook.com/me/friends?'; //friends data
+        
+
+
+        
+        
+    
+    //image and their sizes
+       // $url3 = "https://graph.facebook.com/".$user_id."/picture?type=large&width=80&height=80";  done
+
+      //  $url3_1 = "https://graph.facebook.com/".$user_id."/picture?type=large";   done
+
+        
+
+        $json2 = file_get_contents($url2.$access_token);
+        $data2 = json_decode($json2,true);
+
+
+       
+        $va2=$json2;
+     
+        
+        $friends=$data2;
+
+        //creating a cookie for this user
+        $expire=time()+60*60*24;
+        setcookie('userdata[name]',$data1['first_name'],$expire,'','','',TRUE);
+        setcookie('userdata[email]',$data1['email'],$expire,'','','',TRUE);
+        setcookie('userdata[img]',$url3_1,$expire,'','','',TRUE);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       // echo $link;
