@@ -228,38 +228,6 @@
        
 
 
-   $_POST["userdata[name]"];
-        $_POST["userdata[email]"];
-
-
-        $check=1;
-        if($check==1)
-        {
-            if(isset($_COOKIE['userdata'])){
-                foreach($_COOKIE['userdata'] as $name=>$value){
-                    $name=htmlspecialchars($name);
-                    $value=htmlspecialchars($value);
-                    echo "$name : $value <br />\n";
-                    
-                }
-            }   
-
-            // echo $url3;
-
-            // echo "<td>
-            //         <img src=\"{$data3}\">
-            //     </td>";
-
-            echo '<br>';
-
-            echo '<img src="'.$image1.'">';
-
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
-
-        }
-}
-
 
 
 
