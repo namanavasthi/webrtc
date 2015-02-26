@@ -144,7 +144,7 @@
       $email = $graph->getProperty('email');
       echo "hi $name <br>";
       echo "your email is $email <br><Br>";
-      echo "<img src='$image' /><br><br>";
+      //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
 
       // $params = array( 'next' => 'http://webrtc-fypgroup11.rhcloud.com/logout/fblogin-basic/?&logout=true' );
