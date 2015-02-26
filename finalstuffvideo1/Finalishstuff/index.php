@@ -276,8 +276,7 @@
 
 
 
-            // $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
-            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject();
+            $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
             // output response
             // echo '<pre>' . print_r( $friends_list, 1 ) . '</pre>';
             // output total friends
@@ -293,9 +292,16 @@
 
             $start = 0;
 
+            echo "after 0";
+
             while ($start < $total_friends) {
 
+                echo "before status : <br>";
+                echo "inside while for ".$start." time";
+                echo "after status";
+
                 echo $friends_list['data'][$start]['name'];
+                echo "after friend line";
 
                 echo '<br />';
 
