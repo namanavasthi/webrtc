@@ -8,10 +8,8 @@
       #video,#otherPeer { width: 300px;}
     </style>
     <script>
-    function loadpage() {
-      $(document).ready(function() {
-        window.location.assign("http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
-      });
+    function load() {
+      window.location.assign("http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
     }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,9 +66,7 @@
       <div class="carousel-caption">
         <h1>Web RTC Video Conferencing</h1>
         <p></p>
-        <p><!--<a class="btn btn-lg btn-primary" href="signupnonfb.php">Create an account</a>   CHANGE  THIS FOR FINAL LINK -->
-        <a class="btn btn-lg btn-primary" href="loginnonfb.html">Login</a>  <!-- ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!-->
-        </p>
+        
 
 
         <?php
@@ -279,13 +275,15 @@
                 }
             }   
 
-            
+            echo "<p><!--<a class="'btn btn-lg btn-primary'" href="'signupnonfb.php'">Create an account</a>   CHANGE  THIS FOR FINAL LINK -->
+        <a class="'btn btn-lg btn-primary'" href="'loginnonfb.html'">Login</a>  <!-- ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!-->
+        </p> ";
 
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
+            echo "<p><a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a><p>";
             
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
-            // header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
-            echo "<script type='text/javascript'> window.loadpage(); </script>";
+            header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
+            // echo "<script type='text/javascript'> window.onload=load; </script>";
             exit();
 
         }
