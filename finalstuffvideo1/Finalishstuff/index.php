@@ -168,18 +168,14 @@
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
       $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
       // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject()->asArray();
-      $url2 = 'https://graph.facebook.com/'.$id.'/friends?access_token='.$access_token.'';
-      $access_token = $_SESSION['fb_token'];
-      $json2 = file_get_contents($url2.$access_token);
-      $data2 = json_decode($json2,true);  
-      $friends=$data2;
+      // $gender = (new FacebookRequest( $sess, 'GET', '/me/gender' ))->execute()->getGraphObject();
+      
 
       
       echo "hi $name <br>";
       echo "your email is $email <br><Br>";
       echo "hi $first_name <br>";
       echo "hi $last_name <br>";
-      echo "<br> $friends <br>";
       echo "$gender <br>";
       
 
