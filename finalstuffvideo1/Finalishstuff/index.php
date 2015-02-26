@@ -319,7 +319,7 @@
             // }
 
 
-            $name = $friends_list->getProperty('name');
+            $name = $friends_list['data'][$start]->getProperty('name');
 
             echo $name;
             // print_r($name,1);
