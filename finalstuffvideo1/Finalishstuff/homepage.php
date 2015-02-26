@@ -112,7 +112,7 @@ include ('search.php')
 				    //not possible
 				} else {
 				    $link=$_COOKIE[$cookie_name];
-				    // echo $link;
+				    echo '<li>'.$link.'</li>';
 				}
 
 				echo '<li><a href="'.$link.'" >Logout from facebook</a></li>';
