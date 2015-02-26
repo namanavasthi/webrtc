@@ -154,7 +154,7 @@
       // use graph object methods to get user details
       $name = $graph->getName();
       $id = $graph->getId();
-      $image = 'https://graph.facebook.com/'.$id.'/picture?width=300';
+      // $image = 'https://graph.facebook.com/'.$id.'/picture?width=300';
       $email = $graph->getProperty('email');
       // echo "hi $name <br>";
       // echo "your email is $email <br><Br>";
