@@ -189,6 +189,9 @@
 
     }else{
       //else echo login
+      $cookie_name="logoutlink1";
+      $cookie_value=$link;
+      setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
     echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a><p>'; 
 
     }
