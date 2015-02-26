@@ -279,7 +279,7 @@
 
             
 
-            echo "Please Wait while page is loading";
+            echo "<p>Please Wait while page is loading</p>";
 
             echo "<p><a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a><p>";
             
