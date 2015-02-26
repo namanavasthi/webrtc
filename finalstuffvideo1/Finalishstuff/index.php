@@ -298,6 +298,8 @@ $result = $me->asArray();
 // Get user's friends
 $friends = $result['data'];
 
+print_r($friends,1);
+
 // Converting classes to array
 foreach ($friends as $key => $value) {
     $friends[$key] = (array)$value;
