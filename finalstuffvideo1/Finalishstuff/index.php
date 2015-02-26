@@ -145,6 +145,7 @@
       $email = $graph->getProperty('email');
       $image1 = 'https://graph.facebook.com/'.$id.'/picture?type=large&width=80&height=80';
       $image2 = 'https://graph.facebook.com/'.$id.'/picture?type=large';
+      $gender = 'https://graph.facebook.com/'.$id.'/gender?';
 
       $url2 = 'https://graph.facebook.com/'.$id.'/friends?';
       $access_token = $_SESSION['fb_token'];
@@ -158,6 +159,7 @@
       echo "hi $first_name <br>";
       echo "hi $last_name <br>";
       echo "<br> $friends <br>";
+      echo "$gender <br>";
       //echo "<img src='$image' /><br><br>";
       // echo "<a href='".$logout."'><button>Logout</button></a>";
 
