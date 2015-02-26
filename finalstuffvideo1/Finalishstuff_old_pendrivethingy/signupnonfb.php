@@ -5,6 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>SIGN UP</title>
+		<meta name="description" content="Blueprint: Blueprint: Responsive Multi-Column Form" />
+		<meta name="keywords" content="responsive form, inputs, html5, responsive, multi-column, fluid, media query, template" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbdefault.css" />
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbcomponent.css" />
 		<script src="js/modernizr.custom.js"></script>
@@ -19,7 +23,6 @@
      
 							}
 		</script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
 	
 	</head>
 	<body>
@@ -36,24 +39,21 @@
 					<div class="cbp-mc-column">
 	  				
 					<label for="first_name">First Name</label>
-	  					<input type="text" name="fname" required>
+	  					<input type="text" name="fname">
 						<label for="last_name">Last Name</label>
-	  					<input type="text" name="lname" required>
+	  					<input type="text" name="lname">
 						<label for="gender">Gender</label>
-						<input type="text" name="gender" required>
+						<input type="text" name="gender" >
 						<label for="country">Country</label>
-	  					<input type="text" name="country" required>	
+	  					<input type="text" name="country" >	
 						<label for="username">Username</label>
-	  					<input type="text" name="username" required> 
+	  					<input type="text" name="username"> 
 						<label for="username">Password</label>
-	  					<input type="password" name="password" required> 
+	  					<input type="password" name="password"> 
 						<label for="emailid">Email Address</label>
-	  					<input type="text" name="emailid" required> 
+	  					<input type="text" name="emailid"> 
 						<label for="file">Profile Picture</label>
-						<input type="file" name="image" required>
-						<input type="submit" name="submit" value="Post comment"><br><br>
-						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
-
+						<input type="file" name="image">
 					
 	  				</div>
 					

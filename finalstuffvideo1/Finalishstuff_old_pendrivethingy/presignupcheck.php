@@ -34,7 +34,7 @@ $fullname=$fname." ".$lname;
 		
 		if($image_size==FALSE)
 			echo "Please upload an image file";
-		else if(!$insert=mysql_query("INSERT INTO users VALUES('$fname','$lname','$fullname','$em','$a','$uname','$password','$country','$gender','$image_name','$image','','','')"))
+		else if(!$insert=mysql_query("INSERT INTO users VALUES('$fname','$lname','$fullname','$em','$a','$uname','$password','$country','$gender','$image_name','$image','','')"))
 				echo "Image didn't get uploaded";
 	
 	//else {

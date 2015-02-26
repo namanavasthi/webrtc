@@ -4,7 +4,6 @@
 //connect to db
 mysql_connect("localhost","root","");
 mysql_select_db("webrtc");
-//include('../../ajaxfiles/load.php');
 ?>
 
 
@@ -27,10 +26,8 @@ mysql_select_db("webrtc");
 
 <style>
       div.container-fluid{
-        /*margin: 0;
-        background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg); */
-		background-image: url("phone-booth.jpg");
-		background-position: center center;
+        /*margin: 0;*/
+        background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);
     background-size: cover;
     background-repeat:no-repeat;
         /*background-size: 1440px 800px;*/
@@ -65,87 +62,6 @@ mysql_select_db("webrtc");
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		
-		
-		
-		
-		<script type="text/javascript">
-		
-var loadedobjects=""
-var rootdomain="http://"+window.location.hostname
-
-function ajaxpage(url, containerid){
-var page_request = false
-if (window.XMLHttpRequest) // if Mozilla, Safari etc
-page_request = new XMLHttpRequest()
-else if (window.ActiveXObject){ // if IE
-try {
-page_request = new ActiveXObject("Msxml2.XMLHTTP")
-} 
-catch (e){
-try{
-page_request = new ActiveXObject("Microsoft.XMLHTTP")
-}
-catch (e){}
-}
-}
-else
-return false
-page_request.onreadystatechange=function(){
-loadpage(page_request, containerid)
-}
-page_request.open('GET', url, true)
-page_request.send(null)
-
-
-
-
-}
-
-function loadpage(page_request, containerid){
-if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
-document.getElementById(containerid).innerHTML=page_request.responseText
-}
-
-function loadobjs(){
-if (!document.getElementById)
-return
-for (i=0; i<arguments.length; i++){
-var file=arguments[i]
-var fileref=""
-if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
-if (file.indexOf(".js")!=-1){ //If object is a js file
-fileref=document.createElement('script')
-fileref.setAttribute("type","text/javascript");
-fileref.setAttribute("src", file);
-}
-else if (file.indexOf(".css")!=-1){ //If object is a css file
-fileref=document.createElement("link")
-fileref.setAttribute("rel", "stylesheet");
-fileref.setAttribute("type", "text/css");
-fileref.setAttribute("href", file);
-}
-}
-if (fileref!=""){
-document.getElementsByTagName("head").item(0).appendChild(fileref)
-loadedobjects+=file+" " //Remember this object as being already added to page
-}
-}
-}
-
-</script>
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	</head>
 
 	
@@ -166,55 +82,12 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
 
 	<body>
-	
-	<div id="auto">
-	
-<!--<a href="javascript:ajaxpage('load.php', 'rightcolumn');">Porsche Page</a> -->
-
-
-
-<!--<a href="javascript:loadobjs('../../ajaxfiles/style.css', 'ajaxfiles/tooltip.js');">Load "style.css" and "tooltip.js"</a>-->
-
-</div>
-	
-	<!--<div id="rightcolumn"><h3>yooooo<h3></div>-->
-	
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
-	
-	
-	
-	<script src="general.js"></script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 <div class="container-fluid" style="height:720px">
 
 
 <!-- navbar header -->
-<!--
+
 	<div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
@@ -248,9 +121,7 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
     </div>
   </div><!-- /container -->
-  
-<!--</div>
-<!-- /navbar wrapper -->
+</div><!-- /navbar wrapper -->
 
 <!-- end of navbar -->
 
@@ -278,39 +149,121 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
 <?php
 
-	$query = mysql_query("SELECT * FROM users");
+
+	$a=$_COOKIE['userdata']['email'];
+	//echo $name;
+	$a=hash("md5",$a);
+	//echo $name;
+	$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+	
+		//$query = mysql_query("SELECT * FROM users");
 	$name=array();
 	$i=0;
 	$count=mysql_num_rows($query);
 	WHILE($rows = mysql_fetch_array($query)):
 	
-		$fullname = $rows['fullname'];
+		$fullname = $rows['friendname'];
 			//include('kiddingnext.php');
 		$name[$i]=$fullname;
 		$i++;
 		
 	endwhile;
 
-	//for($j=0;$j<=$count;$j++)
-	
+	if ($count==0) {
+		echo "To add new friends, use the search bar above";
+	}
+		
+	else if($count==1)
+	{
 		echo"
 		<div class='row'>
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='printlala.php?firstname=$fullname'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='printlala.php?firstname=$fullname'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='printlala.php?firstname=$fullname'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='printlala.php?firstname=$fullname'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a> 
-					<figure><a href='printlala.php?firstname=$fullname'><img src='img/4.jpg' alt='img04'/><p>$name[4]</p></figure></a>  
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
 		</div> <!-- /row -->"; 
+
+	}
+	
+	else if($count==2)
+	{
+		echo"
+		<div class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
+				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
+					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					</div>
+				</div><!-- /grid-wrap -->
+			</div> <!-- div for right column -->
+		</div> <!-- /row -->"; 
+
+	}
+	
+	
+	else if($count==3)
+	{
+		echo"
+		<div class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
+				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
+					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					</div>
+				</div><!-- /grid-wrap -->
+			</div> <!-- div for right column -->
+		</div> <!-- /row -->"; 
+
+	}
+	
+	
+	else if($count==4)
+	{
+	echo"
+		<div class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
+				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
+					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a>   
+					</div>
+				</div><!-- /grid-wrap -->
+			</div> <!-- div for right column -->
+		</div> <!-- /row -->"; 
+
+	}
+	
+	//for($j=0;$j<=$count;$j++)
+	else if($count==5){
+	echo"
+		<div class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
+				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
+					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[4]'><img src='img/4.jpg' alt='img04'/><p>$name[4]</p></figure></a>  
+					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
+					</div>
+				</div><!-- /grid-wrap -->
+			</div> <!-- div for right column -->
+		</div> <!-- /row -->"; }
 	
 //var_dump($name);
 
 ?>
+
+
 
 <!--<figure><img src='img/3.jpg' alt='img03'/><p>YOYO1</p></figure>
 						<figure><img src='img/1.jpg' alt='img01'/><p>YOYO2</p></figure>
@@ -347,7 +300,7 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
 		<!-- this is for left sidebar -->
 		<div class="container">
-			<!--<nav id="menu" class="menu">
+			<nav id="menu" class="menu">
 				<button class="menu__handle"><span>Menu</span></button>
 				<div class="menu__inner">
 					<ul>
@@ -362,7 +315,7 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 						<path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
 					</svg>
 				</div>
-			</nav> -->
+			</nav>
 			<div class="main">
 				<!-- <header class="codrops-header">
 					<h1>Elastic SVG Elements <span>Adding elasticity with SVG shape animations</span></h1>
@@ -398,11 +351,9 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 		</div><!-- /container -->
 
 <!-- 
-<?php
-// include("usercookie.php");
-?> 
 
 
+Removed:  include('usercookie.php');
 
 
 
@@ -417,13 +368,13 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 		<div class="container">
 			<div class="side-fluid">
 				<div class="intro-content">				
-					<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>
+					<!--<div class="profile"><img src="img/profile1.jpg" alt="profile1"></div>-->
+					<div class="profile"><img src='displayim.php'></div>
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
-					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
+					<h1><span><font color='blue'><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></font></span></h1>
 				</div>
 			</div>
 		</div><!-- /container -->
-
 
 
 

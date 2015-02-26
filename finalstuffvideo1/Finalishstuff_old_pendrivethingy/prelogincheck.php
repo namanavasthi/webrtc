@@ -47,7 +47,7 @@ if(isset($_POST['emailid'])&&isset($_POST['password']))
 			}
 			else if($query_num_rows==1)
 			{
-				$queryins = mysql_query("UPDATE `users` SET `Status`='Online' where `emailid`='$emailid' and `password`='$password'");
+				//$queryins = mysql_query("UPDATE `users` SET `Active`=1 where `UserName`='$username' and `UserPassword`='$password'");
 				//echo "inside first else if";
 				//creating a cookie for this user
 				$expire=time()+60*60*24;

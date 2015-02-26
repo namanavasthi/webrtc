@@ -131,7 +131,7 @@ session_start(); //ask Naman
         //connect to the datatbase
         mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,password,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
+        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,country,gender,imagename,image,imagelarge,imagesmall) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage')"; //check if it works!!!!
 
         $result = mysql_query($query);
 
@@ -234,7 +234,7 @@ session_start(); //ask Naman
 
             echo '<img src="'.$url3.'">';
 
-            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php>Go to main page</a>";
+            echo "<a href=http://webrtc-fypgroup11.rhcloud.com/ElasticSVGElements/homepage.php>Go to main page</a>";
             echo "<a href=http://webrtc-fypgroup11.rhcloud.com/usercookie.php>Go to cookie test</a>";
 
         }

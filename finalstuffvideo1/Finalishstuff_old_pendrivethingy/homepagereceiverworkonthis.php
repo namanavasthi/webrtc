@@ -167,9 +167,9 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
 	<body>
 	
-	<div id="auto">
+	<div id="leftcolumn">
 	
-<!--<a href="javascript:ajaxpage('load.php', 'rightcolumn');">Porsche Page</a> -->
+<a href="javascript:ajaxpage('load.php', 'rightcolumn');">Porsche Page</a>
 
 
 
@@ -177,7 +177,7 @@ loadedobjects+=file+" " //Remember this object as being already added to page
 
 </div>
 	
-	<!--<div id="rightcolumn"><h3>yooooo<h3></div>-->
+	<div id="rightcolumn"><h3>yooooo<h3></div>
 	
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
