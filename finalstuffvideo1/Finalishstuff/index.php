@@ -189,7 +189,7 @@
 
     }else{
       //else echo login
-    // echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a><p>'; 
+    echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a><p>'; 
 
     }
 
@@ -200,7 +200,7 @@
 
         <p>
            <!-- <?php  echo ' <a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a>'; ?> -->
-           <a href="#">haha</a>
+           <!-- <a href="#">haha</a> -->
         </p>
 
         </div>
