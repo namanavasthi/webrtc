@@ -127,7 +127,7 @@
   //2.Use app id,secret and redirect url 
   $app_id = '955536087794562';
   $app_secret = 'd5a0d6381787072586f2f6849183f51d';
-  $redirect_url='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php';
+  $redirect_url='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/';
 
   //3.Initialize application, create helper object and get fb sess
    FacebookSession::setDefaultApplication($app_id,$app_secret);
@@ -177,6 +177,9 @@
       setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
 
 
+      echo '<a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">YO MAMMA GO TO HOME PAGE </a>';
+
+
       // echo $link;
 
 
@@ -189,9 +192,12 @@
 
     }else{
       //else echo login
+      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php?&logout=true';
+      $link = $helper->getLogoutUrl($sess,$next);
       $cookie_name="logoutlink1";
       $cookie_value=$link;
       setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");
+      
     echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a><p>'; 
 
     }
