@@ -2,7 +2,8 @@
 //session_start();
 
 //connect to db
-mysql_connect("localhost","root","");
+//mysql_connect("localhost","root","");
+mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
 include ('search.php')
 ?>

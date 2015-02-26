@@ -13,8 +13,8 @@ $flag=0;
 $name=$_COOKIE['userdata']['name'];    //CHECK IF THIS IS CORRECT!!!!!!!!!!!!!!! should it be emailid??
 //echo "muahaha";
 echo $name;
-//$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-$connect=mysql_connect("localhost","root","");
+$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+// $connect=mysql_connect("localhost","root","");
 
 if (!$connect) {
 	die("Connection failed: " .mysql_error());

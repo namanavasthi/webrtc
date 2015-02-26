@@ -14,7 +14,7 @@ $name="Rhea Thomas";
 //echo "muahaha";
 //echo $name;
 //$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-$connect=mysql_connect("localhost","root","");
+$connect=mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 
 if (!$connect) {
 	die("Connection failed: " .mysql_error());
