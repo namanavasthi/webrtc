@@ -16,64 +16,40 @@
 		<link href = "css/styles.css" rel = "stylesheet">
 	</head>
 	<body>
+<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+            <li><a href="http://www.bootply.com" target="ext">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-		<div class = "navbar navbar-inverse navbar-static-top">
-			
-			<div class = "container">
-
-				<a href="#" class="navbar-brand" data-target=".navbar-header">Tech Site</a>
-
-				<div class="navbar-header">
-
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span> 
-					</button>
-				</div>
-
-				<div class="collapse navbar-collapse navHeaderCollapse">
-
-					<ul class="nav navbar-nav navbar-right">
-
-						<li class="active"><a href="index.htm">Home</a></li>
-						<li><a href="#">Blog</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Facebook</a></li>
-								<li><a href="#">Google+</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Instagram</a></li>
-							</ul>
-
-						</li>
-						<li><a href="#">About</a></li>
-						<li><a href="#contact" data-toggle="modal">Contact Us</a></li>
-
-
-
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-          	<?php
-				$cookie_name="logoutlink1";
-				if(!isset($_COOKIE[$cookie_name])) {
-				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-				} else {
-				    $link=$_COOKIE[$cookie_name];
-				}
-				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-			?>
-			</ul>
-
-
-
-				</div>
-
-			</div>
-
-
-		</div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
 
 		
 		<div id="rightcolumn"></div>
