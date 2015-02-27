@@ -108,7 +108,7 @@ mysql_select_db("webrtc");
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="#">Web RTC</a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
