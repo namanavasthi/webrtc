@@ -165,7 +165,7 @@
       $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
 
-      $cookie_name="logoutlink";
+      $cookie_name="logoutlink1";
       $cookie_value=$link;
       setcookie($cookie_name, $cookie_value, time() + (3600 * 30), "/");   // for logout button
 
