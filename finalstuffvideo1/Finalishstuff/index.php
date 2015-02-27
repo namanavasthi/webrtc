@@ -116,8 +116,8 @@
    }
   
   //2.Use app id,secret and redirect url 
-  $app_id = '955536087794562';
-  $app_secret = 'd5a0d6381787072586f2f6849183f51d';
+  $app_id = '1511622425778854';
+  $app_secret = '5049e96e052e37ee34585d2b9e8daa5e';
   $redirect_url='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/';
 
   //3.Initialize application, create helper object and get fb sess
