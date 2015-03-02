@@ -219,7 +219,7 @@ setcookie('friends', $json);
                 <font color='blue'>
                 <?php
                     $num=sizeof($name);
-                    if($num>5)
+                    if($num>4)
                     {
                         echo"
                 
