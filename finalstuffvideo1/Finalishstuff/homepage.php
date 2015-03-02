@@ -18,14 +18,17 @@ if(!empty($_GET)){
     $callstatus=$_GET['callstatus'];
     $username=$_GET['caller'];
     //echo $username;
+    //echo"<br>";
     //echo $callstatus;
-    if($callstatus='rejected')
+    if($callstatus=='rejected')
     {
+        //echo "inside if";
         $query=mysql_query("UPDATE friends SET webrtcid='' WHERE username='$username' AND friendname='$a'");
     }
-    else if($callstatus='accepted')
+    else
     {
-        $query=mysql_query("UPDATE friends SET webrtcid='' WHERE username='$username' AND friendname='$a'");
+        //echo $a;
+        $query=mysql_query("UPDATE `friends` SET `webrtcid`='' WHERE `webrtcid`='$username' AND `friendname`='$a'");
     }
 }
 $query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");

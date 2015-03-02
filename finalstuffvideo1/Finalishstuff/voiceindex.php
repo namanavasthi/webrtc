@@ -129,7 +129,10 @@
                     <button id="close" class="setup">Close Conference</button>
                     <script type="text/javascript">
                         document.getElementById("close").onclick = function () {
-                            location.href = "http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php";
+                            //var key=getCookie('multicookiee');
+                            var key=window.location.hash.substring(1);
+                            var callstatus='accepted';
+                            window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
                         };
                     </script>
                 </section>
