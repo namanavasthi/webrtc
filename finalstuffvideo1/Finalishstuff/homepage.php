@@ -26,7 +26,7 @@ if(!empty($_GET)){
     else if($callstatus=='accepted')
     {
         //echo $a;
-        $query=mysql_query("UPDATE `friends` SET `webrtcid`='' WHERE `webrtcid`='$username' AND `friendname`='$a'");
+        $query=mysql_query("UPDATE friends SET webrtcid='' WHERE webrtcid='$username' AND friendname='$a'");
     }
 }
 
