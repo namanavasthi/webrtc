@@ -219,7 +219,7 @@
           $friendname = $value->name;
           echo "am i even inserting?";
           echo $friendname;
-          $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+          $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('$fullname','$a','$friendname','','','NULL')";
           $result = mysql_query($query1);
         }
         echo "inside if query_num_rows==0";
@@ -252,7 +252,7 @@
             else
             {
               // $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
-              $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+              $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('$fullname','$a','$friendname','','','NULL')";
               echo "inserting into friends";
               $result = mysql_query($query1);
             }
