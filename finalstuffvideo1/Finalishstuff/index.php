@@ -174,7 +174,7 @@
       setcookie('userdata[email]',$email,$expire,'','','',TRUE);
       setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
-      echo "after cookie is set for userdata";
+      // echo "after cookie is set for userdata";
 
       $em=$email;
       $uname=$id;
@@ -203,7 +203,7 @@
 
       $result = mysql_query($query);
 
-      echo "query executed succesfully";
+      // echo "query executed succesfully";
 
       $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
@@ -211,22 +211,22 @@
 
       $query_num_rows = mysql_num_rows($query1);
 
-      echo " ".$query_num_rows." this is number of rows in friends with my name";
+      // echo " ".$query_num_rows." this is number of rows in friends with my name";
 
       if ($query_num_rows==0)
       {
         foreach ($friends_list['data'] as $key => $value) {
           $friendname = $value->name;
-          echo "am i even inserting?";
-          echo $friendname;
+          // echo "am i even inserting?";
+          // echo $friendname;
           $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('$fullname','$a','$friendname','','','NULL')";
           $result = mysql_query($query1);
         }
-        echo "inside if query_num_rows==0";
+        // echo "inside if query_num_rows==0";
       }
 
       else {
-        echo "inside else part";
+        // echo "inside else part";
         $name=array();
         $i=0;
         $count=mysql_num_rows($query1);
@@ -253,7 +253,7 @@
             {
               // $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
               $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('$fullname','$a','$friendname','','','NULL')";
-              echo "inserting into friends";
+              // echo "inserting into friends";
               $result = mysql_query($query1);
             }
           }
@@ -261,7 +261,7 @@
         }
       }
       
-      echo "after friend insertion part";
+      // echo "after friend insertion part";
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
 
@@ -277,12 +277,12 @@
       $check=1;
       if($check==1)
       {
-          echo "inside $check==1";
+          // echo "inside $check==1";
           if(isset($_COOKIE['userdata'])){
               foreach($_COOKIE['userdata'] as $name=>$value){
                   $name=htmlspecialchars($name);
                   $value=htmlspecialchars($value);
-                  echo "$name : $value <br />\n";
+                  // echo "$name : $value <br />\n";
                   
               }
           }   
