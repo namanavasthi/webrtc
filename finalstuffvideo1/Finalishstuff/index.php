@@ -266,7 +266,7 @@
 // new palakh stuff
 
 
-foreach($friends['data'] as $key=>$value)
+foreach($friends_list['data'] as $key=>$value)
         {
             // $friendname=$value['name'];
             $friendname = $value->name;
