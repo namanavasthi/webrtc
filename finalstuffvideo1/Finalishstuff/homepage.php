@@ -8,7 +8,7 @@ include ('search.php');
 $expire=time()+60*60*24;
 setcookie('friendname','NULL',$expire,'','','',TRUE);
 setcookie('count','NULL',$expire,'','','',TRUE);
-$a=$_COOKIE['userdata']['name'];
+$a=$_COOKIE['userdata']['name']; 
 //$a=hash('md5',$a);
 include ('search.php');
 $expire=time()+60*60*24;
