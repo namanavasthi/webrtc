@@ -266,13 +266,13 @@
 // new palakh stuff
 
 
-foreach($friends_list['data'] as $key=>$value)
-        {
-            // $friendname=$value['name'];
-            $friendname = $value->name;
-            $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
-            $result = mysql_query($query1);
-        }
+// foreach($friends_list['data'] as $key=>$value)
+//         {
+//             // $friendname=$value['name'];
+//             $friendname = $value->name;
+//             $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+//             $result = mysql_query($query1);
+//         }
 
 
 
