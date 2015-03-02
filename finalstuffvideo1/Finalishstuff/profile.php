@@ -514,7 +514,7 @@ function refresh()
                 <!-- <div id="videos-container"></div> 
             </section>
 			-->
-			 <h1><span><a href="multichat.php">Multichat</a>
+			 <h1><span><a href="multichat.php">Multichat</a></span></h1>
 			 
 			<script>
 				function myFunction3(name,value,days) {
