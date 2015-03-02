@@ -64,8 +64,7 @@ if(!empty($_GET)){
 
 $query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
 
-WHILE ($rows=mysql_fetch_array($
-query1)):
+WHILE ($rows=mysql_fetch_array($query1)):
     $status=$rows['status'];
     //echo $status;
     if($status=='Busy')
