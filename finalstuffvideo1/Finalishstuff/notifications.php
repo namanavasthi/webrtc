@@ -140,7 +140,7 @@ function refresh()
 					</svg>
 				</div>
 			</nav>
-			<div class="main">
+			<!-- <div class="main"> -->
 				<!-- <header class="codrops-header">
 					<h1>Elastic SVG Elements <span>Adding elasticity with SVG shape animations</span></h1>
 					<div class="codrops-links">
@@ -175,7 +175,8 @@ function refresh()
 		</div><!-- /container -->
 
 
-		<div class="container1">
+		<!-- <div class="container1"> -->
+		<div class="main">
 			<header class="clearfix">
 					<h1>NOTIFICATIONS</h1>
 			</header>	
