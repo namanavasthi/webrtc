@@ -6,7 +6,7 @@ setcookie('friendname',$lala,$expire,'','','',TRUE);
 //session_start();
 
 //connect to db
-mysql_connect("localhost","root","");
+mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
 
 //$image=mysql_query("SELECT * FROM users where firstname='$name'");
