@@ -79,7 +79,7 @@ $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendnam
 		echo "<script>
 		var r=confirm('Click here to join the conference initiated by $username');
 		if(r==true) {
-		window.location.href='voiceindex.php#$webrtcid';
+		window.location.href='multiindex.php#$webrtcid';
 		}
 	
 		else
