@@ -152,13 +152,13 @@
       $friends_list = (new FacebookRequest( $sess, 'GET', '/me/friends' ))->execute()->getGraphObject()->asArray();
       $gender = $graph->getProperty('gender');
 
-      
+
       // echo "hi $name <br>";
       // echo "your email is $email <br><Br>";
       // echo "hi $first_name <br>";
       // echo "hi $last_name <br>";
       // echo "$gender <br>";
-      
+
 
       $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
@@ -169,97 +169,97 @@
 
 
       //creating a cookie for this user
-        $expire=time()+60*60*24;
-        setcookie('userdata[name]',$name,$expire,'','','',TRUE);
-        setcookie('userdata[email]',$email,$expire,'','','',TRUE);
-        setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
+      $expire=time()+60*60*24;
+      setcookie('userdata[name]',$name,$expire,'','','',TRUE);
+      setcookie('userdata[email]',$email,$expire,'','','',TRUE);
+      setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
-        echo "after cookie is set for userdata";
+      echo "after cookie is set for userdata";
 
-        $em=$email;
-        $uname=$id;
-        $fname=$first_name;
-        $lname=$last_name;
-        $fullname=$name;
-        $gender=$gender;
-        $a= hash ( "md5" , $em);
-    
-    //for the image...VERIFY THE SIZESSSSSSSSSSSSSSSSSSSS!!!!!
-    $largeimage=$image2;
-    $smallimage=$image1;
+      $em=$email;
+      $uname=$id;
+      $fname=$first_name;
+      $lname=$last_name;
+      $fullname=$name;
+      $gender=$gender;
+      $a= hash ( "md5" , $em);
 
-        //connect to db
-        $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+      //for the image...VERIFY THE SIZESSSSSSSSSSSSSSSSSSSS!!!!!
+      $largeimage=$image2;
+      $smallimage=$image1;
 
-        if (!$connect) {
+      //connect to db
+      $connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+
+      if (!$connect) {
         die("Connection failed: " .mysql_error());
-        } 
-        echo 'Connected successfully';
+      } 
+      echo 'Connected successfully';
 
-        //connect to the datatbase
-        mysql_select_db("webrtc");
+      //connect to the datatbase
+      mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$email','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
+      $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$email','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
 
-        $result = mysql_query($query);
+      $result = mysql_query($query);
 
-        echo "query executed succesfully";
+      echo "query executed succesfully";
 
-        $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+      $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
-    //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
-    
-        $query_num_rows = mysql_num_rows($query1);
+      //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
 
-        echo " ".$query_num_rows." this is number of rows in friends with my name";
+      $query_num_rows = mysql_num_rows($query1);
 
-        if ($query_num_rows==0)
-        {
-          foreach ($friends_list['data'] as $key => $value) {
-              $friendname = $value->name;
-              echo "am i even inserting?";
-              echo $friendname;
-              $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
-              $result = mysql_query($query1);
-          }
-          echo "inside if query_num_rows==0";
-        }
+      echo " ".$query_num_rows." this is number of rows in friends with my name";
 
-        else {
-          echo "inside else part";
-  $name=array();
-  $i=0;
-  $count=mysql_num_rows($query1);
-  WHILE($rows = mysql_fetch_array($query1)):
-  
-    $fullname = $rows['friendname'];
-      //include('kiddingnext.php');
-    $name[$i]=$fullname;
-    $i++;
-    
-  endwhile;
-    
-  $flag=0;
-  
-  foreach ($friends_list['data'] as $key => $value) {
-        {
-            $friendname = $value->name;
-      
-      for($j=0;$j<$count;$j++)
+      if ($query_num_rows==0)
       {
-        if($friendname==$name[$j])
-          $flag=0;
-        else
-        {
-          // $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+        foreach ($friends_list['data'] as $key => $value) {
+          $friendname = $value->name;
+          echo "am i even inserting?";
+          echo $friendname;
           $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
-          echo "inserting into friends";
           $result = mysql_query($query1);
         }
+        echo "inside if query_num_rows==0";
       }
-  
-    }
-  }
+
+      else {
+        echo "inside else part";
+        $name=array();
+        $i=0;
+        $count=mysql_num_rows($query1);
+        WHILE($rows = mysql_fetch_array($query1)):
+
+          $fullname = $rows['friendname'];
+          //include('kiddingnext.php');
+          $name[$i]=$fullname;
+          $i++;
+
+        endwhile;
+
+        $flag=0;
+
+        foreach ($friends_list['data'] as $key => $value) {
+        
+          $friendname = $value->name;
+
+          for($j=0;$j<$count;$j++)
+          {
+            if($friendname==$name[$j])
+              $flag=0;
+            else
+            {
+              // $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+              $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+              echo "inserting into friends";
+              $result = mysql_query($query1);
+            }
+          }
+
+        }
+      
         echo "after friend insertion part";
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
