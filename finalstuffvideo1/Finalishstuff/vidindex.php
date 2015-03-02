@@ -162,12 +162,18 @@
                     <button id="setup-new-room" class="setup">Setup New Conference</button>
                     <button id="close" class="setup">Close Conference</button>
                     <script type="text/javascript">
+                        // document.getElementById("close").onclick = function () {
+                        //     //var key=getCookie('multicookiee');
+                        //     // var key=window.location.hash.substring(1);
+                        //     // var callstatus='accepted';
+                        //     // window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
+                        //     window.location.href = "homepage.php";
+                        // };
                         document.getElementById("close").onclick = function () {
                             //var key=getCookie('multicookiee');
-                            // var key=window.location.hash.substring(1);
-                            // var callstatus='accepted';
-                            // window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
-                            window.location.href = "homepage.php";
+                            var key=window.location.hash.substring(1);
+                            var callstatus='accepted';
+                            window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
                         };
                     </script>
                 </section>
