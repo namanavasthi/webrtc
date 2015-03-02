@@ -210,56 +210,85 @@
 
         // echo "query executed succesfully";
 
-        $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+        // $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
      // $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
     
-        $query_num_rows = mysql_num_rows($query1);
+        // $query_num_rows = mysql_num_rows($query1);
 
-        if ($query_num_rows==0)
-        {
-          foreach ($friends_list['data'] as $key => $value) {
-              $friendname = $value->name;
-              $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
-              $result = mysql_query($query1);
-          }
-        }
+  //       if ($query_num_rows==0)
+  //       {
+  //         foreach ($friends_list['data'] as $key => $value) {
+  //             $friendname = $value->name;
+  //             $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+  //             $result = mysql_query($query1);
+  //         }
+  //       }
 
-        else {
-  $name=array();
-  $i=0;
-  $count=mysql_num_rows($query1);
-  WHILE($rows = mysql_fetch_array($query1)):
+  //       else {
+  // $name=array();
+  // $i=0;
+  // $count=mysql_num_rows($query1);
+  // WHILE($rows = mysql_fetch_array($query1)):
   
-    $fullname = $rows['friendname'];
-      //include('kiddingnext.php');
-    $name[$i]=$fullname;
-    $i++;
+  //   $fullname = $rows['friendname'];
+  //     //include('kiddingnext.php');
+  //   $name[$i]=$fullname;
+  //   $i++;
     
-  endwhile;
+  // endwhile;
     
-  $flag=0;
+  // $flag=0;
   
-  foreach ($friends_list['data'] as $key => $value) {
-        {
-            $friendname = $value->name;
+  // foreach ($friends_list['data'] as $key => $value) {
+  //       {
+  //           $friendname = $value->name;
       
-      for($j=0;$j<$count;$j++)
-      {
-        if($friendname==$name[$j])
-          $flag=0;
-        else
-        {
-          $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
-          $result = mysql_query($query1);
-        }
-      }
+  //     for($j=0;$j<$count;$j++)
+  //     {
+  //       if($friendname==$name[$j])
+  //         $flag=0;
+  //       else
+  //       {
+  //         $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+  //         $result = mysql_query($query1);
+  //       }
+  //     }
   
-    }
-  }
+  //   }
+  // }
         
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
+
+
+
+// new palakh stuff
+
+
+foreach($friends['data'] as $key=>$value)
+        {
+            // $friendname=$value['name'];
+            $friendname = $value->name;
+            $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+            $result = mysql_query($query1);
+        }
+
+
+
+// till here
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
