@@ -174,6 +174,8 @@
         setcookie('userdata[email]',$email,$expire,'','','',TRUE);
         setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
+        echo "after cookie is set for userdata";
+
         $em=$email;
         $uname=$id;
         $fname=$first_name;
@@ -192,7 +194,7 @@
         if (!$connect) {
         die("Connection failed: " .mysql_error());
         } 
-        // echo 'Connected successfully';
+        echo 'Connected successfully';
 
         //connect to the datatbase
         mysql_select_db("webrtc");
@@ -201,13 +203,15 @@
 
         $result = mysql_query($query);
 
-        // echo "query executed succesfully";
+        echo "query executed succesfully";
 
         $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
     //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
     
         $query_num_rows = mysql_num_rows($query1);
+
+        echo " ".$query_num_rows." this is number of rows in friends with my name";
 
         if ($query_num_rows==0)
         {
@@ -216,9 +220,11 @@
               $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
               $result = mysql_query($query1);
           }
+          echo "inside if query_num_rows==0";
         }
 
         else {
+          echo "inside else part";
   $name=array();
   $i=0;
   $count=mysql_num_rows($query1);
@@ -243,14 +249,16 @@
           $flag=0;
         else
         {
-          $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+          // $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+          $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+          echo "inserting into friends";
           $result = mysql_query($query1);
         }
       }
   
     }
   }
-        
+        echo "after friend insertion part";
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
 
