@@ -259,8 +259,9 @@
           }
 
         }
+      }
       
-        echo "after friend insertion part";
+      echo "after friend insertion part";
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
 
@@ -269,21 +270,22 @@
        
 
 
-   $_POST["userdata[name]"];
-        $_POST["userdata[email]"];
+      $_POST["userdata[name]"];
+      $_POST["userdata[email]"];
 
 
-        $check=1;
-        if($check==1)
-        {
-            if(isset($_COOKIE['userdata'])){
-                foreach($_COOKIE['userdata'] as $name=>$value){
-                    $name=htmlspecialchars($name);
-                    $value=htmlspecialchars($value);
-                    // echo "$name : $value <br />\n";
-                    
-                }
-            }   
+      $check=1;
+      if($check==1)
+      {
+          echo "inside $check==1";
+          if(isset($_COOKIE['userdata'])){
+              foreach($_COOKIE['userdata'] as $name=>$value){
+                  $name=htmlspecialchars($name);
+                  $value=htmlspecialchars($value);
+                  echo "$name : $value <br />\n";
+                  
+              }
+          }   
 
             
 
@@ -296,32 +298,12 @@
             // echo "<script type='text/javascript'> window.onload=load; </script>";
             exit();
 
-        }
+      }
            
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
             // exit();
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
       // echo $link;
 
 
