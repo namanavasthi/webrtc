@@ -16,7 +16,7 @@
 
 <!-- end of bootstrap scripts -->
 
-<link rel="stylesheet" href="css/contactusstyle.css" type="text/css" media="screen"/>
+
 
 <link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/homepagenormalize.css" />
@@ -31,7 +31,7 @@
  
 
 
-        
+        <link rel="stylesheet" href="css/contactusstyle.css" type="text/css" media="screen"/>
         
     </head>
     <body>
