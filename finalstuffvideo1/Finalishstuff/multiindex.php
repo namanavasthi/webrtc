@@ -152,6 +152,12 @@
                     
                     <input type="text" id="conference-name">           <!--add text here if at all it is needed -->
                     <button id="setup-new-room" class="setup">Setup New Conference</button>
+                    <button id="close" class="setup">Close Conference</button>
+                    <script type="text/javascript">
+                        document.getElementById("close").onclick = function () {
+                            location.href = "http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php";
+                        };
+                    </script>
                 </section>
                 
                 <!-- list of all available conferencing rooms -->
