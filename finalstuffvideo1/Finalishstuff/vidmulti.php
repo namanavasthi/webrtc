@@ -216,49 +216,62 @@ setcookie('friends', $json);
 					<!-- ADDED PART!!!!!!!!!!!!!!!!!!!!!!!!!!! king.php-->
 
 				<h3>
-				<font color='blue'>
-				FRIENDS SELECTED ARE: <br>
-				
-				<?php
-					for($i=0;$i<sizeof($name);$i++)
-					{
-						echo $name[$i]."<br>";
-					}
-				?>
-				</font>
-				</h3>
-				
-				
-	<!--	 <section class="experiment">                
-                <section> -->
+                <font color='blue'>
+                <?php
+                    $num=sizeof($name);
+                    if($num>5)
+                    {
+                        echo"
+                
+                
+                        Please select only 5 participants<br><br>";
+                        echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
+                    }
+                    
+                    else {
+                    echo"FRIENDS SELECTED ARE: <br>";
+                    for($i=0;$i<sizeof($name);$i++)
+                    {
+                        echo $name[$i]."<br>";
+                    }
+                
+                
+                echo"
+                
+                </font>
+                </h3>";
+                
+                
+                echo"
                   <h1>  <span>
-                        <a href="multiindex.php" target="_parent"><code>
-						<strong id="unique-token">Proceed to Video Call</strong></code></a>
+                        <a href='multiindex.php' target='_parent'><code>
+                        <strong id='unique-token'>Proceed to Video Call</strong></code></a>
                     </span> </h1>
                     
                  
-         <!--   </section>
-			-->
-			 
-			<script>
-				function myFunction3(name,value,days) {
-							
-	// naman cookie files index.html
+          ";
+            
+            }
+             ?>
+            <script>
+                function myFunction3(name,value,days) {
+                            
+    // naman cookie files index.html
 
-	if (days) {
-		var date = new Date();
-		//date.setTime(date.getTime()+(days*24*60*60*1000));
-		date.setTime(date.getTime()+(days*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	{
-		document.cookie = name+"="+value+";"+expires;
-		document.getElementById('unique-token').onclick = function () {
+    if (days) {
+        var date = new Date();
+        //date.setTime(date.getTime()+(days*24*60*60*1000));
+        date.setTime(date.getTime()+(days*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    {
+        document.cookie = name+"="+value+";"+expires;
+        document.getElementById('unique-token').onclick = function () {
         //location.href = "videocall.php";
     }
 
-	}
+    }
 
 
 
@@ -266,11 +279,11 @@ setcookie('friends', $json);
 }
 
 
-			</script>
-		
-			</div>
-			</div>
-		</div><!-- /container -->
+            </script>
+        
+            </div>
+            </div>
+        </div><!-- /container -->
 
 
 <!-- ADDDDDEEEEEDDDDDDDDDD FROM initial.html -->
@@ -400,14 +413,14 @@ setcookie('friends', $json);
                 }
 
                 (function() {
-					var KEY=(Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
+                    var KEY=(Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
                     var uniqueToken = document.getElementById('unique-token');
                     if (uniqueToken)
                         if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_parent">Share this link</a></h2>';
                         else uniqueToken.parentNode.parentNode.href = 'multiindex.php#' + KEY;
-						var cookie_name='multicookiee';
-						var days='7';
-						myFunction3(cookie_name,KEY,days);
+                        var cookie_name='multicookiee';
+                        var days='7';
+                        myFunction3(cookie_name,KEY,days);
                 })();
 
                 function scaleVideos() {
@@ -475,63 +488,63 @@ setcookie('friends', $json);
 
 
 
-		<script src="js/classie.js"></script>
-		<script>
-			(function() {
+        <script src="js/classie.js"></script>
+        <script>
+            (function() {
 
-				function SVGMenu( el, options ) {
-					this.el = el;
-					this.init();
-				}
+                function SVGMenu( el, options ) {
+                    this.el = el;
+                    this.init();
+                }
 
-				SVGMenu.prototype.init = function() {
-					this.trigger = this.el.querySelector( 'button.menu__handle' );
-					this.shapeEl = this.el.querySelector( 'div.morph-shape' );
+                SVGMenu.prototype.init = function() {
+                    this.trigger = this.el.querySelector( 'button.menu__handle' );
+                    this.shapeEl = this.el.querySelector( 'div.morph-shape' );
 
-					var s = Snap( this.shapeEl.querySelector( 'svg' ) );
-					this.pathEl = s.select( 'path' );
-					this.paths = {
-						reset : this.pathEl.attr( 'd' ),
-						open : this.shapeEl.getAttribute( 'data-morph-open' ),
-						close : this.shapeEl.getAttribute( 'data-morph-close' )
-					};
+                    var s = Snap( this.shapeEl.querySelector( 'svg' ) );
+                    this.pathEl = s.select( 'path' );
+                    this.paths = {
+                        reset : this.pathEl.attr( 'd' ),
+                        open : this.shapeEl.getAttribute( 'data-morph-open' ),
+                        close : this.shapeEl.getAttribute( 'data-morph-close' )
+                    };
 
-					this.isOpen = false;
+                    this.isOpen = false;
 
-					this.initEvents();
-				};
+                    this.initEvents();
+                };
 
-				SVGMenu.prototype.initEvents = function() {
-					this.trigger.addEventListener( 'click', this.toggle.bind(this) );
-				};
+                SVGMenu.prototype.initEvents = function() {
+                    this.trigger.addEventListener( 'click', this.toggle.bind(this) );
+                };
 
-				SVGMenu.prototype.toggle = function() {
-					var self = this;
+                SVGMenu.prototype.toggle = function() {
+                    var self = this;
 
-					if( this.isOpen ) {
-						classie.remove( self.el, 'menu--anim' );
-						setTimeout( function() { classie.remove( self.el, 'menu--open' );	}, 250 );
-					}
-					else {
-						classie.add( self.el, 'menu--anim' );
-						setTimeout( function() { classie.add( self.el, 'menu--open' );	}, 250 );
-					}
-					this.pathEl.stop().animate( { 'path' : this.isOpen ? this.paths.close : this.paths.open }, 350, mina.easeout, function() {
-						self.pathEl.stop().animate( { 'path' : self.paths.reset }, 800, mina.elastic );
-					} );
-					
-					this.isOpen = !this.isOpen;
-				};
+                    if( this.isOpen ) {
+                        classie.remove( self.el, 'menu--anim' );
+                        setTimeout( function() { classie.remove( self.el, 'menu--open' );   }, 250 );
+                    }
+                    else {
+                        classie.add( self.el, 'menu--anim' );
+                        setTimeout( function() { classie.add( self.el, 'menu--open' );  }, 250 );
+                    }
+                    this.pathEl.stop().animate( { 'path' : this.isOpen ? this.paths.close : this.paths.open }, 350, mina.easeout, function() {
+                        self.pathEl.stop().animate( { 'path' : self.paths.reset }, 800, mina.elastic );
+                    } );
+                    
+                    this.isOpen = !this.isOpen;
+                };
 
-				new SVGMenu( document.getElementById( 'menu' ) );
+                new SVGMenu( document.getElementById( 'menu' ) );
 
-			})();
-		</script>
+            })();
+        </script>
 
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
-	</body>
+    </body>
 </html>
