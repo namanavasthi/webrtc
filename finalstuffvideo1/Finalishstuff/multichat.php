@@ -274,29 +274,13 @@ $name=array();
 		</form>
 		";
 	}
-	
-	else if($count==5)
-	{
-		echo"
-		ADD FRIENDS TO THE MULTICHAT: <br>
-		<form action='vidmulti.php' method='post'>
-		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
-		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
-		<input type='checkbox' name='check_list[$name[2]]'>$name[2]</input> <br>
-		<input type='checkbox' name='check_list[$name[3]]'>$name[3]</input> <br>
-		<input type='checkbox' name='check_list[$name[4]]'>$name[4]</input> <br>
-		<input type='submit' value='Submit'>
-		</form>
-		";
-	}
-	
-	                       
-	
+
+	                      	
 	else 
 	{
 	
 		$query=mysql_query("SELECT * FROM friends WHERE userid='$a' AND friendname in (SELECT fullname FROM users WHERE status='Online')");
-		echo"ADD FRIENDS TO THE MULTICHAT: (MAXIMUM 5 PARTICIPANTS)";
+		echo"ADD FRIENDS TO THE MULTICHAT: (MAXIMUM 4 PARTICIPANTS)";
 		echo '<form action="vidmulti.php" action="post">';
 		while($row = mysql_fetch_array($query))
 		{
