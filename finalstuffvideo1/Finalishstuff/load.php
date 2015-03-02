@@ -53,7 +53,8 @@ $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendnam
 	
 		else
 		{
-			window.location.href='homepage.php?callstatus=$val&caller=$username';
+			window.location.href='homepage.php';
+
 		}
 		</script>"; 
 		}

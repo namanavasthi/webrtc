@@ -14,36 +14,36 @@ include ('search.php');
 $expire=time()+60*60*24;
 setcookie('friendname','NULL',$expire,'','','',TRUE);
 setcookie('count','NULL',$expire,'','','',TRUE);
-if(!empty($_GET)){
-    $callstatus=$_GET['callstatus'];
-    $username=$_GET['caller'];
-    //echo $username;
-    //echo"<br>";
-    //echo $callstatus;
-    if($callstatus=='rejected')
-    {
-        //echo "inside if";
-        $query=mysql_query("UPDATE friends SET webrtcid='' WHERE username='$username' AND friendname='$a'");
-    }
-    else if($callstatus=='accepted')
-    {
-        //echo $a;
-        $query=mysql_query("UPDATE `friends` SET `webrtcid`='' WHERE `webrtcid`='$username' AND `friendname`='$a'");
-    }
-}
-$query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
+// if(!empty($_GET)){
+//     $callstatus=$_GET['callstatus'];
+//     $username=$_GET['caller'];
+//     //echo $username;
+//     //echo"<br>";
+//     //echo $callstatus;
+//     if($callstatus=='rejected')
+//     {
+//         //echo "inside if";
+//         $query=mysql_query("UPDATE friends SET webrtcid='' WHERE username='$username' AND friendname='$a'");
+//     }
+//     else if($callstatus=='accepted')
+//     {
+//         //echo $a;
+//         $query=mysql_query("UPDATE `friends` SET `webrtcid`='' WHERE `webrtcid`='$username' AND `friendname`='$a'");
+//     }
+// }
+// $query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
 
-WHILE ($rows=mysql_fetch_array($query1)):
-    $status=$rows['status'];
-    //echo $status;
-    if($status=='Busy')
-    {
-        $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
-    }
+// WHILE ($rows=mysql_fetch_array($query1)):
+//     $status=$rows['status'];
+//     //echo $status;
+//     if($status=='Busy')
+//     {
+//         $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
+//     }
    
-    else
-    {}
-endwhile;
+//     else
+//     {}
+// endwhile;
 ?>
 
 
