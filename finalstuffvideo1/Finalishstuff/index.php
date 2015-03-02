@@ -177,7 +177,7 @@
 
       //creating a cookie for this user
         $expire=time()+60*60*24;
-        setcookie('userdata[name]',$fullname,$expire,'','','',TRUE);
+        setcookie('userdata[name]',$name,$expire,'','','',TRUE);
         setcookie('userdata[email]',$email,$expire,'','','',TRUE);
         setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
