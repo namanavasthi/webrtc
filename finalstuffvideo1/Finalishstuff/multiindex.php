@@ -64,7 +64,7 @@
 	<!--ADDDDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD FOR STATUS PART!!!! -->
 	
 	<?php
-		mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+		mysql_connect("127.0.0.1","root","");
 		mysql_select_db("webrtc");
 		$hashem=$_COOKIE['userdata']['email'];
 		$hashem=hash("md5",$hashem);
@@ -78,7 +78,7 @@
 	<!--ADDDDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD FOR DB PART!!!! -->
 	
 	<?php 
-						mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+						mysql_connect("127.0.0.1","root","");
 						mysql_select_db("webrtc");
 						
 
@@ -151,16 +151,30 @@
                     </span>
                     
                     <input type="text" id="conference-name">           <!--add text here if at all it is needed -->
-                    <button id="setup-new-room" class="setup">Setup New Conference</button><br>
-                    <button id="close" class="setup">Close Conference</button>
+                    <button id="setup-new-room" class="setup">Setup New Conference</button>
+					<br><br><br>
+					<button id="close" class="setup">Close Conference</button>
                     <script type="text/javascript">
                         document.getElementById("close").onclick = function () {
-                            //var key=getCookie('multicookiee');
-                            var key=window.location.hash.substring(1);
-                            var callstatus='accepted';
+							//var key=getCookie('multicookiee');
+							var key=window.location.hash.substring(1);
+							var callstatus='accepted';
                             window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
                         };
+						
+						
+					function getCookie(cname) {
+						var name = cname + "=";
+						var ca = document.cookie.split(';');
+						for(var i=0; i<ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0)==' ') c = c.substring(1);
+						if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+						}
+						return "";
+					} 
                     </script>
+
                 </section>
                 
                 <!-- list of all available conferencing rooms -->

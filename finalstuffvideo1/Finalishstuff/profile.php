@@ -6,7 +6,7 @@ setcookie('friendname',$lala,$expire,'','','',TRUE);
 //session_start();
 
 //connect to db
-mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+mysql_connect("localhost","root","");
 mysql_select_db("webrtc");
 
 //$image=mysql_query("SELECT * FROM users where firstname='$name'");
@@ -113,11 +113,11 @@ mysql_select_db("webrtc");
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        <a class="navbar-brand" href="#">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li><a href="http://www.bootply.com" target="ext">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
@@ -132,17 +132,6 @@ mysql_select_db("webrtc");
               </ul>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-          	<?php
-				$cookie_name="logoutlink1";
-				if(!isset($_COOKIE[$cookie_name])) {
-				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-				} else {
-				    $link=$_COOKIE[$cookie_name];
-				}
-				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-			?>
-			</ul>
         </div>
 
     </div>
@@ -150,6 +139,7 @@ mysql_select_db("webrtc");
 </div><!-- /navbar wrapper -->
 
 <!-- end of navbar -->
+
 
 
 
