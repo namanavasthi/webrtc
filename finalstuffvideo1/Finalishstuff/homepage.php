@@ -8,6 +8,22 @@ include ('search.php');
 $expire=time()+60*60*24;
 setcookie('friendname','NULL',$expire,'','','',TRUE);
 setcookie('count','NULL',$expire,'','','',TRUE);
+$a=$_COOKIE['userdata']['name'];
+//$a=hash('md5',$a);
+include ('search.php');
+$expire=time()+60*60*24;
+setcookie('friendname','NULL',$expire,'','','',TRUE);
+setcookie('count','NULL',$expire,'','','',TRUE);
+if(!empty($_GET)){
+    $callstatus=$_GET['callstatus'];
+    $username=$_GET['caller'];
+    //echo $username;
+    //echo $callstatus;
+    if($callstatus='rejected')
+    {
+        $query=mysql_query("UPDATE friends SET webrtcid='' WHERE username='$username' AND friendname='$a'");
+    }
+}
 ?>
 
 
