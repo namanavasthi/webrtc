@@ -217,6 +217,8 @@
         {
           foreach ($friends_list['data'] as $key => $value) {
               $friendname = $value->name;
+              echo "am i even inserting?";
+              echo $friendname;
               $query1 = "INSERT INTO friends (username,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
               $result = mysql_query($query1);
           }
