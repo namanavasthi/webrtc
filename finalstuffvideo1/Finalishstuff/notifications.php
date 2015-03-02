@@ -189,6 +189,7 @@ function refresh()
 
 		<div class="container1">
 			<header class="clearfix">
+				<br>
 					<h1>NOTIFICATIONS</h1>
 			</header>	
 			<div class="main1">
