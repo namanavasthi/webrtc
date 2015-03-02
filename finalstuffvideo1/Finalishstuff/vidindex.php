@@ -169,6 +169,7 @@
 							var callstatus='accepted';
                             window.location.href = "homepage.php?callstatus="+callstatus+"&caller="+key;
                         };
+                    </script>
 						
                 </section>
                 
