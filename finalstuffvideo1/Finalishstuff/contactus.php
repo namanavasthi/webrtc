@@ -28,10 +28,12 @@
 		<link rel="stylesheet" type="text/css" href="css/homepagedemo_rightbar.css" />
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
 		<link href="css/bootstrap.css" rel="stylesheet">
- 
+
 
 
         <link rel="stylesheet" href="css/contactusstyle.css" type="text/css" media="screen"/>
+
+        <script src="js/snap.svg-min.js"></script>
         
     </head>
     <body>
