@@ -60,21 +60,22 @@ if(!empty($_GET)){
         //echo $a;
         $query=mysql_query("UPDATE `friends` SET `webrtcid`='' WHERE `webrtcid`='$username' AND `friendname`='$a'");
     }
+
+
+	$query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
+
+	WHILE ($rows=mysql_fetch_array($query1)):
+	    $status=$rows['status'];
+	    //echo $status;
+	    if($status=='Busy')
+	    {
+	        $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
+	    }
+	   
+	    else
+	    {}
+	endwhile;
 }
-
-$query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
-
-WHILE ($rows=mysql_fetch_array($query1)):
-    $status=$rows['status'];
-    //echo $status;
-    if($status=='Busy')
-    {
-        $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
-    }
-   
-    else
-    {}
-endwhile;
 ?>
 
 
