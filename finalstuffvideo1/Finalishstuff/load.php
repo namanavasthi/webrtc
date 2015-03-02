@@ -42,6 +42,7 @@ setcookie("userid",$userid);
 }
 
 $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendname='$name' and webrtcid<>''");
+$val='rejected';
 
 	if($type=='video') {
 		if(mysql_fetch_array($query) != 0) {
