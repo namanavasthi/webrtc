@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- this is the final one -->
 <html>
   
   <head>
@@ -7,27 +8,24 @@
     <style>
       #video,#otherPeer { width: 300px;}
     </style>
-    <script>
-    function load() {
-      window.location.assign("http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php");
-    }
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/indexmaincss.css" rel="stylesheet">
   </head>
 
+
+
 <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
       
         <div class="navbar-header">
-	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
         <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
@@ -57,18 +55,27 @@
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide">
-  
-  <div class="item active">
-    <img src="images/phone-booth.jpg" style="width:100%" class="img-responsive">
-    <div class="container">
-      <div class="carousel-caption">
-        <h1>Web RTC Video Conferencing</h1>
-        <p></p>
-        <!-- <p><a class=btn btn-lg btn-primary href=signupnonfb.php>Create an account</a>   CHANGE  THIS FOR FINAL LINK  -->
-        <!-- <a class=btn btn-lg btn-primary href=loginnonfb.html>Login</a>   ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!--> 
-        <!-- </p>  -->
+  <!-- Indicators -->
+ <!--  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+  <!-- <div class="carousel-inner"> -->
+    <div class="item active">
+      <img src="images/phone-booth.jpg" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Web RTC Video Conferencing</h1>
+          <p></p>
+		  <!-- <p><a class="btn btn-lg btn-primary" href="signupnonfb.php">Create an account</a>   CHANGE  THIS FOR FINAL LINK  -->
+            <!-- <a class="btn btn-lg btn-primary" href="loginnonfb.html">Login</a> -->  <!-- ADD ACTUAL PAGE HERE!!!!!!!!!!!!!!!!-->
+        <!-- </p> -->
+			<!--facebook api-->				
+          <!-- <p><a class="btn btn-lg btn-primary" href="https://graph.facebook.com/oauth/authorize?type=web_server&amp;display=touch&amp;scope=read_friendlists,user_friends,email,manage_friendlists,read_stream,public_profile,user_photos&amp;client_id=1511622425778854&amp;redirect_uri=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/facebookcallback.php">Sign-in with Facebook</a> -->
+            <!-- <a href="http://webrtc-fypgroup11.rhcloud.com/url.php">try this</a> -->
 
-
+        <!-- </p> -->
         <?php
 
 /* INCLUSION OF LIBRARY FILEs*/
@@ -170,7 +177,7 @@
 
       //creating a cookie for this user
         $expire=time()+60*60*24;
-        setcookie('userdata[name]',$first_name,$expire,'','','',TRUE);
+        setcookie('userdata[name]',$name,$expire,'','','',TRUE);
         setcookie('userdata[email]',$email,$expire,'','','',TRUE);
         setcookie('userdata[img]',$image2,$expire,'','','',TRUE);
 
@@ -199,64 +206,99 @@
 
         $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$email','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
 
-        $result = mysql_query($query);
+        // $result = mysql_query($query);
+
+        echo "this is after insert into db";
 
         // echo "query executed succesfully";
 
-        $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+        // $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
-    //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
+     // $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
     
-        $query_num_rows = mysql_num_rows($query1);
+  //       $query_num_rows = mysql_num_rows($query1);
 
-        if ($query_num_rows==0)
-        {
-          foreach ($friends_list['data'] as $key => $value) {
-              $friendname = $value->name;
-              $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
-              $result = mysql_query($query1);
-          }
-        }
+  //       if ($query_num_rows==0)
+  //       {
+  //         foreach ($friends_list['data'] as $key => $value) {
+  //             $friendname = $value->name;
+  //             $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+  //             $result = mysql_query($query1);
+  //         }
+  //       }
 
-        else {
-  $name=array();
-  $i=0;
-  $count=mysql_num_rows($query1);
-  WHILE($rows = mysql_fetch_array($query1)):
+  //       else {
+  // $name=array();
+  // $i=0;
+  // $count=mysql_num_rows($query1);
+  // WHILE($rows = mysql_fetch_array($query1)):
   
-    $fullname = $rows['friendname'];
-      //include('kiddingnext.php');
-    $name[$i]=$fullname;
-    $i++;
+  //   $fullname = $rows['friendname'];
+  //     //include('kiddingnext.php');
+  //   $name[$i]=$fullname;
+  //   $i++;
     
-  endwhile;
+  // endwhile;
     
-  $flag=0;
+  // $flag=0;
   
-  foreach ($friends_list['data'] as $key => $value) {
-        {
-            $friendname = $value->name;
+  // foreach ($friends_list['data'] as $key => $value) {
+  //       {
+  //           $friendname = $value->name;
       
-      for($j=0;$j<$count;$j++)
-      {
-        if($friendname==$name[$j])
-          $flag=0;
-        else
-        {
-          $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
-          $result = mysql_query($query1);
-        }
-      }
+  //     for($j=0;$j<$count;$j++)
+  //     {
+  //       if($friendname==$name[$j])
+  //         $flag=0;
+  //       else
+  //       {
+  //         $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+  //         $result = mysql_query($query1);
+  //       }
+  //     }
   
-    }
-  }
+  //   }
+  // }
         
 
 //MODIFIED TILL HEREEEEEEE!!!!!!!!!!!!
 
 
 
-       
+// new palakh stuff
+
+        echo "palakh stuff started";
+
+
+foreach($friends_list['data'] as $key=>$value)
+        {
+            // $friendname=$value['name'];
+            $friendname = $value->name;
+            $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
+            $result = mysql_query($query1);
+        }
+
+        echo "this is after insert into friends";
+
+
+
+// till here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       echo "before posting of name and email";
 
 
    $_POST["userdata[name]"];
@@ -267,6 +309,7 @@
         if($check==1)
         {
             if(isset($_COOKIE['userdata'])){
+              echo "cookie value set";
                 foreach($_COOKIE['userdata'] as $name=>$value){
                     $name=htmlspecialchars($name);
                     $value=htmlspecialchars($value);
@@ -290,12 +333,13 @@
            
             // header("Location: http://webrtc-fypgroup11.rhcloud.com/thisisit.html");
             // exit();
+        echo "not outside isset session";
 
     }
 
 
 
-
+echo "outside isset";
 
 
 
@@ -336,26 +380,76 @@
 
 
 ?>
-
-
-
-
-  
-
-
-
-
-
-        <!-- change this link -->
-        <!--facebook api-->
-        <!-- <p><a class="btn btn-lg btn-primary" href="https://graph.facebook.com/oauth/authorize?type=web_server&amp;display=touch&amp;scope=read_friendlists,user_friends,email,manage_friendlists,read_stream,public_profile,user_photos&amp;client_id=1511622425778854&amp;redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php">Sign-in with Facebook</a>
-        </p> -->
+		
+        </div>
       </div>
     </div>
+    
   </div>
+  
 </div>
-
 <!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<!-- <div class="container marketing"> -->
+
+  <!-- Three columns of text below the carousel -->
+  <!-- <div class="row">
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="http://placehold.it/140x140">
+      <h2>Mobile-first</h2>
+      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="http://placehold.it/140x140">
+      <h2>One Fluid Grid</h2>
+      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="http://placehold.it/140x140">
+      <h2>LESS is More</h2>
+      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
+      <p><a class="btn btn-default" href="#">View details »</a></p>
+    </div>
+  </div> --><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+ <!--  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
+    <h2 class="featurette-heading">Responsive Design. <span class="text-muted">It'll blow your mind.</span></h2>
+    <p class="lead">In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
+    <h2 class="featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>
+    <p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
+    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Flatness.</span></h2>
+    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
+  </div>
+
+  <hr class="featurette-divider"> -->
+
+  <!-- /END THE FEATURETTES -->
+
 
   <!-- FOOTER -->
   <footer>
