@@ -27,11 +27,11 @@
 	//connect to the datatbase
 	mysql_select_db("webrtc");
 	//$query = mysql_query("SELECT * FROM hospitals WHERE fullname='$sval'");
-	$name=$_COOKIE['userdata']['email'];
+	$a=$_COOKIE['userdata']['email'];
 	//echo $name;
-	$name=hash("md5",$name);
+	$a=hash("md5",$a);
 	//echo $name;
-	$query = mysql_query("SELECT * FROM friends WHERE userid='$name'");
+	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
 	$num_rows=mysql_num_rows($query);
 	$count=$num_rows;
 	//echo $count;
@@ -39,13 +39,23 @@
 	//echo $temp;
 		$i=0;
 		$name=array();
+		$image=array();
 	WHILE($rows = mysql_fetch_array($query)):
 		
-		$fullname = $rows['friendname'];	
+		$fullname = $rows['fullname'];	
 		$name[$i]=$fullname;
+		if($rows['imagename'!=''])
+		{
+			$image[$i]='disim.php?id='.$name[$i];
+		}
+		else
+		{
+			$image[$i]=$rows['imagelarge'];
+		}
 		$i++;
 	endwhile;
-	
+	//var_dump($name);
+	//var_dump($image);
 	$p=0;
 	for($j=0;$j<=$count;$j++)
 	{
@@ -92,24 +102,20 @@
 		<br><br><br><br><br><br><br><br><br><br>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[$p]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$p]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+							<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>	
 							</p>
 						</figcaption>			
 					</figure>
 					<figure class='effect-winston'>
-						<img src='img/1.jpg' alt='img01'/>
+						<img src='$image[$m]' alt='img01'/>
 						<figcaption>
 							<h2>$name[$m]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='profile.php?firstname=$name[$m]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
@@ -123,25 +129,23 @@
 			//echo $count; 
 			//echo"<br>";
 			//echo $name[$m+1]."<br>";
-		/*	$q=$p+1;
+			$q=$p+1;
 			$count--;
 		//	$temp--;
 			//echo $count; 
 			echo"<div class='container'>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[$q]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$q]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='profile.php?firstname=$name[$q]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
 				</div>
-			</div>"; */
+			</div>"; 
 			break; 
 		}
 		else
@@ -162,24 +166,20 @@
 		<br><br><br><br><br><br><br><br><br><br>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/1.jpg' alt='img30'/>
+						<img src='$image[$p]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$p]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
 							</p>
 						</figcaption>	 	
 					</figure> 
 					<figure class='effect-winston'>
-						<img src='img/1.jpg' alt='img01'/>
+						<img src='$image[$l]' alt='img01'/>
 						<figcaption>
 							<h2>$name[$l]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='profile.php?firstname=$name[$l]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
@@ -193,31 +193,6 @@
 	}
 	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

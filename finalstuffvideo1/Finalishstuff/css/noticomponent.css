@@ -1,0 +1,52 @@
+.cbp-mc-form1 {
+	position: relative;
+}
+
+
+.cbp-mc-column1 {
+	width: 33%;
+	padding: 10px 30px;
+	float: left;
+	/*background: black;*/
+	opacity: 0.70;
+}
+
+.cbc-mc-column1 {
+	width: 44%;
+	padding: 10px 30px;
+	float: left;
+	background: black;
+	opacity: 0.70;
+}
+
+#button1 {
+  border: 1px solid #00ff00;
+  color: #000000;
+  background: #DCDCDC;
+  border-color: #DCDCDC;
+}
+@media screen and (max-width: 70em) {
+	.cbp-mc-column1 {
+		width: 23%;
+	}
+	.cbc-mc-column1 {
+		width: 50%;
+	}
+	.cbp-mc-column1:nth-child(2) {
+		width: 50%;
+	}
+	.cbc-mc-column1:nth-child(3) {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+	.cbp-mc-column1 {
+		width: 100%;
+		padding: 10px;
+	}
+	.cbc-mc-column1 {
+		width: 100%;
+		padding: 10px;
+	}
+}

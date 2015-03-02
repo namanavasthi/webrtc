@@ -6,8 +6,7 @@ setcookie('friendname',$lala,$expire,'','','',TRUE);
 //session_start();
 
 //connect to db
-// mysql_connect("localhost","root","");
-mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+mysql_connect("localhost","root","");
 mysql_select_db("webrtc");
 
 //$image=mysql_query("SELECT * FROM users where firstname='$name'");
@@ -60,7 +59,13 @@ mysql_select_db("webrtc");
 
 
 
-
+        <!-- scripts used for video-conferencing -->
+        <script src="firebase.js"> </script>
+        <script src="RTCPeerConnection-v1.5.js"> </script>
+        <script src="conference.js"> </script>
+        
+        <!-- script used to stylize video element -->
+        <script src="getMediaElement.min.js"> </script>
 
 
 
@@ -112,7 +117,7 @@ mysql_select_db("webrtc");
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+            <li class="active"><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
             <li><a href="http://www.bootply.com" target="ext">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
@@ -149,8 +154,34 @@ mysql_select_db("webrtc");
 
 
 
+<!-- ADDDDDDDEEEEEEEEEEEEEDDDDDDDDDDDD QUERY DB!!!!!!!!!! -->
+
+<div id="auto"></div>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.3.2.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('#auto').load('load.php');
+	refresh();
+}
+	);
+	
+function refresh()
+{
+	setTimeout(function() {
+	$('#auto').load('load.php');
+	refresh();
+	},5000);
+}
 
 
+</script>
+
+
+<!--till here!!!!!!!!! -->
 
 
 
@@ -170,25 +201,67 @@ mysql_select_db("webrtc");
 
 <?php
 
+
 	$a=$_COOKIE['userdata']['email'];
 	//echo $name;
 	$a=hash("md5",$a);
 	//echo $name;
-	$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
-
-		//$query = mysql_query("SELECT * FROM users");
+	//$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+	//$query = mysql_query("SELECT * FROM users");
+	
+	$query=mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
 	$name=array();
+	$image=array();
 	$i=0;
 	$count=mysql_num_rows($query);
 	WHILE($rows = mysql_fetch_array($query)):
 	
-		$fullname = $rows['friendname'];
+		$fullname = $rows['fullname'];
 			//include('kiddingnext.php');
 		$name[$i]=$fullname;
+		if($rows['imagename'!=''])
+		{
+			$image[$i]='disim.php?id='.$name[$i];
+		}
+		else
+		{
+			$image[$i]=$rows['imagesmall'];
+		}
 		$i++;
 		
 	endwhile;
+	
+	
+	//TO DISPLAY THE IMAGESSSSSSSSSSS!!!!!!!!!!!!!!!
 
+	/*$query1 = mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+
+	$image=array();
+	$j=0;
+
+	WHILE($rows = mysql_fetch_array($query1)):
+		
+		if($rows['imagename'=''])
+		{
+			$image[$j]='disim.php?id='.$name[$j];
+			$j++;
+		}
+		else
+		{
+			$image[$j]=$rows['imagesmall'];
+			$j++;
+		}
+
+		
+	endwhile;
+	
+	
+	
+	//TILL HERE!!!!!!!!!!!
+	*/
+	//var_dump($name);
+	//var_dump($image);
+	
 	//for($j=0;$j<=$count;$j++)
 	
 	if ($count==0) {
@@ -202,7 +275,7 @@ mysql_select_db("webrtc");
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a>   
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -217,8 +290,8 @@ mysql_select_db("webrtc");
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -234,9 +307,9 @@ mysql_select_db("webrtc");
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -252,10 +325,10 @@ mysql_select_db("webrtc");
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a>   
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -270,16 +343,36 @@ mysql_select_db("webrtc");
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[4]'><img src='img/4.jpg' alt='img04'/><p>$name[4]</p></figure></a>  
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[4]'><img src='$image[4]' alt='img04'/><p>$name[4]</p></figure></a>  
 					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
 		</div> <!-- /row -->"; }
+		
+	else
+	{
+	echo"
+		<div class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
+				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
+					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[4]'><img src='$image[4]' alt='img04'/><p>$name[4]</p></figure></a>  
+					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
+					</div>
+				</div><!-- /grid-wrap -->
+			</div> <!-- div for right column -->
+		</div> <!-- /row -->"; 
+	}
+	
 	
 //var_dump($name);
 
@@ -337,37 +430,7 @@ mysql_select_db("webrtc");
 				</div>
 			</nav>
 			<div class="main">
-				<!-- <header class="codrops-header">
-					<h1>Elastic SVG Elements <span>Adding elasticity with SVG shape animations</span></h1>
-					<div class="codrops-links">
-						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/DialogEffects/" title="Previous Demo"><span>Previous Demo</span></a> / 
-						<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=21555" title="Back to the article"><span>Back to the Codrops Article</span></a>
-					</div>
-					<nav class="codrops-demos">
-						<a class="current-demo" href="index.html">Sidebar Menu</a>
-						<a href="pullupmenu.html">Pull-Up Menu</a>
-						<a href="dropdown.html">Drop-down Menu</a>
-						<a href="drag.html">Drag &amp; Drop</a>
-						<a href="collapseexpand.html">Collapse &amp; Expand</a>
-						<a href="hamburger.html">Menu Icon</a>
-						<a href="circlemenu.html">Circular Menu</a>
-						<a href="inputs.html">Inputs</a>
-						<a href="button.html">Buttons</a>
-					</nav>
-				</header>-->
-				<!-- Related demos -->
-				<!-- <section class="related">
-					<p>If you enjoyed this demo you might also like:</p>
-					<a href="http://tympanus.net/Development/WobblySlideshowEffect/">
-						<img src="img/related/WobblySlideshowEffect.png" />
-						<h3>Wobbly Slideshow Effect</h3>
-					</a>
-					<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/">
-						<img src="img/related/ShapeHoverEffect.png" />
-						<h3>Shape Hover Effect</h3>
-					</a>
-				</section>  -->
-			</div><!-- /main -->
+				</div><!-- /main -->
 		</div><!-- /container -->
 
 <!-- 
@@ -396,7 +459,30 @@ mysql_select_db("webrtc");
 					
 					?> -->
 					<div class='profile'>
-					<img src="disim.php?id=<?php echo $lala; ?>" /> 
+					
+					
+					<?php
+							
+							$query=mysql_query("SELECT fullname,imagename,imagelarge from users WHERE fullname='$lala'");
+							WHILE($rows = mysql_fetch_array($query)):
+	
+								$fullname = $rows['fullname'];
+								$imagename = $rows['imagename'];
+								//echo $fullname;
+								if($rows['imagename'!=''])
+								{
+									echo"<img src='disim.php?id=$fullname'>";
+								}
+								else
+								{
+									$image=$rows['imagelarge'];
+									echo "<img src='$image'>";
+								}
+							endwhile;
+					?>
+					
+					
+					
 					</div>
 					
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> 
@@ -409,15 +495,39 @@ mysql_select_db("webrtc");
 					<!-- ADDDDDEDDDDDDDDDDD PARTTTTTTTTT COOOOOOOOKKKIIIIEEEEEEEEEEE-->
 					
 					
-					 <h1><span><a href="http://www.google.com">Voice Call</a> 
+					<!-- <h1><span><a href="http://www.google.com">Voice Call</a> </span></h1>  
 					<!-- ADDED PART!!!!!!!!!!!!!!!!!!!!!!!!!!! king.php-->
 
-<script>
-function id () {
-return (Math.random() * 10000 + 10000 | 0).toString();
-}
-ROOM = id();
-function myFunction3(name,value,days) {
+				
+				 <h1>  <span>
+                        <a href="voiceindex.php" target="_parent"><code>
+						<strong id="unique-token-voice">Voice Call</strong></code></a>
+                    </span> </h1>
+	
+				
+				
+	<!--	 <section class="experiment">                
+                <section> -->
+                  <h1>  <span>
+                        <a href="vidindex.php" target="_parent"><code>
+						<strong id="unique-token">Video Call</strong></code></a>
+                    </span> </h1>
+                    
+                    <!-- <input type="text" id="conference-name"> -->
+                    <!-- <button id="setup-new-room" class="setup">Setup New Conference</button> -->
+                
+                
+                <!-- list of all available conferencing rooms -->
+                <!-- <table style="width: 100%;" id="rooms-list"></table> -->
+                
+                <!-- local/remote videos container -->
+                <!-- <div id="videos-container"></div> 
+            </section>
+			-->
+			 <h1><span><a href="multichat.php">Multichat</a>
+			 
+			<script>
+				function myFunction3(name,value,days) {
 							
 	// naman cookie files index.html
 
@@ -429,29 +539,242 @@ function myFunction3(name,value,days) {
 	}
 	else var expires = "";
 	{
-		document.cookie = name+"="+value+expires;
-		document.getElementById('key').onclick = function () {
-        location.href = "videocall.php#"+ROOM+"";
+		document.cookie = name+"="+value+";"+expires;
+		document.getElementById('unique-token').onclick = function () {
+        //location.href = "videocall.php";
     }
 
 	}
 
 
+
+
 }
+		
+			</script>
+		
+	<script>
+		function myFunction4(name,value,days) {
+							
+	// naman cookie files index.html
 
-var cookie_name='cookiee';
-var days='7';
+	if (days) {
+		var date = new Date();
+		//date.setTime(date.getTime()+(days*24*60*60*1000));
+		date.setTime(date.getTime()+(days*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	{
+		document.cookie = name+"="+value+";"+expires;
+		document.getElementById('unique-token').onclick = function () {
+        //location.href = "videocall.php";
+    }
 
+	}
 
-document.write("<div id='key'><a href='#"+ROOM+"' onClick=myFunction3(cookie_name,ROOM,days)>Video Call</a></div>");
-</script> </span></h1>  
-				</div>
+}
+		
+	</script>
+		
+		
+			</div>
 			</div>
 		</div><!-- /container -->
 
 
 
+<!-- ADDDDDEEEEEDDDDDDDDDD FROM initial.html -->
 
+<script>
+              
+                var config = {
+                    openSocket: function(config) {
+                        var channel = config.channel || location.href.replace( /\/|:|#|%|\.|\[|\]/g , '');
+                        var socket = new Firebase('https://webrtc.firebaseIO.com/' + channel);
+                        socket.channel = channel;
+                        socket.on("child_added", function(data) {
+                            config.onmessage && config.onmessage(data.val());
+                        });
+                        socket.send = function(data) {
+                            this.push(data);
+                        };
+                        config.onopen && setTimeout(config.onopen, 1);
+                        socket.onDisconnect().remove();
+                        return socket;
+                    },
+                    onRemoteStream: function(media) {
+                        var mediaElement = getMediaElement(media.video, {
+                            width: (videosContainer.clientWidth / 2) - 50,
+                            buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider','take-snapshot']
+                        });
+                        mediaElement.id = media.streamid;
+                        videosContainer.insertBefore(mediaElement, videosContainer.firstChild);
+                    },
+                    onRemoteStreamEnded: function(stream, video) {
+                        if (video.parentNode && video.parentNode.parentNode && video.parentNode.parentNode.parentNode) {
+                            video.parentNode.parentNode.parentNode.removeChild(video.parentNode.parentNode);
+                        }
+                    },
+                    onRoomFound: function(room) {
+                        var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
+                        if (alreadyExist) return;
+
+                        if (typeof roomsList === 'undefined') roomsList = document.body;
+
+                        var tr = document.createElement('tr');
+                        tr.innerHTML = '<td><strong>' + room.roomName + '</strong> shared a conferencing room with you!</td>' +
+                            '<td><button class="join">Join</button></td>';
+                        roomsList.insertBefore(tr, roomsList.firstChild);
+
+                        var joinRoomButton = tr.querySelector('.join');
+                        joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
+                        joinRoomButton.setAttribute('data-roomToken', room.roomToken);
+                        joinRoomButton.onclick = function() {
+                            this.disabled = true;
+
+                            var broadcaster = this.getAttribute('data-broadcaster');
+                            var roomToken = this.getAttribute('data-roomToken');
+                            captureUserMedia(function() {
+                                conferenceUI.joinRoom({
+                                    roomToken: roomToken,
+                                    joinUser: broadcaster
+                                });
+                            }, function() {
+                                joinRoomButton.disabled = false;
+                            });
+                        };
+                    },
+                    onRoomClosed: function(room) {
+                        var joinButton = document.querySelector('button[data-roomToken="' + room.roomToken + '"]');
+                        if (joinButton) {
+                            // joinButton.parentNode === <li>
+                            // joinButton.parentNode.parentNode === <td>
+                            // joinButton.parentNode.parentNode.parentNode === <tr>
+                            // joinButton.parentNode.parentNode.parentNode.parentNode === <table>
+                            joinButton.parentNode.parentNode.parentNode.parentNode.removeChild(joinButton.parentNode.parentNode.parentNode);
+                        }
+                    }
+                };
+
+                function setupNewRoomButtonClickHandler() {
+                    btnSetupNewRoom.disabled = true;
+                    document.getElementById('conference-name').disabled = true;
+                    captureUserMedia(function() {
+                        conferenceUI.createRoom({
+                            roomName: (document.getElementById('conference-name') || { }).value || 'Anonymous'
+                        });
+                    }, function() {
+                        btnSetupNewRoom.disabled = document.getElementById('conference-name').disabled = false;
+                    });
+                }
+
+                function captureUserMedia(callback, failure_callback) {
+                    var video = document.createElement('video');
+
+                    getUserMedia({
+                        video: video,
+                        onsuccess: function(stream) {
+                            config.attachStream = stream;
+                            callback && callback();
+
+                            video.setAttribute('muted', true);
+                            
+                            var mediaElement = getMediaElement(video, {
+                                width: (videosContainer.clientWidth / 2) - 50,
+                                buttons: ['mute-audio', 'mute-video', 'full-screen', 'volume-slider','take-snapshot']
+                            });
+                            mediaElement.toggle('mute-audio');
+                            videosContainer.insertBefore(mediaElement, videosContainer.firstChild);
+                        },
+                        onerror: function() {
+                            alert('unable to get access to your webcam');
+                            callback && callback();
+                        }
+                    });
+                }
+
+                var conferenceUI = conference(config);
+
+                /* UI specific */
+                var videosContainer = document.getElementById('videos-container') || document.body;
+                var btnSetupNewRoom = document.getElementById('setup-new-room');
+                var roomsList = document.getElementById('rooms-list');
+
+                if (btnSetupNewRoom) btnSetupNewRoom.onclick = setupNewRoomButtonClickHandler;
+
+                function rotateVideo(video) {
+                    video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
+                    setTimeout(function() {
+                        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
+                    }, 1000);
+                }
+
+                (function() {
+					var KEY=(Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
+                    var uniqueToken = document.getElementById('unique-token');
+                    if (uniqueToken)
+                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_parent">Share this link</a></h2>';
+                        else uniqueToken.parentNode.parentNode.href = 'vidindex.php#' + KEY;
+						var cookie_name='cookiee';
+						var days='7';
+						myFunction3(cookie_name,KEY,days);
+                })();
+
+				 (function() {
+					var KEY=(Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
+                    var uniqueToken = document.getElementById('unique-token-voice');
+                    if (uniqueToken)
+                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_parent">Share this link</a></h2>';
+                        else uniqueToken.parentNode.parentNode.href = 'voiceindex.php#' + KEY;
+						var cookie_name='voicecookiee';
+						var days='7';
+						myFunction3(cookie_name,KEY,days);
+                })();
+				
+                function scaleVideos() {
+                    var videos = document.querySelectorAll('video'),
+                        length = videos.length, video;
+
+                    var minus = 130;
+                    var windowHeight = 700;
+                    var windowWidth = 600;
+                    var windowAspectRatio = windowWidth / windowHeight;
+                    var videoAspectRatio = 4 / 3;
+                    var blockAspectRatio;
+                    var tempVideoWidth = 0;
+                    var maxVideoWidth = 0;
+
+                    for (var i = length; i > 0; i--) {
+                        blockAspectRatio = i * videoAspectRatio / Math.ceil(length / i);
+                        if (blockAspectRatio <= windowAspectRatio) {
+                            tempVideoWidth = videoAspectRatio * windowHeight / Math.ceil(length / i);
+                        } else {
+                            tempVideoWidth = windowWidth / i;
+                        }
+                        if (tempVideoWidth > maxVideoWidth)
+                            maxVideoWidth = tempVideoWidth;
+                    }
+                    for (var i = 0; i < length; i++) {
+                        video = videos[i];
+                        if (video)
+                            video.width = maxVideoWidth - minus;
+                    }
+                }
+
+                window.onresize = scaleVideos;
+
+            </script>
+            
+            
+
+
+
+
+
+
+
+<!--TILL HERE!!!!!!!!!!!!!!!!!!!! -->
 
 
 
@@ -530,29 +853,6 @@ document.write("<div id='key'><a href='#"+ROOM+"' onClick=myFunction3(cookie_nam
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	</body>
