@@ -1,8 +1,27 @@
 <html>
 
 <?php
+
+// require_once('recaptchalib.php');
+//  $privatekey = "6Lf4QQITAAAAAACcjNB3DDMQudNEYmKsm_FcqSlG";
+//  $resp = recaptcha_check_answer ($privatekey,
+//                                  $_SERVER["REMOTE_ADDR"],
+//                                  $_POST["recaptcha_challenge_field"],
+//                                  $_POST["recaptcha_response_field"]);
+//  if (!$resp->is_valid) {
+//    // What happens when the CAPTCHA was entered incorrectly
+//    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+//         "(reCAPTCHA said: " . $resp->error . ")");
+//  } else {
+//    // Your code here to handle a successful verification
+//  	// echo "yomama";
+//  }
+
+
+
+
 //connect to db
-mysql_connect("localhost","root","");
+mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
 
 $em=$_POST["emailid"];
@@ -31,22 +50,6 @@ $fullname=$fname." ".$lname;
 /*		$query = "INSERT INTO users(firstname,lastname,fullname,gender,country,username,emailid,hashemail) VALUES('$fname','$lname','$fullname','$gender','$country','$uname','$em','$a')";
 		$result = mysql_query($query);*/
 
-		
-		/* require_once('recaptchalib.php');
-		$privatekey = "6Lf4QQITAAAAAACcjNB3DDMQudNEYmKsm_FcqSlG";
-		$resp = recaptcha_check_answer ($privatekey,
-                                 $_SERVER["REMOTE_ADDR"],
-                                 $_POST["recaptcha_challenge_field"],
-                                 $_POST["recaptcha_response_field"]);
-		if (!$resp->is_valid) {
-		// What happens when the CAPTCHA was entered incorrectly
-		die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-        "(reCAPTCHA said: " . $resp->error . ")");
-		} else {
-		// Your code here to handle a successful verification
- 	//echo "yomama";
-		} */
-		
 		
 		if($image_size==FALSE)
 			echo "Please upload an image file";

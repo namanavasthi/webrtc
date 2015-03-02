@@ -38,7 +38,7 @@ session_start(); //ask Naman
         $check=0;
 
         $token_url = "https://graph.facebook.com/oauth/access_token?type=web_server&client_id="
-            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/facebookcallback.php&client_secret=" //made chnages here to the url
+            . $app_id . "&redirect_uri=http://webrtc-fypgroup11.rhcloud.com/facebookcallback.php&client_secret="
             . $app_secret . "&code=" . $code;
 
         $access_token = file_get_contents($token_url);
@@ -114,7 +114,6 @@ session_start(); //ask Naman
         $fname=$data1["first_name"];
         $lname=$data1["last_name"];
         $fullname=$data["name"];
-        $gender=$data1["gender"];
         $a= hash ( "md5" , $em);
 		
 		//for the image...VERIFY THE SIZESSSSSSSSSSSSSSSSSSSS!!!!!
@@ -132,7 +131,7 @@ session_start(); //ask Naman
         //connect to the datatbase
         mysql_select_db("webrtc");
 
-        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
+        $query = "INSERT INTO users (firstname,lastname,fullname,emailid,hashemail,password,username,password,country,gender,imagename,image,imagelarge,imagesmall,status) VALUES('$fname','$lname','$fullname','$em','$a','$uname','','$country','$gender','','','$largeimage','$smallimage','Online')"; //check if it works!!!!
 
         $result = mysql_query($query);
 
@@ -150,7 +149,7 @@ session_start(); //ask Naman
 
 		//$query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
 		
-	$query_num_rows = mysql_num_rows($query1);
+	$query_num_rows = mysql_num_rows($query);
 	if ($query_num_rows==0)
 	{
 		foreach($friends['data'] as $key=>$value)
@@ -244,7 +243,6 @@ session_start(); //ask Naman
             // exit();
 
     }
-}
 
 ?>
 

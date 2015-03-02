@@ -6,7 +6,7 @@ mysql_select_db("webrtc");
 //$id=addslashes($_REQUEST['id']);
 $emailid=$_COOKIE['userdata']['email'];
 
-$image=mysql_query("SELECT * FROM users where firstname='$emailid'");
+$image=mysql_query("SELECT * FROM users where emailid='$emailid'");
 $image=mysql_fetch_assoc($image);
 $image=$image['image'];
 /*
@@ -32,8 +32,8 @@ imagecopyresized($image, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $he
 // Output
 $image=imagejpeg($thumb); */
 
-echo $image;
+//echo $image;
 
 header('Content-Type: image/jpeg');
-//echo $image;
+echo $image;
 ?>

@@ -13,22 +13,22 @@
 	<?php 
 	//session_start();
 	//connect to the server
-$connect = mysql_connect("localhost","root","");
-
+//$connect = mysql_connect("localhost","root","");
+$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 //connect to the datatbase
 mysql_select_db("webrtc");
 
 if(isset($_POST['emailid'])&&isset($_POST['password']))
 {
 	$emailid = $_POST['emailid'];
-	//$fname = $_POST['fullname'];
+	$fname = $_POST['fullname'];
 	$password = $_POST['password'];
 	//$password_hash=md5($password);
 	//echo "inside if";
  
 	//echo $password_hash;
 	
-	if(!empty($emailid)&&!empty($password))
+	if(!empty($emailid)&&!empty($password)&&!empty($fname))
 	{
 		$query = mysql_query("SELECT * FROM users WHERE emailid='$emailid' AND password ='$password'");
 		$data = mysql_fetch_array($query);
@@ -47,20 +47,13 @@ if(isset($_POST['emailid'])&&isset($_POST['password']))
 			}
 			else if($query_num_rows==1)
 			{
-			
-				
 				$queryins = mysql_query("UPDATE `users` SET `Status`='Online' where `emailid`='$emailid' and `password`='$password'");
-				$query = mysql_query("SELECT * FROM users WHERE emailid='$emailid'");
-				WHILE($rows = mysql_fetch_array($query)):
-					$fname = $rows['fullname'];
-				endwhile;
-				
 				//echo "inside first else if";
 				//creating a cookie for this user
 				$expire=time()+60*60*24;
 				setcookie('userdata[name]',$fname,$expire,'','','',TRUE);
 				setcookie('userdata[email]',$emailid,$expire,'','','',TRUE);
-				//echo $fname;
+		
 				 $check=1;
 					if($check==1)
 					{
@@ -72,7 +65,7 @@ if(isset($_POST['emailid'])&&isset($_POST['password']))
 
 						}
 						}
-						header('Location:homepage.php');
+						header('Location:homepagenonfb.php');
 					}
 		
 			

@@ -40,17 +40,6 @@ a:focus {
 	outline: none;
 }
 
-/* ADDDDDDDDDDDEEEEEEEEEEEEEEEEDDDDDDDDDDDDDDDD */
-
-strong {
-    /*color: rgb(255, 14, 14);*/
-	color: #B24E51;
-	text-decoration: none;			/*COLOUR CHANGED!!!*/
-  	
-}
-
-
-/* TILLLLL HEREEEEEEEEEE!!!!!!!!!! */
 .theme-2 { background: #434d55; }
 .theme-2 a { color: #4991C2; }
 .theme-2 a:hover, .theme-2 a:focus { color: #74777b; }

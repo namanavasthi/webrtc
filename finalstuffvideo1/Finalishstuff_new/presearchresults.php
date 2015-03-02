@@ -25,28 +25,49 @@
 	//{
 	//print $sval;
 	//connect to the server
-	$connect = mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+	$connect = mysql_connect("localhost","root","");
 
 	//connect to the datatbase
+	//mysql_select_db("userdata");
 	mysql_select_db("webrtc");
-	//$query = mysql_query("SELECT * FROM hospitals WHERE fullname='$sval'");
-	$query = mysql_query("SELECT * FROM users WHERE firstname='$sval' or lastname='$sval' or fullname='$sval'");
+	//$query = mysql_query("SELECT * FROM chemists");
+	//$query = mysql_query("SELECT fullname,emailid,imagelarge,imagename FROM users WHERE firstname='$sval' or lastname='$sval' or fullname='$sval'");
+	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge`,`emailid` FROM `users` WHERE `fullname` in (SELECT `fullname` FROM `users` WHERE firstname='$sval' or lastname='$sval' or fullname='$sval')");
+	
+	//echo $count;
 	$num_rows=mysql_num_rows($query);
 	$count=$num_rows;
-	//echo $count;
 	$temp=$count-1;
 	//echo $temp;
 		$i=0;
+		$email=array();
+		$image=array();
 		$name=array();
+		//$query = mysql_query("SELECT fullname,emailid,imagelarge,imagename FROM users WHERE firstname='$sval' or lastname='$sval' or fullname='$sval'");
+	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge`,`emailid` FROM `users` WHERE `fullname` in (SELECT `fullname` FROM `users` WHERE firstname='$sval' or lastname='$sval' or fullname='$sval')");
+	
+	
 	WHILE($rows = mysql_fetch_array($query)):
 		
 		$fullname = $rows['fullname'];	
+		$emailid = $rows['emailid'];	
+		$imagename=$rows['imagename'];
 		$name[$i]=$fullname;
+		$email[$i]=$emailid;
+		if($rows['imagename'!=''])
+		{
+			$image[$i]='disim.php?id='.$name[$i];
+		}
+		else
+		{
+			$image[$i]=$rows['imagelarge'];
+		}
 		$i++;
 	endwhile;
+	//var_dump($image);
 	
 	$p=0;
-	for($j=0;$j<=$count;$j++)
+	for($j=0;$j<$count;$j++)
 	{
 	
 		if ($count==1)
@@ -54,13 +75,12 @@
 			echo"<div class='container'>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[0]' alt='img30'/>
 						<figcaption>
 							<h2>$name[0]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='user.php?firstname=$name[0]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[0]&name=$name[0]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
@@ -72,7 +92,7 @@
 		if($count % 2!=0)
 		{
 			
-			for ($k=0;$k<=$count-1;$k++)
+			for ($k=0;$k<$count-1;$k++)
 			{
 			//echo $temp; 
 				//echo"<br>";
@@ -91,25 +111,23 @@
 		<br><br><br><br><br><br><br><br><br><br>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[$p]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$p]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
-							</p>
+								<a href='user.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[$p]&name=$name[$p]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>
+								</p>
 						</figcaption>			
 					</figure>
 					<figure class='effect-winston'>
-						<img src='img/1.jpg' alt='img01'/>
+						<img src='$image[$m]' alt='img01'/>
 						<figcaption>
 							<h2>$name[$m]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
-							</p>
+								<a href='user.php?firstname=$name[$m]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[$m]&name=$name[$m]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>
+								</p>
 						</figcaption>			
 					</figure>
 				</div> 
@@ -122,25 +140,24 @@
 			//echo $count; 
 			//echo"<br>";
 			//echo $name[$m+1]."<br>";
-		/*	$q=$p+1;
+			$q=$p+1;
 			$count--;
 		//	$temp--;
 			//echo $count; 
 			echo"<div class='container'>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[$q]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$q]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='user.php?firstname=$name[$q]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[$q]&name=$name[$q]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
 				</div>
-			</div>"; */
+			</div>"; 
 			break; 
 		}
 		else
@@ -161,24 +178,23 @@
 		<br><br><br><br><br><br><br><br><br><br>
 				<div class='grid'>
 					<figure class='effect-winston'>
-						<img src='img/30.jpg' alt='img30'/>
+						<img src='$image[$p]' alt='img30'/>
 						<figcaption>
 							<h2>$name[$p]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+							<a href='user.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[$p]&name=$name[$p]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>	
 							</p>
 						</figcaption>			
 					</figure>
 					<figure class='effect-winston'>
-						<img src='img/1.jpg' alt='img01'/>
+						<img src='$image[$l]' alt='img01'/>
 						<figcaption>
 							<h2>$name[$l]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='user.php?firstname=$name[$l]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+								<a href='search1.php?email=$email[$l]&name=$name[$l]'><i class='fa fa-fw fa-plus-circle' title='ADD AS FRIEND'></i></a>
+								
 							</p>
 						</figcaption>			
 					</figure>
@@ -190,8 +206,11 @@
 		}
 		
 	}
-	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+	if ($count>0) {
+	echo"
 	<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";	
+	}
 	//}
 	
 	
