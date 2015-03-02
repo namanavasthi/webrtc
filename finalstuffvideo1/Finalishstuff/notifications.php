@@ -188,7 +188,7 @@ function refresh()
 
 	<?php
 			//database connection
-			mysql_connect("localhost","root","");
+			mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 			mysql_select_db("webrtc");
 			$name=$_COOKIE['userdata']['email'];
 			//$name='emma@gmail.com';

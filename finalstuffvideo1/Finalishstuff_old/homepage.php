@@ -1,18 +1,11 @@
 <?php
-$lala=addslashes($_REQUEST['firstname']);
-$expire=time()+60*60*24;
-setcookie('friendname',$lala,$expire,'','','',TRUE);
-
 //session_start();
 
 //connect to db
-mysql_connect("localhost","root","");
+//mysql_connect("localhost","root","");
+mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
-
-//$image=mysql_query("SELECT * FROM users where firstname='$name'");
-//$image=mysql_fetch_assoc($image);
-//$friendimage=$image['image'];
-
+include ('search.php')
 ?>
 
 
@@ -59,13 +52,7 @@ mysql_select_db("webrtc");
 
 
 
-        <!-- scripts used for video-conferencing -->
-        <script src="firebase.js"> </script>
-        <script src="RTCPeerConnection-v1.5.js"> </script>
-        <script src="conference.js"> </script>
-        
-        <!-- script used to stylize video element -->
-        <script src="getMediaElement.min.js"> </script>
+
 
 
 
@@ -149,41 +136,13 @@ mysql_select_db("webrtc");
   </div><!-- /container -->
 </div><!-- /navbar wrapper -->
 
-
 <!-- end of navbar -->
 
 
 
 
 
-<!-- ADDDDDDDEEEEEEEEEEEEEDDDDDDDDDDDD QUERY DB!!!!!!!!!! -->
 
-<div id="auto"></div>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.3.2.min.js"></script>
-<script>
-$(document).ready(function()
-{
-	$('#auto').load('load.php');
-	refresh();
-}
-	);
-	
-function refresh()
-{
-	setTimeout(function() {
-	$('#auto').load('load.php');
-	refresh();
-	},5000);
-}
-
-
-</script>
-
-
-<!--till here!!!!!!!!! -->
 
 
 
@@ -203,70 +162,29 @@ function refresh()
 
 <?php
 
-
 	$a=$_COOKIE['userdata']['email'];
 	//echo $name;
 	$a=hash("md5",$a);
 	//echo $name;
-	//$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
-	//$query = mysql_query("SELECT * FROM users");
-	
-	$query=mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+	$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
+
+		//$query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
 	$name=array();
-	$image=array();
 	$i=0;
 	$count=mysql_num_rows($query);
 	WHILE($rows = mysql_fetch_array($query)):
 	
-		$fullname = $rows['fullname'];
+		$fullname = $rows['friendname'];
 			//include('kiddingnext.php');
 		$name[$i]=$fullname;
-		if($rows['imagename'!=''])
-		{
-			$image[$i]='disim.php?id='.$name[$i];
-		}
-		else
-		{
-			$image[$i]=$rows['imagesmall'];
-		}
 		$i++;
 		
 	endwhile;
-	
-	
-	//TO DISPLAY THE IMAGESSSSSSSSSSS!!!!!!!!!!!!!!!
-
-	/*$query1 = mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
-
-	$image=array();
-	$j=0;
-
-	WHILE($rows = mysql_fetch_array($query1)):
-		
-		if($rows['imagename'=''])
-		{
-			$image[$j]='disim.php?id='.$name[$j];
-			$j++;
-		}
-		else
-		{
-			$image[$j]=$rows['imagesmall'];
-			$j++;
-		}
-
-		
-	endwhile;
-	
-	
-	
-	//TILL HERE!!!!!!!!!!!
-	*/
-	//var_dump($name);
-	//var_dump($image);
+	//MODIFY !!!!
 	
 	//for($j=0;$j<=$count;$j++)
 	
-	if ($count==0) {
+		if ($count==0) {
 		echo "To add new friends, use the search bar above";
 	}
 		
@@ -277,7 +195,7 @@ function refresh()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a>   
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -292,8 +210,8 @@ function refresh()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -309,9 +227,9 @@ function refresh()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -327,10 +245,10 @@ function refresh()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a>   
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -345,38 +263,22 @@ function refresh()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[4]'><img src='$image[4]' alt='img04'/><p>$name[4]</p></figure></a>  
+					<figure><a href='profile.php?firstname=$name[0]'><img src='img/4.jpg' alt='img04'/><p>$name[0]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[1]'><img src='img/4.jpg' alt='img04'/><p>$name[1]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[2]'><img src='img/4.jpg' alt='img04'/><p>$name[2]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[3]'><img src='img/4.jpg' alt='img04'/><p>$name[3]</p></figure></a> 
+					<figure><a href='profile.php?firstname=$name[4]'><img src='img/4.jpg' alt='img04'/><p>$name[4]</p></figure></a>  
 					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
 		</div> <!-- /row -->"; }
-		
-	else
-	{
-	echo"
-		<div class='row'>
-			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
-				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
-					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a> 
-					<figure><a href='profile.php?firstname=$name[4]'><img src='$image[4]' alt='img04'/><p>$name[4]</p></figure></a>  
-					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
-					</div>
-				</div><!-- /grid-wrap -->
-			</div> <!-- div for right column -->
-		</div> <!-- /row -->"; 
-	}
-	
 	
 //var_dump($name);
+
+?>
+
+
 
 ?>
 
@@ -432,16 +334,43 @@ function refresh()
 				</div>
 			</nav>
 			<div class="main">
-				</div><!-- /main -->
+				<!-- <header class="codrops-header">
+					<h1>Elastic SVG Elements <span>Adding elasticity with SVG shape animations</span></h1>
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/DialogEffects/" title="Previous Demo"><span>Previous Demo</span></a> / 
+						<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=21555" title="Back to the article"><span>Back to the Codrops Article</span></a>
+					</div>
+					<nav class="codrops-demos">
+						<a class="current-demo" href="index.html">Sidebar Menu</a>
+						<a href="pullupmenu.html">Pull-Up Menu</a>
+						<a href="dropdown.html">Drop-down Menu</a>
+						<a href="drag.html">Drag &amp; Drop</a>
+						<a href="collapseexpand.html">Collapse &amp; Expand</a>
+						<a href="hamburger.html">Menu Icon</a>
+						<a href="circlemenu.html">Circular Menu</a>
+						<a href="inputs.html">Inputs</a>
+						<a href="button.html">Buttons</a>
+					</nav>
+				</header>-->
+				<!-- Related demos -->
+				<!-- <section class="related">
+					<p>If you enjoyed this demo you might also like:</p>
+					<a href="http://tympanus.net/Development/WobblySlideshowEffect/">
+						<img src="img/related/WobblySlideshowEffect.png" />
+						<h3>Wobbly Slideshow Effect</h3>
+					</a>
+					<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/">
+						<img src="img/related/ShapeHoverEffect.png" />
+						<h3>Shape Hover Effect</h3>
+					</a>
+				</section>  -->
+			</div><!-- /main -->
 		</div><!-- /container -->
 
 <!-- 
 
-// include("usercookie.php");
-					
 
-
-
+Removed:  include('usercookie.php');
 
 
 
@@ -456,55 +385,43 @@ function refresh()
 		<div class="container">
 			<div class="side-fluid">
 				<div class="intro-content">				
-			<!--	
-					echo"<div class='profile'> <img src='php/imageoffriend?imagename=$lala'></div>";
+					<div class="profile"><img src="<?php print_r($_COOKIE['userdata']['img']); ?>" alt="profile1"></div>
+
 					
-					?> -->
-					<div class='profile'>
-					
-					
-					<?php
-							
-							$query=mysql_query("SELECT fullname,imagename,imagelarge from users WHERE fullname='$lala'");
-							WHILE($rows = mysql_fetch_array($query)):
-	
-								$fullname = $rows['fullname'];
-								$imagename = $rows['imagename'];
-								//echo $fullname;
-								if($rows['imagename'!=''])
-								{
-									echo"<img src='disim.php?id=$fullname'>";
-								}
-								else
-								{
-									$image=$rows['imagelarge'];
-									echo "<img src='$image'>";
-								}
-							endwhile;
-					?>
-					
-					
-					
-					</div>
-					
-					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> 
-					<a href="http://www.google.com"><h1><span> ADD PHP HERE!!!!!!!!!!!!!!!!!!</span></h1></a> -->
-					<h1><span><font color='blue'><?php print $lala; echo"<br>"; 
-					//print_r($_COOKIE['userdata']['name']);?>
-					</font></span></h1>
-					<!-- <h1><span><a href="http://www.google.com">Voice Call</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="voicecall.php">Video Call</a></span></h1>  -->
-					
-					<!-- ADDDDDEDDDDDDDDDDD PARTTTTTTTTT COOOOOOOOKKKIIIIEEEEEEEEEEE-->
-					
-					
-					<!-- <h1><span><a href="http://www.google.com">Voice Call</a> </span></h1>  
-					<!-- ADDED PART!!!!!!!!!!!!!!!!!!!!!!!!!!! king.php-->
-					
-					</div>
+
+
+
+					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
+					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
 				</div>
 			</div>
+		</div><!-- /container -->
 
-			<script src="js/classie.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script src="js/classie.js"></script>
 		<script>
 			(function() {
 
@@ -560,6 +477,8 @@ function refresh()
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
 
 
 	</body>

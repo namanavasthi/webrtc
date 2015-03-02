@@ -1,7 +1,7 @@
 <html>
 
 <?php
-$conn=mysql_connect("localhost","root","");
+$conn=mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
 $sendername=$_REQUEST['sendername'];
 $senderid=$_REQUEST['senderid'];

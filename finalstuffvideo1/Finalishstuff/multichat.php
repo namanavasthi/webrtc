@@ -196,7 +196,7 @@ function refresh()
 				<div class="intro-content">	
 <?php
 
-mysql_connect("localhost","root","");
+mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
 
 $a=$_COOKIE['userdata']['email'];

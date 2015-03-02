@@ -78,7 +78,7 @@
 	<!--ADDDDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD FOR DB PART!!!! -->
 	
 	<?php 
-						mysql_connect("127.0.0.1","root","");
+						mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 						mysql_select_db("webrtc");
 						
 
