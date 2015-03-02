@@ -212,7 +212,7 @@
 
         $query1 = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 
-    //  $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
+     // $query = mysql_query("SELECT * FROM users"); //MODIFY TO FRIENDS TABLE
     
         $query_num_rows = mysql_num_rows($query1);
 
@@ -220,7 +220,7 @@
         {
           foreach ($friends_list['data'] as $key => $value) {
               $friendname = $value->name;
-              $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid) VALUES('','$a','$friendname','')";
+              $query1 = "INSERT INTO friends (friendid,userid,friendname,webrtcid,callstatus,type) VALUES('','$a','$friendname','','','NULL')";
               $result = mysql_query($query1);
           }
         }
