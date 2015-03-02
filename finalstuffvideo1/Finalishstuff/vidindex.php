@@ -19,7 +19,7 @@
                 -webkit-transition: all 1s ease;
                 transition: all 1s ease;
                 vertical-align: top;
-            } 
+            }
 
             input {
                 border: 1px solid #d9d9d9;
