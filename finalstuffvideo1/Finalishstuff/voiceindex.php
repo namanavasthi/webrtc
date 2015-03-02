@@ -125,7 +125,7 @@
                     </span>
                     
                     <input type="text" id="conference-name"> 
-                    <button id="setup-new-room" class="setup">Setup New Conference</button>
+                    <button id="setup-new-room" class="setup">Setup New Conference</button><br>
                     <button id="close" class="setup">Close Conference</button>
                     <script type="text/javascript">
                         document.getElementById("close").onclick = function () {
