@@ -210,7 +210,7 @@ function refresh()
 		$count=mysql_num_rows($query);
 		if ($count==0)
 		{
-			echo"<h2> <font color='dark blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have no new notifications!</font></h2>";
+			echo"<h2> <font color='dark blue'>You have no new notifications!</font></h2>";
 		}
 		
 		else {
