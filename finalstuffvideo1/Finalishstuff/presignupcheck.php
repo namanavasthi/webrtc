@@ -15,7 +15,16 @@
 
 		<link rel="stylesheet" type="text/css" href="css/homepagedemo_rightbar.css" />
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
-		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+		
+<!-- bootstrap scripts -->
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- end of bootstrap scripts -->
 </head>
 <body>
 	<!-- navbar header -->
