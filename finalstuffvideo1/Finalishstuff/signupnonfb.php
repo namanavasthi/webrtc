@@ -76,7 +76,7 @@
 						
 	  				</div>
 	  				
-	  				<div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="SUBMIT" /></div>
+	  				<!-- <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="SUBMIT" /></div> -->
 				</form>
 			</div>
 		</div>
