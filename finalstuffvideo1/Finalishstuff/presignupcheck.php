@@ -20,8 +20,22 @@ $fullname=$fname." ".$lname;
 		echo"<font size=5 color=red face=Arial>Please fill in all the fields</font>";	
 		include ('signupnonfb.php');
 	}	
+	if(isset($_POST['g-recaptcha-response'])){
+          $captcha=$_POST['g-recaptcha-response'];
+        }
+        if(!$captcha){
+          echo '<h2>Please check the the captcha form.</h2>';
+          exit;
+        }
+        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lf4QQITAAAAAACcjNB3DDMQudNEYmKsm_FcqSlG&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+        if($response.success==false)
+        {
+          echo '<h2>You are spammer ! Get the @$%K out</h2>';
+        }else
+        {
+          
 	
-	else if(!empty($_FILES) && isset($_FILES['image']))
+	if(!empty($_FILES) && isset($_FILES['image']))
 	{
 		$image=addslashes(file_get_contents($_FILES['image']['tmp_name']));
 		$image_name=addslashes($_FILES['image']['name']);
@@ -78,6 +92,7 @@ $fullname=$fname." ".$lname;
 		*/
 	// include('../../ElasticSVGElements/kidding.php');
 		}
+	} //end of else part of captcha
 	//}
 ?>
 </html>

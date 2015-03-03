@@ -51,8 +51,9 @@
 	  					<input type="text" name="emailid" required> 
 						<label for="file">Profile Picture</label>
 						<input type="file" name="image" required>
-						<!-- <input type="submit" name="submit" value="Post comment"><br><br> -->
 						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
+						<input type="submit" name="submit" value="Submit"><br><br>
+						
 
 					
 	  				</div>
