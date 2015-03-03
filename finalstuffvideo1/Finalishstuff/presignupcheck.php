@@ -6,6 +6,16 @@
 		<title>Sign Up Check</title>
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbdefault.css" />
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbcomponent.css" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/homepagenormalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagedemo.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagesidebar.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagecomponent2_maincontent.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/homepagedemo_rightbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
+		<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 	<!-- navbar header -->
