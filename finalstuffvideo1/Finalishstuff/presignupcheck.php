@@ -113,7 +113,7 @@ $fullname=$fname." ".$lname;
           $captcha=$_POST['g-recaptcha-response'];
         }
         if(!$captcha){
-          echo '<br><h2>Please check the the captcha form.</h2>';
+          echo '<br><br><br><br><h2>Please check the the captcha form.</h2>';
           header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/signupnonfb.php');
           exit;
         }
