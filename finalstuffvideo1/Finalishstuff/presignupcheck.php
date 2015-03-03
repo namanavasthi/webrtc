@@ -1,5 +1,12 @@
 <html>
-
+<head>
+<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Sign Up Check</title>
+		<link rel="stylesheet" type="text/css" href="css/signupnonfbdefault.css" />
+		<link rel="stylesheet" type="text/css" href="css/signupnonfbcomponent.css" />
+</head>
 <?php
 //connect to db
 mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
@@ -25,6 +32,7 @@ $fullname=$fname." ".$lname;
         }
         if(!$captcha){
           echo '<h2>Please check the the captcha form.</h2>';
+          header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/signupnonfb.php');
           exit;
         }
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lf4QQITAAAAAACcjNB3DDMQudNEYmKsm_FcqSlG&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
