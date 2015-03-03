@@ -91,7 +91,7 @@
 		
 		<div class="container">
 			<header class="clearfix">
-					<h1>SIGN UP</h1>
+					<br><h1>SIGN UP</h1>
 			</header>	
 			<div class="main">
 				<form class="cbp-mc-form" name='myform' action='presignupcheck.php' method='post' onSubmit="return verifyEmail()" enctype='multipart/form-data'>
@@ -118,6 +118,7 @@
 						<label for="file">Profile Picture</label>
 						<input type="file" name="image" required>
 						<div class="g-recaptcha" data-sitekey="6Lf4QQITAAAAAHdSD33qmqIApjT6hY0TSaPZzlvo"></div>  
+						<br>
 						<input type="submit" name="submit" value="Submit"><br><br>
 						
 
