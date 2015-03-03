@@ -34,7 +34,7 @@
 
 </head>
 <body>
-	<div class="container-fluid" style="height:720px">
+	<!-- <div class="container-fluid" style="height:720px"> -->
 	<!-- navbar header -->
 
 	<div class="navbar-wrapper">
@@ -76,7 +76,7 @@
 <!-- end of navbar -->
 
 
-</div>  <!-- end of container div -->
+<!-- </div>  end of container div -->
 
 
 
