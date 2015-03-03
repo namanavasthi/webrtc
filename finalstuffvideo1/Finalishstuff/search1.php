@@ -9,11 +9,136 @@
 		<link rel="stylesheet" type="text/css" href="css/searchnormalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/searchdemo.css" />
 		<link rel="stylesheet" type="text/css" href="css/searchcomponent.css" />
+
+
+
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/homepagenormalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagedemo.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagesidebar.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagecomponent2_maincontent.css" />
+
+		
+		<link href="css/bootstrap.css" rel="stylesheet">
+
+
+
+
+
+
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
 	<body>
+
+
+
+
+
+
+
+<!-- navbar header -->
+
+	<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+            <li><a href="http://www.bootply.com" target="ext">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<?php
+				$cookie_name="logoutlink1";
+				if(!isset($_COOKIE[$cookie_name])) {
+				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+				} else {
+				    $link=$_COOKIE[$cookie_name];
+				}
+				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+			?>
+			</ul>
+        </div>
+
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+<!-- end of navbar -->
+
+
+
+
+
+
+
+
+		<!-- this is for left sidebar -->
+		<div class="container">
+			<nav id="menu" class="menu">
+				<button class="menu__handle"><span>Menu</span></button>
+				<div class="menu__inner">
+					<ul>
+						<li><a href="#"><i class="fa fa-fw fa-home"></i><span>Home<span></a></li>
+						<li><a href="#"><i class="fa fa-fw fa-heart"></i><span>Favs<span></a></li>
+						<li><a href="#"><i class="fa fa-fw fa-folder"></i><span>Files<span></a></li>
+						<li><a href="#"><i class="fa fa-fw fa-tachometer"></i><span>Stats<span></a></li>
+					</ul>
+				</div>
+				<div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
+					<svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
+						<path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
+					</svg>
+				</div>
+			</nav>
+			
+		</div><!-- /container -->
+
+<!-- 
+
+
+Removed:  include('usercookie.php');
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="container">
 		<?php
 			//database connection
