@@ -25,8 +25,25 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
 <!-- end of bootstrap scripts -->
+
+<style>
+      div.container-fluid{
+        /*margin: 0;*/
+        background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+        /*background-size: 1440px 800px;*/
+        /*background-repeat:no-repeat;*/
+        /*display: compact;*/
+      }
+    </style>
+
+
+
+
 </head>
 <body>
+	<div class="container-fluid" style="height:720px">
 	<!-- navbar header -->
 
 	<div class="navbar-wrapper">
@@ -66,6 +83,9 @@
 </div><!-- /navbar wrapper -->
 
 <!-- end of navbar -->
+
+
+</div>  <!-- end of container div -->
 
 
 
