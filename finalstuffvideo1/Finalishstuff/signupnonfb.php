@@ -20,6 +20,20 @@
 							}
 		</script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
+
+		<script src="js/snap.svg-min.js"></script>
+
+
+		<!-- bootstrap scripts -->
+			<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+		<!-- end of bootstrap scripts -->
+
+		
 	
 	</head>
 	<body>

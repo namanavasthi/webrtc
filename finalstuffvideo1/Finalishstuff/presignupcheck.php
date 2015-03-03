@@ -7,6 +7,49 @@
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbdefault.css" />
 		<link rel="stylesheet" type="text/css" href="css/signupnonfbcomponent.css" />
 </head>
+<body>
+	<!-- navbar header -->
+
+	<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+            <li><a href="http://www.bootply.com" target="ext">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div>
+
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+<!-- end of navbar -->
+
+
+
 <?php
 //connect to db
 mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
@@ -31,14 +74,14 @@ $fullname=$fname." ".$lname;
           $captcha=$_POST['g-recaptcha-response'];
         }
         if(!$captcha){
-          echo '<h2>Please check the the captcha form.</h2>';
+          echo '<br><h2>Please check the the captcha form.</h2>';
           header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/signupnonfb.php');
           exit;
         }
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Lf4QQITAAAAAACcjNB3DDMQudNEYmKsm_FcqSlG&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
         if($response.success==false)
         {
-          echo '<h2>You are spammer ! Get the @$%K out</h2>';
+          echo '<h2>Bot has been detected</h2>';
         }else
         {
           
@@ -103,4 +146,6 @@ $fullname=$fname." ".$lname;
 	} //end of else part of captcha
 	//}
 ?>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
 </html>
