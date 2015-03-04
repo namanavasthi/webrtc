@@ -25,9 +25,7 @@
 		<link rel="stylesheet" type="text/css" href="css/homepagesidebar.css" />
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent2_maincontent.css" />
 
-		<link rel="stylesheet" type="text/css" href="css/homepagedemo_rightbar.css" />
-		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
-		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 
 
 
@@ -203,13 +201,6 @@ function refresh()
                 </p>
             </form>
         </div>
-
-
-         <style>
-            .footer p{
-                margin-bottom: 100px;
-            }
-        </style>
         
         <div class="footer">
             <p>©2001-2015 All Rights Reserved. ProjectName® is a registered trademark of The Final Year Group 11. <!-- <a href="https://www.twitter.com/ihatetomatoes" target="_blank">@ihatetomatoes</a>. --></p>
