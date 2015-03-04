@@ -188,7 +188,7 @@ function refresh1()
 
 <!-- navbar header -->
 
-	<div class="navbar-wrapper">
+	<div class="navbar-wrapper" id="nav_re">
   <div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse navbar-static-top">
       
