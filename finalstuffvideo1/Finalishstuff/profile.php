@@ -490,8 +490,8 @@ function refresh()
 
 				
 				 <h1>  <span>
-                        <a href="voiceindex.php" target="_parent"><!-- <code>
-						<strong id="unique-token-voice"> -->Voice Call<!-- </strong></code> --></a>
+                        <a href="voiceindex.php" target="_parent"><code>
+						<strong id="unique-token-voice">Voice Call</strong></code></a>
                     </span> </h1>
 	
 				
