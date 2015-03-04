@@ -122,7 +122,7 @@ function refresh()
 							<span class="glyphicon glyphicon-comment"></span>
 							Notification
 						<!-- </button> -->
-						<span class="badge badge-notify"><?php echo $count; ?></span>
+						<span class="badge badge-notify"><?php echo "$count"; ?></span>
 					<!-- </div> -->
 					</a>
 				</li>
