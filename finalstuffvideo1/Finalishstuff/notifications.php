@@ -118,10 +118,10 @@ function refresh()
 				<li class="active">
 					<!-- <div class="container"> -->
 					<a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">
-						<button class="btn btn-default btn-lg btn-link" style="font-size:36px;">
+						<!-- <button class="btn btn-default btn-lg btn-link" style="font-size:36px;"> -->
 							<span class="glyphicon glyphicon-comment"></span>
 							Notification
-						</button>
+						<!-- </button> -->
 						<span class="badge badge-notify">3</span>
 					<!-- </div> -->
 					</a>
