@@ -499,8 +499,8 @@ function refresh()
 	<!--	 <section class="experiment">                
                 <section> -->
                   <h1>  <span>
-                        <a href="vidindex.php" target="_parent"><!-- <code>
-						<strong id="unique-token"> -->Video Call<!-- </strong></code> --></a>
+                        <a href="vidindex.php" target="_parent"><code>
+						<strong id="unique-token"> -->Video Call</strong></code></a>
                     </span> </h1>
                     
                     <!-- <input type="text" id="conference-name"> -->
