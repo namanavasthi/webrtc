@@ -145,16 +145,26 @@ setcookie('friends', $json);
             <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
             <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/aboutus/aboutus.html" target="ext">About</a></li>
             <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/contactus.php">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
+            <li>
+                <!-- <div class="container"> -->
+                <a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">
+                    <!-- <button class="btn btn-default btn-lg btn-link" style="font-size:36px;"> -->
+                        <span class="glyphicon glyphicon-comment"></span>
+                        Notification
+                    <!-- </button> -->
+                    <span class="badge badge-notify">
+                        <?php 
+                            mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+                            mysql_select_db("webrtc");
+                            $name=$_COOKIE['userdata']['email'];
+                            //$name='emma@gmail.com';
+                            $query = mysql_query("SELECT * FROM notifications WHERE username='$name' AND viewstatus<>'seen'");
+                            $count=mysql_num_rows($query);
+                            echo "$count"; 
+                        ?>
+                    </span>
+                <!-- </div> -->
+                </a>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
