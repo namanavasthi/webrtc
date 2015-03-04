@@ -159,6 +159,25 @@ function refresh()
 
 </script>
 
+<script>
+$(document).ready(function()
+{
+	$('#nav_re').load('notif.php');
+	refresh();
+}
+	);
+	
+function refresh()
+{
+	setTimeout(function() {
+	$('#nav_re').load('notif.php');
+	refresh();
+	},8000);
+}
+
+
+</script>
+
 
 <!--till here!!!!!!!!! -->
 
