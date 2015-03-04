@@ -7,15 +7,15 @@
 		<title>Search Result</title>
 	
 
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/searchnormalize.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/searchcomponent.css" />
+
 
 		
-		<link href="css/bootstrap.css" rel="stylesheet">
+		
 
-
-				<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/searchnormalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/searchdemo.css" />
-		<link rel="stylesheet" type="text/css" href="css/searchcomponent.css" />
 
 
 
@@ -26,7 +26,9 @@
 		<link rel="stylesheet" type="text/css" href="css/homepagesidebar.css" />
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent2_maincontent.css" />
 
+		<link rel="stylesheet" type="text/css" href="css/searchdemo.css" />
 
+		<link href="css/bootstrap.css" rel="stylesheet">
 		<script src="js/snap.svg-min.js"></script>
 
 
