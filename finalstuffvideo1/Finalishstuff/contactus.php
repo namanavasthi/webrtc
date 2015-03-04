@@ -18,7 +18,7 @@
 
 
 
-<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/homepagenormalize.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/homepagedemo.css" />
