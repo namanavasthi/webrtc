@@ -162,7 +162,7 @@ function refresh()
 <script>
 $(document).ready(function()
 {
-	$('#nav_re').load('notif.php');
+	$('#nav_re').load('notif_homepage.php');
 	refresh1();
 }
 	);
@@ -170,7 +170,7 @@ $(document).ready(function()
 function refresh1()
 {
 	setTimeout(function() {
-	$('#nav_re').load('notif.php');
+	$('#nav_re').load('notif_homepage.php');
 	refresh();
 	},5000);
 }
