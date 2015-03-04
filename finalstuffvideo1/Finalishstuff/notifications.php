@@ -50,6 +50,15 @@ include ('search.php');
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
 		<link href="css/bootstrap.css" rel="stylesheet">
 
+		<style>
+			.badge-notify{
+			   background:red;
+			   position:relative;
+			   top: -20px;
+			   left: -35px;
+			}
+
+		</style>
 		
 	</head>
 		<body>
@@ -102,32 +111,30 @@ function refresh()
         <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
-            <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/aboutus/aboutus.html" target="ext">About</a></li>
-            <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/contactus.php">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-          	<?php
-				$cookie_name="logoutlink1";
-				if(!isset($_COOKIE[$cookie_name])) {
-				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-				} else {
-				    $link=$_COOKIE[$cookie_name];
-				}
-				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
-			?>
+			<ul class="nav navbar-nav">
+				<li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php">Home</a></li>
+				<li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/aboutus/aboutus.html" target="ext">About</a></li>
+				<li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/contactus.php">Contact</a></li>
+				<li class="active">
+					<div class="container">
+						<button class="btn btn-default btn-lg btn-link" style="font-size:36px;">
+							<span class="glyphicon glyphicon-comment"></span>
+						</button>
+						<span class="badge badge-notify">3</span>
+					</div>
+					<a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">Notification</a>
+				</li>
+			</ul>
+          	<ul class="nav navbar-nav navbar-right">
+	          	<?php
+					$cookie_name="logoutlink1";
+					if(!isset($_COOKIE[$cookie_name])) {
+					    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+					} else {
+					    $link=$_COOKIE[$cookie_name];
+					}
+					echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+				?>
 			</ul>
         </div>
 
