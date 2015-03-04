@@ -207,7 +207,7 @@ function refresh()
 
          <style>
             .footer p{
-                margin-bottom: 2em;
+                margin-bottom: 100px;
             }
         </style>
         
