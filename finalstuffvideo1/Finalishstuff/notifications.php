@@ -54,7 +54,7 @@ include ('search.php');
 			.badge-notify{
 			   background:red;
 			   position:relative;
-			   top: -30px;
+			   top: -15px;
 			   /*left: -35px;*/
 			}
 
