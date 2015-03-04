@@ -116,13 +116,15 @@ function refresh()
 				<li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/aboutus/aboutus.html" target="ext">About</a></li>
 				<li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/contactus.php">Contact</a></li>
 				<li class="active">
-					<div class="container">
+					<!-- <div class="container"> -->
+					<a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">
 						<button class="btn btn-default btn-lg btn-link" style="font-size:36px;">
 							<span class="glyphicon glyphicon-comment"></span>
+							Notification
 						</button>
 						<span class="badge badge-notify">3</span>
-					</div>
-					<a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">Notification</a>
+					<!-- </div> -->
+					</a>
 				</li>
 			</ul>
           	<ul class="nav navbar-nav navbar-right">
