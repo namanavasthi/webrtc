@@ -163,16 +163,16 @@ function refresh()
 $(document).ready(function()
 {
 	$('#nav_re').load('notif.php');
-	refresh();
+	refresh1();
 }
 	);
 	
-function refresh()
+function refresh1()
 {
 	setTimeout(function() {
 	$('#nav_re').load('notif.php');
 	refresh();
-	},8000);
+	},5000);
 }
 
 
