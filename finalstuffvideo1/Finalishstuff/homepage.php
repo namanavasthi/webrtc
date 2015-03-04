@@ -547,7 +547,7 @@ Removed:  include('usercookie.php');
 
 
 					<!-- <a href="http://www.google.com"><h1><span>Toby Blue </span><span>Web Designer</span></h1></a> -->
-					<a href="http://www.google.com"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
+					<a href="#"><h1><span><?php print_r($_COOKIE['userdata']['name']); ?></span><span><?php print_r($_COOKIE['userdata']['email']); ?></span></h1></a>
 				</div>
 			</div>
 		</div><!-- /container -->
