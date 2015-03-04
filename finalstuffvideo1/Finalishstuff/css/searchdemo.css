@@ -20,6 +20,8 @@ body {
 	font-family: 'Raleway', Arial, sans-serif;
 	min-height: 500px;
 	background-image: url("phone-booth-copy.jpg");
+	background-size: cover;
+    background-repeat:no-repeat;
 }
 
 a {
