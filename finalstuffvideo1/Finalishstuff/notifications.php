@@ -130,7 +130,10 @@ function refresh()
 								//$name='emma@gmail.com';
 								$query = mysql_query("SELECT * FROM notifications WHERE username='$name' AND viewstatus<>'seen'");
 								$count=mysql_num_rows($query);
-								echo "$count"; 
+								if ($count!=0) {
+									echo "$count";
+								}
+								 
 							?>
 						</span>
 					<!-- </div> -->
