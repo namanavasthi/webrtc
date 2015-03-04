@@ -353,7 +353,16 @@
             
             
         </article>
+
+        <style>
+            .footer p{
+                margin-bottom: 2em;
+            }
+        </style>
         
+        <div class="footer">
+            <p>©2001-2015 All Rights Reserved. ProjectName® is a registered trademark of The Final Year Group 11. <!-- <a href="https://www.twitter.com/ihatetomatoes" target="_blank">@ihatetomatoes</a>. --></p>
+        </div>
         
     
         <!-- commits.js is useless for you! -->
