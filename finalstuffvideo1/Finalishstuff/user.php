@@ -135,7 +135,7 @@ mysql_select_db("webrtc");
 						<span class="glyphicon glyphicon-comment"></span>
 						Notification
 					<!-- </button> -->
-					<span class="badge badge-notify">
+					<!-- <span class="badge badge-notify"> -->
 						<?php 
 							mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 							mysql_select_db("webrtc");
@@ -143,9 +143,11 @@ mysql_select_db("webrtc");
 							//$name='emma@gmail.com';
 							$query = mysql_query("SELECT * FROM notifications WHERE username='$name' AND viewstatus<>'seen'");
 							$count=mysql_num_rows($query);
-							echo "$count"; 
+							if ($count!=0) {
+									echo "<span class='badge badge-notify'>$count</span>";
+								}
 						?>
-					</span>
+					<!-- </span> -->
 				<!-- </div> -->
 				</a>
 			</li>
