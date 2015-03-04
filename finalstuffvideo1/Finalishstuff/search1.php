@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>Search Result</title>
 	
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/searchnormalize.css" />
@@ -185,7 +186,7 @@ Removed:  include('usercookie.php');
 					$query = mysql_query("INSERT INTO friend_request (username,friendname) VALUES('$username','$friendemailid')");
 					$query1= mysql_query("INSERT INTO notifications (username,missedcall,friendrequest,friendrequestemailid,viewstatus) VALUES('$friendemailid','','$sendername','$username','unseen')");
 					echo"<h2><font color='blue'>Your friend request has been sent to $friendname! </h2>";
-					header('Refresh: 2;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
+					header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
 				}
 				else {}
 				endwhile;
