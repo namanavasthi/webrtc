@@ -164,7 +164,7 @@ Removed:  include('usercookie.php');
 
 
 
-
+<div class="container-fluid" style="height:720px">
 
 		<div class="container">
 		<?php
@@ -220,6 +220,7 @@ Removed:  include('usercookie.php');
 			
 			<div class="overlay"></div>
 		</div><!-- /container -->
+	</div> <!-- end of fluid div -->
 		<script src="js/classie.js"></script>
 		<script>
 			(function() {
