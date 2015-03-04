@@ -14,6 +14,18 @@
 		<!-- <link href = "css/bootstrap.min.css" rel = "stylesheet"> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link href = "css/styles.css" rel = "stylesheet">
+
+        <style>
+            .badge-notify{
+               background:red;
+               position:relative;
+               top: -15px;
+               /*left: -35px;*/
+            }
+
+        </style>
+
+        
 	</head>
 	<body>
 

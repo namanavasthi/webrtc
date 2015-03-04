@@ -32,6 +32,16 @@
         <link rel="stylesheet" href="css/contactusstyle.css" type="text/css" media="screen"/>
 
         <script src="js/snap.svg-min.js"></script>
+
+        <style>
+			.badge-notify{
+			   background:red;
+			   position:relative;
+			   top: -15px;
+			   /*left: -35px;*/
+			}
+
+		</style>
         
     </head>
     <body>

@@ -26,6 +26,15 @@
 		<script src="js/snap.svg-min.js"></script>
 
 
+<style>
+			.badge-notify{
+			   background:red;
+			   position:relative;
+			   top: -15px;
+			   /*left: -35px;*/
+			}
+
+		</style>
 
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

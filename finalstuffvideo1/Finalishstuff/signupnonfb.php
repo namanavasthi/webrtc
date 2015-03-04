@@ -33,6 +33,15 @@
 
 		<!-- end of bootstrap scripts -->
 
+<style>
+			.badge-notify{
+			   background:red;
+			   position:relative;
+			   top: -15px;
+			   /*left: -35px;*/
+			}
+
+		</style>
 		
 	
 	</head>
