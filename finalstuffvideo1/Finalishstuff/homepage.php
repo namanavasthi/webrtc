@@ -159,6 +159,13 @@ function refresh()
 
 </script>
 
+
+
+
+<!-- made changes here for making notif dynamic, check notif_homepage.php also for further reading -->
+
+<!-- 
+
 <script>
 $(document).ready(function()
 {
@@ -177,7 +184,7 @@ function refresh1()
 
 
 </script>
-
+ -->
 
 <!--till here!!!!!!!!! -->
 
