@@ -55,7 +55,7 @@ include ('search.php');
 			   background:red;
 			   position:relative;
 			   top: -20px;
-			   left: -35px;
+			   /*left: -35px;*/
 			}
 
 		</style>
