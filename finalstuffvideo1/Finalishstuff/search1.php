@@ -165,7 +165,8 @@ Removed:  include('usercookie.php');
 				if($friendname!=$rows['fullname']){
 					$query = mysql_query("INSERT INTO friend_request (username,friendname) VALUES('$username','$friendemailid')");
 					$query1= mysql_query("INSERT INTO notifications (username,missedcall,friendrequest,friendrequestemailid,viewstatus) VALUES('$friendemailid','','$sendername','$username','unseen')");
-					echo"<h2><font color='blue'>Success! Your friend request has been sent to $friendname! </h2>";
+					echo"<h2><font color='blue'>Your friend request has been sent to $friendname! </h2>";
+					header('Refresh: 2;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
 				}
 				else {}
 				endwhile;
