@@ -122,7 +122,7 @@ function refresh()
 							<span class="glyphicon glyphicon-comment"></span>
 							Notification
 						<!-- </button> -->
-						<span class="badge badge-notify">
+						
 							<?php 
 								mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 								mysql_select_db("webrtc");
@@ -131,11 +131,11 @@ function refresh()
 								$query = mysql_query("SELECT * FROM notifications WHERE username='$name' AND viewstatus<>'seen'");
 								$count=mysql_num_rows($query);
 								if ($count!=0) {
-									echo "$count";
+									echo "<span class='badge badge-notify'>$count</span>";
 								}
 								 
 							?>
-						</span>
+						
 					<!-- </div> -->
 					</a>
 				</li>
