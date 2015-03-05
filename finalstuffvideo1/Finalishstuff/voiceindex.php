@@ -85,6 +85,55 @@
         <!-- script used to stylize video element -->
         <script src="voicecall.js"> </script>
 	</head>	
+
+
+<!-- ADDDDDDDEEEEEEEEEEEEEDDDDDDDDDDDD QUERY DB!!!!!!!!!! -->
+
+<div id="auto"></div>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.3.2.min.js"></script>
+<script>
+$(document).ready(function()
+{
+    $('#auto').load('status.php');
+    refresh();
+}
+    );
+   
+function refresh()
+{
+    setTimeout(function() {
+    $('#auto').load('status.php');
+    refresh();
+    },5000);
+}
+
+
+</script>
+
+
+<!--till here!!!!!!!!! -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 		<!--ADDDDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD FOR STATUS PART!!!! -->
 	
 	<?php
