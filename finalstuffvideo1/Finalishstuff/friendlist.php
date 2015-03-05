@@ -233,6 +233,10 @@
 		//endwhile;
 	endwhile;			//for outer while	
 	*/
+
+	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+    if($count>0)
+        echo"<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";  
 	?>
 		
 	</body>
