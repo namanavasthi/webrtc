@@ -231,7 +231,10 @@ function refresh()
 	//$query = mysql_query("SELECT * FROM friends WHERE userid='$a'");
 	//$query = mysql_query("SELECT * FROM users");
 	
-	$query=mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+	//ADDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD TODAAAAAAAAAAYYYYYYYYYYY
+	$query=mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `status`='Online' AND `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+	
+	
 	$name=array();
 	$image=array();
 	$i=0;
