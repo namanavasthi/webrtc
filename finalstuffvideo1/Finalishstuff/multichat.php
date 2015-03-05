@@ -80,32 +80,127 @@
 
 <style>
 
-div.options > input {
-    visibility: hidden;
+
+
+
+label {
+	display: inline;
 }
 
-div.options {
-    display: block;
-    margin: 0 0 0 -10px;
-    padding: 0 0 20px 0;  
-    height: 20px;
-    width: 150px;
-
+.regular-checkbox {
+	display: none;
 }
 
-div.options > img {
-    display: inline-block;
-    padding: 0px;
-    height:30px;
-    width:30px;
-    background: none;
+.regular-checkbox + label {
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
 }
 
-div.options > input:checked +img {  
-    background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
-    background-repeat: no-repeat;
-    background-position:center center;
-    background-size:30px 30px;
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked + label {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.regular-checkbox:checked + label:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}
+
+
+.big-checkbox + label {
+	padding: 18px;
+}
+
+.big-checkbox:checked + label:after {
+	font-size: 28px;
+	left: 6px;
+}
+
+.tag {
+	font-family: Arial, sans-serif;
+	width: 200px;
+	position: relative;
+	top: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	float: left;
+}
+
+.radio-1 {
+	width: 193px;
+}
+
+.button-holder {
+	float: left;
+}
+
+/* RADIO */
+
+.regular-radio {
+	display: none;
+}
+
+.regular-radio + label {
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-radio:checked + label:after {
+	content: ' ';
+	width: 12px;
+	height: 12px;
+	border-radius: 50px;
+	position: absolute;
+	top: 3px;
+	background: #99a1a7;
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+	text-shadow: 0px;
+	left: 3px;
+	font-size: 32px;
+}
+
+.regular-radio:checked + label {
+	background-color: #e9ecee;
+	color: #99a1a7;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.regular-radio + label:active, .regular-radio:checked + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.big-radio + label {
+	padding: 16px;
+}
+
+.big-radio:checked + label:after {
+	width: 24px;
+	height: 24px;
+	left: 4px;
+	top: 4px;
 }
 
 </style>
@@ -317,13 +412,15 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
-		<div class='options'>
+		<div>
+			<div class='tag'>Checkbox Big</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' /><label for='checkbox-2-1'></label>
+		</div>
 		<form action='vidmulti.php' method='post'>
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='submit' value='Submit'>
 		</form>
-		</div>
 		";
 	}
 	
