@@ -1,4 +1,28 @@
-﻿
+﻿<!--ADDDDDDDDDEEEEEEEEEEEEDDDDDDDDDD to restrict users -->
+
+<?php
+    mysql_connect("127.0.0.1","root","");
+    mysql_select_db("webrtc");
+   
+   
+    if(empty($_COOKIE))
+    {
+        echo"
+        <script>
+        alert('Unauthorized user!!');
+        //window.location.href('index.php');    //ERRRORRRRRRRR PAGE!!
+        </script>
+        ";
+        header('Location:404.html'); //ADDDDDDDDDD URLLLLL
+    }
+    $name=$_COOKIE['userdata']['name'];
+    $sender=$_COOKIE['sender'];
+    //echo "a ".$sender." i";
+   
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

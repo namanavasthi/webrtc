@@ -136,7 +136,7 @@ main {
 	margin: -150px auto 0 auto;
 	display: table-cell;
 	vertical-align: middle;
-	color: #000000;
+	color: #ebebeb;
 	padding: 0 8%;
 	text-align: center;
 	position: relative;
@@ -144,7 +144,7 @@ main {
 }
 	.hsContent h2,
 	.copy h2 {
-		color: #000000;
+		color: #ffffff;
 		font-size: 45px;
 		line-height: 48px;
 		/*margin-bottom: 222px;*/
@@ -170,7 +170,7 @@ main {
 	.hsContent p {
 		width: 400px;
 		margin: 0 auto;
-		color: #000000;
+		color: #b2b2b2;
 	}
 	.hsContent a {
 		color: #b2b2b2;
