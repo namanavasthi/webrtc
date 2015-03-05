@@ -531,7 +531,7 @@ $name=array();
 
 		-->
 
-		<div class='cbp-mc-column'><input type='submit' name='submit' value='Submit'></div>
+		<input type='submit' name='submit' value='Submit'>
 
 		</form>
 	</div>
@@ -572,7 +572,7 @@ $name=array();
 		-->
 
 
-		<div class='cbp-mc-column'><input type='submit' name='submit' value='Submit'></div>
+		<input type='submit' name='submit' value='Submit'>
 		</form>
 	</div>
 		";
