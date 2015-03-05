@@ -213,7 +213,7 @@ function refresh1()
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php"><img src="images/webrtc.png"/>Vid3Com</a>
+        <img src="images/webrtc.png"><a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Vid3Com</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
