@@ -98,7 +98,7 @@ label {
 .regular-checkbox + label {
 	background-color: #fafafa;
 	border: 1px solid #cacece;
-	left: 60%;
+	left: 50%;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
 	padding: 9px;
 	border-radius: 3px;
@@ -129,7 +129,7 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
-	left: 60%;
+	left: 50%;
 }
 
 .big-checkbox:checked + label:after {
@@ -140,7 +140,7 @@ label {
 .tag {
 	font-family: Arial, sans-serif;
 	width: 200px;
-	left: 60%;
+	left: 50%;
 	position: relative;
 	font-size: 20px;
 	top: 5px;
@@ -153,7 +153,7 @@ label {
 .heading{
 	font-family: Arial, sans-serif;
 	width: 400px;
-	left: 60%;
+	left: 50%;
 	position: relative;
 	font-size: 40px;
 	top: 5px;
@@ -224,6 +224,57 @@ label {
 	left: 4px;
 	top: 4px;
 }
+
+
+
+
+.cbp-mc-column {
+	width: 33%;
+	padding: 10px 30px;
+	float: left;
+	background: #000000;
+	opacity: 0.4;
+}
+
+
+.cbp-mc-submit-wrap {
+	text-align: center;
+	padding-top: 40px;
+	clear: both;
+}
+
+.cbp-mc-form input.cbp-mc-submit {
+	background: #10689a;
+	border: none;
+	color: #fff;
+	width: auto;
+	cursor: pointer;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 1.1em;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.cbp-mc-form input.cbp-mc-submit:hover {
+	background: #1478b1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
 
@@ -431,7 +482,7 @@ $name=array();
 				</input>
 			</div>
 		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
-		<input type='submit' value='Submit'>
+		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
 		</form>
 	</div>
 		
@@ -459,8 +510,13 @@ $name=array();
 		<!-- 
 			<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 			<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br> 
-		-->
+		
 		<input type='submit' value='Submit'>
+
+		-->
+
+		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
+
 		</form>
 	</div>
 		";
@@ -500,7 +556,7 @@ $name=array();
 		-->
 
 
-		<input type='submit' value='Submit'>
+		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
 		</form>
 	</div>
 		";
