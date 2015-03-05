@@ -146,9 +146,23 @@ label {
 	top: 5px;
 	font-weight: bold;
 	/*text-transform: uppercase;*/
+	display: inline-block;
+	/*float: left;*/
+}
+
+.heading{
+	font-family: Arial, sans-serif;
+	width: 200px;
+	left: 60%;
+	position: relative;
+	font-size: 40px;
+	top: 5px;
+	font-weight: bold;
+	/*text-transform: uppercase;*/
 	display: block;
 	/*float: left;*/
 }
+
 
 .radio-1 {
 	width: 193px;
@@ -407,7 +421,7 @@ $name=array();
 	{
 		echo"
 	<div class='contain'>
-		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		
 		<form action='vidmulti.php' method='post'>
 		<div>
@@ -428,7 +442,7 @@ $name=array();
 	{
 		echo"
 	<div class='contain'>
-		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		<form action='vidmulti.php' method='post'>
 			<div>
 				<div class='tag'>$name[0]</div>
@@ -456,7 +470,7 @@ $name=array();
 	{
 		echo"
 	<div class='contain'>
-		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		
 		<form action='vidmulti.php' method='post'>
 
@@ -496,7 +510,7 @@ $name=array();
 	{
 		echo"
 	<div class='contain'>
-		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		<form action='vidmulti.php' method='post'>
 
 			<div>
