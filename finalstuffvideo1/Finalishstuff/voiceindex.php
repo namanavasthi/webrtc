@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
         <link rel="stylesheet" href="voicestyle.css">
+        <link rel="webrtc icon" href="images/webrtc_ico.ico"/>
         
         <style>
             audio, video {
