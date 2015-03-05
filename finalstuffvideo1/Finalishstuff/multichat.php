@@ -129,13 +129,13 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
-	top: 30px;
+	top: 25px;
 	left: 50%;
 }
 
 .big-checkbox:checked + label:after {
 	font-size: 28px;
-	top: 30px;
+	top: 25px;
 	left: 6px;
 }
 
@@ -497,7 +497,8 @@ $name=array();
 				</input>
 			</div>
 		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
-		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
+		<!-- <div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div> -->
+		<input type='submit' name='submit' value='Submit'>
 		</form>
 	</div>
 		
@@ -530,7 +531,7 @@ $name=array();
 
 		-->
 
-		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
+		<div class='cbp-mc-column'><input type='submit' name='submit' value='Submit'></div>
 
 		</form>
 	</div>
@@ -571,7 +572,7 @@ $name=array();
 		-->
 
 
-		<div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div>
+		<div class='cbp-mc-column'><input type='submit' name='submit' value='Submit'></div>
 		</form>
 	</div>
 		";
@@ -619,7 +620,7 @@ $name=array();
 		-->
 
 
-		<input type='submit' value='Submit'>
+		<input type='submit' name='submit' value='Submit'>
 		</form>
 	</div>
 		";
