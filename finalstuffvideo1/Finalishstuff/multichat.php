@@ -135,7 +135,7 @@ label {
 	font-family: Arial, sans-serif;
 	width: 200px;
 	position: relative;
-	font-size: 200px;
+	font-size: 20px;
 	top: 5px;
 	font-weight: bold;
 	/*text-transform: uppercase;*/
