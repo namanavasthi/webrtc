@@ -275,8 +275,11 @@ input[type=submit] {
 	width: 80px;
 	height: 40px;
 	-webkit-border-radius: 5px;
-	border-radius: 5px; 
+	border-radius: 5px;
+	text-transform: uppercase; 
 	left: 50%;
+	font-size: 1.1em;
+	letter-spacing: 1px;
 }
 
 
