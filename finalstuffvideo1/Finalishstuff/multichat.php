@@ -104,6 +104,7 @@ label {
 	border-radius: 3px;
 	display: inline-block;
 	position: relative;
+	top: 25px;
 }
 
 .regular-checkbox + label:active, .regular-checkbox:checked + label:active {
@@ -180,6 +181,7 @@ label {
 
 .regular-radio {
 	display: none;
+	top: 25px;
 }
 
 .regular-radio + label {
@@ -200,7 +202,8 @@ label {
 	height: 12px;
 	border-radius: 50px;
 	position: absolute;
-	top: 3px;
+	/*top: 3px;*/
+	top: 25px;
 	background: #99a1a7;
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
 	text-shadow: 0px;
@@ -213,21 +216,25 @@ label {
 	color: #99a1a7;
 	border: 1px solid #adb8c0;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+	top: 25px;
 }
 
 .regular-radio + label:active, .regular-radio:checked + label:active {
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+	top: 25px;
 }
 
 .big-radio + label {
 	padding: 16px;
+	top: 25px;
 }
 
 .big-radio:checked + label:after {
 	width: 24px;
 	height: 24px;
 	left: 4px;
-	top: 4px;
+	/*top: 4px;*/
+	top: 25px;
 }
 
 
