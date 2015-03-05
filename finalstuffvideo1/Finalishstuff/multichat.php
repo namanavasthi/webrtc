@@ -567,6 +567,9 @@ $name=array();
 					<label for='checkbox-2-3'></label>
 				</input>
 			</div>
+			<div>
+				<input type='submit' name='submit' value='Submit'>
+			</div>
 
 		<!-- 
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
@@ -575,7 +578,7 @@ $name=array();
 		-->
 
 
-		<input type='submit' name='submit' value='Submit'>
+		
 		</form>
 	</div>
 		";
