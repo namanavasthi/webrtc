@@ -6,8 +6,31 @@ setcookie('friendname',$lala,$expire,'','','',TRUE);
 //session_start();
 
 //connect to db
+
 mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
 mysql_select_db("webrtc");
+
+
+$que=mysql_query("SELECT `status` FROM users WHERE `fullname`='$lala'");
+WHILE($rows=mysql_fetch_array($que)):
+    $userstatus=$rows['status'];
+endwhile;
+//echo $userstatus;
+
+if($userstatus=='Busy')
+{
+    echo"
+    <script>
+    alert('This user is busy right now, please try again later!');
+    window.location.href='homepage.php';
+    </script>
+    ";
+}
+
+//$image=mysql_query("SELECT * FROM users where firstname='$name'");
+//$image=mysql_fetch_assoc($image);
+//$friendimage=$image['image'];
+
 
 //$image=mysql_query("SELECT * FROM users where firstname='$name'");
 //$image=mysql_fetch_assoc($image);
