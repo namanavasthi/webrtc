@@ -87,6 +87,10 @@ label {
 	display: inline;
 }
 
+div {
+	float: left;
+}
+
 .regular-checkbox {
 	display: none;
 }
@@ -400,7 +404,7 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
-		<div class='options'>
+		
 		<form action='vidmulti.php' method='post'>
 		<div>
 				<div class='tag'>$name[0]</div>
@@ -411,7 +415,7 @@ $name=array();
 		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
 		<input type='submit' value='Submit'>
 		</form>
-		</div>
+		
 		";
 	}
 	
