@@ -98,6 +98,7 @@ label {
 .regular-checkbox + label {
 	background-color: #fafafa;
 	border: 1px solid #cacece;
+	left: 60%;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
 	padding: 9px;
 	border-radius: 3px;
@@ -128,6 +129,7 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
+	left: 60%;
 }
 
 .big-checkbox:checked + label:after {
@@ -138,7 +140,7 @@ label {
 .tag {
 	font-family: Arial, sans-serif;
 	width: 200px;
-	left: 50%;
+	left: 60%;
 	position: relative;
 	font-size: 20px;
 	top: 5px;
