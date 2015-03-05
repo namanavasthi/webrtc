@@ -49,6 +49,7 @@
     width: 45px;
     height: 35px;
     margin-top: -7px;
+    float: left;
     margin-right: 3px;
   }
 </style>

@@ -54,6 +54,7 @@ mysql_select_db("webrtc");
     height: 35px;
     margin-top: -7px;
     margin-right: 3px;
+    float: left;
   }
 </style>
 
