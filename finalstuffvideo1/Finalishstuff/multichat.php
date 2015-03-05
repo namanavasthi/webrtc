@@ -138,7 +138,7 @@ label {
 
 .big-checkbox:checked + label:after {
 	font-size: 35px;
-	top: -15px;
+	top: -12px;
 	left: 6px;
 }
 
