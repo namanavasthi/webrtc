@@ -275,7 +275,6 @@ label {
 
 
 
-
 </style>
 
 
@@ -474,7 +473,7 @@ $name=array();
 	<div class='contain'>
 		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		
-		<form action='vidmulti.php' method='post'>
+		<form class='cbp-mc-form' action='vidmulti.php' method='post'>
 		<div>
 				<div class='tag'>$name[0]</div>
 				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
@@ -494,7 +493,8 @@ $name=array();
 		echo"
 	<div class='contain'>
 		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
-		<form action='vidmulti.php' method='post'>
+		<!-- <form action='vidmulti.php' method='post'> -->
+		<form class='cbp-mc-form' action='vidmulti.php' method='post'>
 			<div>
 				<div class='tag'>$name[0]</div>
 				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
@@ -528,7 +528,7 @@ $name=array();
 	<div class='contain'>
 		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
 		
-		<form action='vidmulti.php' method='post'>
+		<form class='cbp-mc-form' action='vidmulti.php' method='post'>
 
 			<div>
 				<div class='tag'>$name[0]</div>
@@ -567,7 +567,7 @@ $name=array();
 		echo"
 	<div class='contain'>
 		<div class='heading'>ADD FRIENDS TO THE MULTICHAT:</div> <br>
-		<form action='vidmulti.php' method='post'>
+		<form class='cbp-mc-form' action='vidmulti.php' method='post'>
 
 			<div>
 				<div class='tag'>$name[0]</div>
