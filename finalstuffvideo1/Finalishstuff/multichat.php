@@ -115,7 +115,9 @@ label {
 .regular-checkbox:checked + label {
 	background-color: #e9ecee;
 	border: 1px solid #adb8c0;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	/*box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);*/
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 2px 0px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+
 	/*top: 25px;*/
 	color: #99a1a7;
 }
