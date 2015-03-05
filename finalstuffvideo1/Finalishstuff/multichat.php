@@ -138,6 +138,7 @@ label {
 .tag {
 	font-family: Arial, sans-serif;
 	width: 200px;
+	left: 50%;
 	position: relative;
 	font-size: 20px;
 	top: 5px;
@@ -403,6 +404,7 @@ $name=array();
 		else if($count==1)
 	{
 		echo"
+	<div class='contain'>
 		ADD FRIENDS TO THE MULTICHAT: <br>
 		
 		<form action='vidmulti.php' method='post'>
@@ -415,6 +417,7 @@ $name=array();
 		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
 		<input type='submit' value='Submit'>
 		</form>
+	</div>
 		
 		";
 	}
