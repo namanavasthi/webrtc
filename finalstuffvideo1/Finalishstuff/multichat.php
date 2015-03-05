@@ -412,13 +412,18 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
-		<div>
-			<div class='tag'>$name[0]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' /><label for='checkbox-2-1'></label>
-		</div>
+
 		<form action='vidmulti.php' method='post'>
-		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
-		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
+			<div>
+				<div class='tag'>$name[0]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
+					<label for='checkbox-2-1'>$name[0]</label>
+				</input>
+			</div>
+		<!-- 
+			<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
+			<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br> 
+		-->
 		<input type='submit' value='Submit'>
 		</form>
 		";
