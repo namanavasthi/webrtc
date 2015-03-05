@@ -106,11 +106,12 @@ endwhile;
 		</style>
 
 <style>
-  .navbar-brand a img{
+  .navbar-brand img{
     width: 45px;
     height: 35px;
     margin-top: -7px;
     margin-right: 3px;
+    float: left;
   }
 </style>
 
