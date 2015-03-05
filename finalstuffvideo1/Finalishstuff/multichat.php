@@ -514,6 +514,7 @@ $name=array();
 				</input>
 
 			</div>
+			<br><br>
 			<div>
 				<input type='submit' name='submit' value='Submit'>
 			</div>
@@ -546,6 +547,7 @@ $name=array();
 					<label for='checkbox-2-2'></label>
 				</input>
 			</div>
+			<br><br>
 			<div>
 				<input type='submit' name='submit' value='Submit'>
 			</div>
@@ -590,6 +592,7 @@ $name=array();
 					<label for='checkbox-2-3'></label>
 				</input>
 			</div>
+			<br><br>
 			<div>
 				<input type='submit' name='submit' value='Submit'>
 			</div>
@@ -638,6 +641,7 @@ $name=array();
 					<label for='checkbox-2-4'></label>
 				</input>
 			</div>
+			<br><br>
 			<div>
 				<input type='submit' name='submit' value='Submit'>
 			</div>
