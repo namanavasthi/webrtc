@@ -129,11 +129,13 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
+	top: -20px;
 	left: 50%;
 }
 
 .big-checkbox:checked + label:after {
 	font-size: 28px;
+	top: -20px;
 	left: 6px;
 }
 
@@ -227,7 +229,7 @@ label {
 
 
 
-
+/*
 .cbp-mc-column {
 	width: 33%;
 	padding: 10px 30px;
@@ -235,7 +237,7 @@ label {
 	background: #000000;
 	opacity: 0.4;
 }
-
+*/
 
 .cbp-mc-submit-wrap {
 	text-align: center;
