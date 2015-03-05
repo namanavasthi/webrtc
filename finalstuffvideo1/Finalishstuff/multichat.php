@@ -137,9 +137,9 @@ label {
 	position: relative;
 	top: 5px;
 	font-weight: bold;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	display: block;
-	float: left;
+	/*float: left;*/
 }
 
 .radio-1 {
@@ -413,7 +413,7 @@ $name=array();
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
 		<div>
-			<div class='tag'>Checkbox Big</div>
+			<div class='tag'>$name[0]</div>
 				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' /><label for='checkbox-2-1'></label>
 		</div>
 		<form action='vidmulti.php' method='post'>
