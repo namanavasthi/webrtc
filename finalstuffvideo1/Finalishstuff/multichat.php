@@ -293,6 +293,7 @@ input[type=submit] {
 	left: 50%;
 	font-size: 15px;
 	letter-spacing: 1px;
+	position: relative;
 }
 
 
