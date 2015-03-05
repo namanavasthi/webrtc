@@ -87,7 +87,7 @@ label {
 	display: inline;
 }
 
-div {
+.contain {
 	float: left;
 }
 
@@ -422,8 +422,8 @@ $name=array();
 	else if($count==2)
 	{
 		echo"
+	<div class='contain'>
 		ADD FRIENDS TO THE MULTICHAT: <br>
-
 		<form action='vidmulti.php' method='post'>
 			<div>
 				<div class='tag'>$name[0]</div>
@@ -443,14 +443,16 @@ $name=array();
 		-->
 		<input type='submit' value='Submit'>
 		</form>
+	</div>
 		";
 	}
 	
 	else if($count==3)
 	{
 		echo"
+	<div class='contain'>
 		ADD FRIENDS TO THE MULTICHAT: <br>
-		<div class='options'>
+		
 		<form action='vidmulti.php' method='post'>
 
 			<div>
@@ -481,15 +483,15 @@ $name=array();
 
 		<input type='submit' value='Submit'>
 		</form>
-		</div>
+	</div>
 		";
 	}
 	
 	else if($count==4)
 	{
 		echo"
+	<div class='contain'>
 		ADD FRIENDS TO THE MULTICHAT: <br>
-		<div class='options'>
 		<form action='vidmulti.php' method='post'>
 
 			<div>
@@ -529,7 +531,7 @@ $name=array();
 
 		<input type='submit' value='Submit'>
 		</form>
-		</div>
+	</div>
 		";
 	}
 
