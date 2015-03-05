@@ -75,6 +75,53 @@
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+
+
+
+<style>
+
+div.options > input {
+    visibility: hidden;
+}
+
+div.options {
+    display: block;
+    margin: 0 0 0 -10px;
+    padding: 0 0 20px 0;  
+    height: 20px;
+    width: 150px;
+
+}
+
+div.options > img {
+    display: inline-block;
+    padding: 0px;
+    height:30px;
+    width:30px;
+    background: none;
+}
+
+div.options > input:checked +img {  
+    background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size:30px 30px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</head>
 
 	
@@ -257,10 +304,12 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='options'>
 		<form action='vidmulti.php' method='post'>
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='submit' value='Submit'>
 		</form>
+		</div>
 		";
 	}
 	
@@ -268,11 +317,13 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='options'>
 		<form action='vidmulti.php' method='post'>
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='submit' value='Submit'>
 		</form>
+		</div>
 		";
 	}
 	
@@ -280,12 +331,14 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='options'>
 		<form action='vidmulti.php' method='post'>
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='checkbox' name='check_list[$name[2]]'>$name[2]</input> <br>
 		<input type='submit' value='Submit'>
 		</form>
+		</div>
 		";
 	}
 	
@@ -293,6 +346,7 @@ $name=array();
 	{
 		echo"
 		ADD FRIENDS TO THE MULTICHAT: <br>
+		<div class='options'>
 		<form action='vidmulti.php' method='post'>
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
@@ -300,6 +354,7 @@ $name=array();
 		<input type='checkbox' name='check_list[$name[3]]'>$name[3]</input> <br>
 		<input type='submit' value='Submit'>
 		</form>
+		</div>
 		";
 	}
 
