@@ -129,13 +129,13 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
-	top: -20px;
+	top: 40px;
 	left: 50%;
 }
 
 .big-checkbox:checked + label:after {
 	font-size: 28px;
-	top: -20px;
+	top: 40px;
 	left: 6px;
 }
 
