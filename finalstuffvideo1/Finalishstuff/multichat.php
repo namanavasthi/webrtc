@@ -152,7 +152,7 @@ label {
 
 .heading{
 	font-family: Arial, sans-serif;
-	width: 200px;
+	width: 400px;
 	left: 60%;
 	position: relative;
 	font-size: 40px;
