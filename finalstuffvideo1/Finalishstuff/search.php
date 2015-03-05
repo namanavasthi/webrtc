@@ -12,7 +12,11 @@
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+
+		<link rel="webrtc icon" href="images/webrtc_ico.ico"/>
+
 	</head>
+
 	<body>
 		<div class="container">
 			<!--<aside class="sidebar clearfix">

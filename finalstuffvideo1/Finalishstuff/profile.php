@@ -33,6 +33,8 @@ mysql_select_db("webrtc");
 		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
 		<link href="css/bootstrap.css" rel="stylesheet">
 
+		<link rel="webrtc icon" href="images/webrtc_ico.ico"/>
+
 <style>
       div.container-fluid{
         /*margin: 0;*/
@@ -44,6 +46,16 @@ mysql_select_db("webrtc");
         /*display: compact;*/
       }
     </style>
+
+
+    <style>
+  .navbar-brand img{
+    width: 45px;
+    height: 35px;
+    margin-top: -7px;
+    margin-right: 3px;
+  }
+</style>
 
 		<script src="js/snap.svg-min.js"></script>
 
@@ -121,7 +133,7 @@ mysql_select_db("webrtc");
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php"><img src="images/webrtc.png">Vid3Com</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

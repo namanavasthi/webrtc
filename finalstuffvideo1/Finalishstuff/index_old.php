@@ -12,6 +12,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/indexmaincss.css" rel="stylesheet">
+
+    <style>
+  .navbar-brand img{
+    width: 45px;
+    height: 35px;
+    margin-top: -7px;
+    margin-right: 3px;
+  }
+</style>
   </head>
 
 
@@ -26,7 +35,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php">Web RTC</a>
+        <a class="navbar-brand" href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/index.php"><img src="images/webrtc.png">Vid3Com</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
