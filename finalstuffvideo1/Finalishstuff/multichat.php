@@ -280,6 +280,7 @@ input[type=submit] {
 	left: 50%;
 	font-size: 15px;
 	letter-spacing: 1px;
+	position: relative;
 }
 
 .submit{
@@ -511,10 +512,16 @@ $name=array();
 				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
 					<label for='checkbox-2-1'></label>
 				</input>
+
+			</div>
+			<div>
+				<input type='submit' name='submit' value='Submit'>
 			</div>
 		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
-		<!-- <div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div> -->
-		<input type='submit' name='submit' value='Submit'>
+		<!-- <div class='cbp-mc-column'><input type='submit' name='ubmit' value='Submit'></div> 
+			 <input type='submit' name='submit' value='Submit'>  
+		-->
+		
 		</form>
 	</div>
 		
@@ -539,15 +546,18 @@ $name=array();
 					<label for='checkbox-2-2'></label>
 				</input>
 			</div>
+			<div>
+				<input type='submit' name='submit' value='Submit'>
+			</div>
 		<!-- 
 			<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 			<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br> 
 		
-		<input type='submit' value='Submit'>
+		<input type='submit' class='submit' value='Submit'>
 
 		-->
 
-		<input type='submit' class='submit' value='Submit'>
+		
 
 		</form>
 	</div>
@@ -628,6 +638,9 @@ $name=array();
 					<label for='checkbox-2-4'></label>
 				</input>
 			</div>
+			<div>
+				<input type='submit' name='submit' value='Submit'>
+			</div>
 
 
 
@@ -636,10 +649,11 @@ $name=array();
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='checkbox' name='check_list[$name[2]]'>$name[2]</input> <br>
 		<input type='checkbox' name='check_list[$name[3]]'>$name[3]</input> <br>
+		<input type='submit' name='submit' value='Submit'>
 		-->
 
 
-		<input type='submit' name='submit' value='Submit'>
+		
 		</form>
 	</div>
 		";
