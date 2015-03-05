@@ -129,13 +129,13 @@ label {
 
 .big-checkbox + label {
 	padding: 18px;
-	top: 40px;
+	top: 30px;
 	left: 50%;
 }
 
 .big-checkbox:checked + label:after {
 	font-size: 28px;
-	top: 40px;
+	top: 30px;
 	left: 6px;
 }
 
@@ -272,8 +272,11 @@ label {
 input[type=submit] {
 	padding:5px 15px; background:#ccc; border:0 none;
 	cursor:pointer;
+	width: 80px;
+	height: 40px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px; 
+	left: 50%;
 }
 
 
