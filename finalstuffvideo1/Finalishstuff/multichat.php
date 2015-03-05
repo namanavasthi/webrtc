@@ -278,7 +278,7 @@ input[type=submit] {
 	border-radius: 5px;
 	text-transform: uppercase; 
 	left: 50%;
-	font-size: 1.1em;
+	font-size: 15px;
 	letter-spacing: 1px;
 }
 
