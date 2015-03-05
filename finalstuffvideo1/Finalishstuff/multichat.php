@@ -428,8 +428,8 @@ $name=array();
 			</div>
 			<div>
 				<div class='tag'>$name[1]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-2' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-2'></label>
 				</input>
 			</div>
 		<!-- 
@@ -456,14 +456,14 @@ $name=array();
 			</div>
 			<div>
 				<div class='tag'>$name[1]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-2' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-2'></label>
 				</input>
 			</div>
 			<div>
 				<div class='tag'>$name[2]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-3' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
+					<label for='checkbox-2-3'></label>
 				</input>
 			</div>
 
@@ -495,20 +495,20 @@ $name=array();
 			</div>
 			<div>
 				<div class='tag'>$name[1]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-2' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-2'></label>
 				</input>
 			</div>
 			<div>
 				<div class='tag'>$name[2]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-3' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
+					<label for='checkbox-2-3'></label>
 				</input>
 			</div>
 			<div>
 				<div class='tag'>$name[3]</div>
-				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[3]]'>
-					<label for='checkbox-2-1'></label>
+				<input type='checkbox' id='checkbox-2-4' class='regular-checkbox big-checkbox' name='check_list[$name[3]]'>
+					<label for='checkbox-2-4'></label>
 				</input>
 			</div>
 
