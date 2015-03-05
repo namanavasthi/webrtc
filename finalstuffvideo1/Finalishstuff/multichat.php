@@ -401,7 +401,13 @@ $name=array();
 		ADD FRIENDS TO THE MULTICHAT: <br>
 		<div class='options'>
 		<form action='vidmulti.php' method='post'>
-		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
+		<div>
+				<div class='tag'>$name[0]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+		<!-- <input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br> -->
 		<input type='submit' value='Submit'>
 		</form>
 		</div>
@@ -441,9 +447,33 @@ $name=array();
 		ADD FRIENDS TO THE MULTICHAT: <br>
 		<div class='options'>
 		<form action='vidmulti.php' method='post'>
+
+			<div>
+				<div class='tag'>$name[0]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[1]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[2]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+
+		<!-- 
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='checkbox' name='check_list[$name[2]]'>$name[2]</input> <br>
+		-->
+
+
 		<input type='submit' value='Submit'>
 		</form>
 		</div>
@@ -456,10 +486,42 @@ $name=array();
 		ADD FRIENDS TO THE MULTICHAT: <br>
 		<div class='options'>
 		<form action='vidmulti.php' method='post'>
+
+			<div>
+				<div class='tag'>$name[0]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[1]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[2]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[2]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[3]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[3]]'>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+
+
+
+		<!-- 
 		<input type='checkbox' name='check_list[$name[0]]'>$name[0]</input> <br>
 		<input type='checkbox' name='check_list[$name[1]]'>$name[1]</input> <br>
 		<input type='checkbox' name='check_list[$name[2]]'>$name[2]</input> <br>
 		<input type='checkbox' name='check_list[$name[3]]'>$name[3]</input> <br>
+		-->
+
+
 		<input type='submit' value='Submit'>
 		</form>
 		</div>
