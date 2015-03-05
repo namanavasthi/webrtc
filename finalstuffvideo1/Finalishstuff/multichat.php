@@ -232,12 +232,9 @@ $a=$_COOKIE['userdata']['email'];
 	//echo $name;
 $a=hash("md5",$a);
 
-//ADDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD TODAAAAAAAAAAYYYYYYYYYYY
-	$query=mysql_query("SELECT `fullname`,`imagename`,`imagesmall` FROM `users` WHERE `status`='Online' AND `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
-	
-	
-	$name=array();
-	$image=array();
+$query=mysql_query("SELECT * FROM friends WHERE userid='$a' AND friendname in (SELECT fullname FROM users WHERE status='Online')");
+
+$name=array();
 	$i=0;
 	$count=mysql_num_rows($query);
 	WHILE($rows = mysql_fetch_array($query)):
