@@ -122,7 +122,7 @@ label {
 
 .regular-checkbox:checked + label:after {
 	content: '\2714';
-	font-size: 14px;
+	font-size: 16px;
 	position: absolute;
 	/*top: 25px;*/
 	left: 3px;
