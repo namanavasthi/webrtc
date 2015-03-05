@@ -282,6 +282,18 @@ input[type=submit] {
 	letter-spacing: 1px;
 }
 
+.submit{
+	padding:5px 15px; background:#ccc; border:0 none;
+	cursor:pointer;
+	width: 80px;
+	height: 40px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase; 
+	left: 50%;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
 
 
 
@@ -534,7 +546,7 @@ $name=array();
 
 		-->
 
-		<input type='submit' name='submit' value='Submit'>
+		<input type='submit' class='submit' value='Submit'>
 
 		</form>
 	</div>
