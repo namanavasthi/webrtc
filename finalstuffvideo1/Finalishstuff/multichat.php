@@ -417,7 +417,13 @@ $name=array();
 			<div>
 				<div class='tag'>$name[0]</div>
 				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[0]]'>
-					<label for='checkbox-2-1'>$name[0]</label>
+					<label for='checkbox-2-1'></label>
+				</input>
+			</div>
+			<div>
+				<div class='tag'>$name[1]</div>
+				<input type='checkbox' id='checkbox-2-1' class='regular-checkbox big-checkbox' name='check_list[$name[1]]'>
+					<label for='checkbox-2-1'></label>
 				</input>
 			</div>
 		<!-- 

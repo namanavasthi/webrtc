@@ -258,11 +258,11 @@ setcookie('friends', $json);
                     }
                     
                     else {
-                    echo"FRIENDS SELECTED ARE: <br>";
-                    for($i=0;$i<sizeof($name);$i++)
-                    {
-                        echo $name[$i]."<br>";
-                    }
+                    // echo"FRIENDS SELECTED ARE: <br>";
+                    // for($i=0;$i<sizeof($name);$i++)
+                    // {
+                    //     echo $name[$i]."<br>";
+                    // }
                 
                 
                 echo"
