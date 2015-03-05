@@ -48,16 +48,16 @@
             <li><a href="#">Home</a></li>
             <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/aboutus/aboutus.html" target="ext">About</a></li>
             <li><a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/contactus.php">Contact</a></li>
-            <li>
+            <!-- <li> -->
               <!-- <div class="container"> -->
-              <a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php">
+              <!-- <a href="http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/notifications.php"> -->
               <!-- <button class="btn btn-default btn-lg btn-link" style="font-size:36px;"> -->
-              <span class="glyphicon glyphicon-comment"></span>
-              Notification
+              <!-- <span class="glyphicon glyphicon-comment"></span> -->
+              <!-- Notification -->
               <!-- </button> -->
               <!-- </div> -->
-              </a>
-            </li>
+              <!-- </a> -->
+            <!-- </li> -->
           </ul>
         </div>
 
