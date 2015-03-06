@@ -8,10 +8,21 @@
 		<link rel="stylesheet" type="text/css" href="css/searchresultsnormalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/searchresultsdemo.css" />
 		<link rel="stylesheet" type="text/css" href="css/searchresults.css" />
-		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" /> -->
 
 		<link rel="webrtc icon" href="images/webrtc_ico.ico"/>
 		
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/homepagenormalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagedemo.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagesidebar.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagecomponent2_maincontent.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/homepagedemo_rightbar.css" />
+		<link rel="stylesheet" type="text/css" href="css/homepagecomponent_rightbar.css" />
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link rel="webrtc icon" href="images/webrtc_ico.ico"/>
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
