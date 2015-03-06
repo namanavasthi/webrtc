@@ -6,26 +6,49 @@
     }
 }
 */
+// $name=array();
+// $i=0;
+// if (!empty($_POST))
+// {
+// 	foreach($_POST['check_list'] as $x => $x_value) 
+// 	{
+// 		$name[$i]=$x;
+// 		$i++;
+// 	}
+// }
+
+// else
+// {
+// 	foreach($_GET['check_list'] as $x => $x_value) 
+// 	{
+// 		$name[$i]=$x;
+// 		$i++;
+// 	}
+
+// }
+
+
 $name=array();
 $i=0;
 if (!empty($_POST))
 {
-	foreach($_POST['check_list'] as $x => $x_value) 
-	{
-		$name[$i]=$x;
-		$i++;
-	}
+    foreach($_POST['check_list'] as $x => $x_value)
+    {
+        $name[$i]=$x;
+        $i++;
+    }
 }
 
-else
+else if(!empty($_GET))
 {
-	foreach($_GET['check_list'] as $x => $x_value) 
-	{
-		$name[$i]=$x;
-		$i++;
-	}
+    foreach($_GET['check_list'] as $x => $x_value)
+    {
+        $name[$i]=$x;
+        $i++;
+    }
 
 }
+
 
 $expire=time()+60*60*24;
 setcookie('count',sizeof($name),$expire);
@@ -248,12 +271,17 @@ setcookie('friends', $json);
                 <font color='blue'>
                 <?php
                     $num=sizeof($name);
-                    if($num>4)
+                    if($num==0)
+                    {
+                        echo "You haven't selected any participants<br><br>";
+                        echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
+                    }
+                    else if($num>4)
                     {
                         echo"
                 
                 
-                        Please select only 5 participants<br><br>";
+                        Please select only 4 participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
                     
