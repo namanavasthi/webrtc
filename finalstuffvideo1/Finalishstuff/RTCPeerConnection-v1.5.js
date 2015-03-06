@@ -11,7 +11,7 @@ var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAge
 (function() {
     window.RTCPeerConnection = function(options) {
         var w = window,
-            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection,
+            PeerConnection = w.mozRTCPeerConnection || w.webkitRTCPeerConnection || w.RTCPeerConnection,
             SessionDescription = w.mozRTCSessionDescription || w.RTCSessionDescription,
             IceCandidate = w.mozRTCIceCandidate || w.RTCIceCandidate;
 

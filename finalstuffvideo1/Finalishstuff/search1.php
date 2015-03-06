@@ -93,7 +93,8 @@
 					<!-- </button> -->
 					<!-- <span class="badge badge-notify"> -->
 						<?php 
-							mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+							//mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+							mysql_connect("localhost","root","");
 							mysql_select_db("webrtc");
 							$name=$_COOKIE['userdata']['email'];
 							//$name='emma@gmail.com';
@@ -180,7 +181,8 @@ Removed:  include('usercookie.php');
 		<div class="container">
 		<?php
 			//database connection
-			mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+			//mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+			mysql_connect("localhost","root","");
 			mysql_select_db("webrtc");
 			
 			$username= $_COOKIE['userdata']['email'];
@@ -196,20 +198,48 @@ Removed:  include('usercookie.php');
 				
 			else 
 			{	
-				$query=mysql_query("SELECT * FROM `users` WHERE `fullname` NOT IN (SELECT `friendname` FROM `friends` WHERE `userid`='$username')");
-				
+				//$query=mysql_query("SELECT * FROM `users` WHERE `fullname` NOT IN (SELECT `friendname` FROM `friends` WHERE `userid`='$username')");
+				$query=mysql_query("SELECT * FROM `friends` WHERE username='$sendername' AND friendname='$friendname'");
+				$count=mysql_num_rows($query);
 				WHILE ($rows=mysql_fetch_array($query)):
-				
-				if($friendname!=$rows['fullname']){
-					$query = mysql_query("INSERT INTO friend_request (username,friendname) VALUES('$username','$friendemailid')");
-					$query1= mysql_query("INSERT INTO notifications (username,missedcall,friendrequest,friendrequestemailid,viewstatus) VALUES('$friendemailid','','$sendername','$username','unseen')");
-					echo"<h2><font color='blue'>Your friend request has been sent to $friendname! </h2>";
-					header('Refresh: 1;url=http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/homepage.php');
-				}
-				else {}
+					$a=$rows['username'];
+					echo $a;
+					echo $count;
+					$b=$rows['friendname'];
+					echo $b;
+					
 				endwhile;
+				//echo "Count from friends".$count;
+				if($count==1)
+				{
+					echo"<h2><font color='blue'>You are already friends with $friendname!</font></h2>";
+				}
 				
-			}	
+				else 
+				{
+					$query1=mysql_query("SELECT * FROM `notifications` WHERE username='$friendemailid' AND friendrequestemailid='$username'");
+					$count=mysql_num_rows($query1);
+					echo $count;
+					if($count>=1)
+					{
+						echo "<h2><font color='blue'>A request has already been sent!</font></h2>";
+					}
+					else 
+					{
+						
+						//WHILE ($rows=mysql_fetch_array($query)):
+						
+				//if($friendname!=$rows['fullname']){
+							$query2 = mysql_query("INSERT INTO friend_request (username,friendname) VALUES('$username','$friendemailid')");
+							$query3= mysql_query("INSERT INTO notifications (username,missedcall,friendrequest,friendrequestemailid,viewstatus) VALUES('$friendemailid','','$sendername','$username','unseen')");
+							echo"<h2><font color='blue'>Success! Your friend request has been sent to $friendname! </h2>";
+					
+					//endwhile;
+					}
+				
+				}
+			}
+			
 			
 			
 		?>
