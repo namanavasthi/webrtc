@@ -204,7 +204,7 @@ Removed:  include('usercookie.php');
 				WHILE ($rows=mysql_fetch_array($query)):
 					$a=$rows['username'];
 					echo $a;
-					echo $count;
+					// echo $count;
 					$b=$rows['friendname'];
 					echo $b;
 					
@@ -232,7 +232,7 @@ Removed:  include('usercookie.php');
 				//if($friendname!=$rows['fullname']){
 							$query2 = mysql_query("INSERT INTO friend_request (username,friendname) VALUES('$username','$friendemailid')");
 							$query3= mysql_query("INSERT INTO notifications (username,missedcall,friendrequest,friendrequestemailid,viewstatus) VALUES('$friendemailid','','$sendername','$username','unseen')");
-							echo"<h2><font color='blue'>Success! Your friend request has been sent to $friendname! </h2>";
+							echo"<h2><font color='blue'>Your friend request has been sent to $friendname! </h2>";
 					
 					//endwhile;
 					}
