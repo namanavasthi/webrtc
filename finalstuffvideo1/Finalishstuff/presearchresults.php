@@ -1,3 +1,7 @@
+<?php
+include('search.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
@@ -146,7 +150,7 @@
 
 
 	<?php
-	include('search.php');
+	
 	
 	$sval=$_GET["sval"];  
 	
