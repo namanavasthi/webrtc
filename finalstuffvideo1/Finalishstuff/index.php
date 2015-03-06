@@ -207,7 +207,7 @@
       if (!$connect) {
         die("Connection failed: " .mysql_error());
       } 
-      echo 'Connected successfully';
+      // echo 'Connected successfully';
 
       //connect to the datatbase
       mysql_select_db("webrtc");
