@@ -277,6 +277,12 @@ setcookie('friends', $json);
                         echo "<p>$num  $name</p><br>";
                         echo "You haven't selected any participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
+                        foreach($_POST['check_list'] as $x => $x_value)
+                            {
+                                $name[$i]=$x;
+                                echo $name[$i];
+                                $i++;
+                            }
                     }
                     else if($num>4)
                     {
@@ -310,6 +316,13 @@ setcookie('friends', $json);
                             
                          
                          ";
+
+                         foreach($_POST['check_list'] as $x => $x_value)
+                            {
+                                $name[$i]=$x;
+                                echo $name[$i];
+                                $i++;
+                            }
             
                     }
                 ?>
