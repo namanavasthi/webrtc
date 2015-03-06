@@ -336,7 +336,8 @@
 
 
       // added today
-
+      mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+mysql_select_db("webrtc");
       $uname=$_GET['uname'];
 
       echo $uname;
