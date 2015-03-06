@@ -340,21 +340,21 @@
       mysql_select_db("webrtc");
       $uname=$_GET['uname'];
 
-      echo $uname;
+      // echo $uname;
 
       $query1=mysql_query("SELECT `status` FROM users WHERE fullname='$uname'");
 
-      echo "success";
+      // echo "success";
 
       WHILE ($rows=mysql_fetch_array($query1)):
         $status=$rows['status'];
-        echo $status;
+        // echo $status;
         if($status=='Online' or $status=='Busy')
         {
           $hasha = $_COOKIE['userdata']['email'];
           $hasha=hash('md5',$hasha);
           $query=mysql_query("UPDATE users SET status='Offline' WHERE hashemail='$hasha'");
-          echo "query ran";
+          // echo "query ran";
         }
 
       endwhile;
