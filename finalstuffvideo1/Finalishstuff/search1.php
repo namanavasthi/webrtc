@@ -203,10 +203,10 @@ Removed:  include('usercookie.php');
 				$count=mysql_num_rows($query);
 				WHILE ($rows=mysql_fetch_array($query)):
 					$a=$rows['username'];
-					echo $a;
+					// echo $a;
 					// echo $count;
 					$b=$rows['friendname'];
-					echo $b;
+					// echo $b;
 					
 				endwhile;
 				//echo "Count from friends".$count;
@@ -219,7 +219,7 @@ Removed:  include('usercookie.php');
 				{
 					$query1=mysql_query("SELECT * FROM `notifications` WHERE username='$friendemailid' AND friendrequestemailid='$username'");
 					$count=mysql_num_rows($query1);
-					echo $count;
+					// echo $count;
 					if($count>=1)
 					{
 						echo "<h2><font color='blue'>A request has already been sent!</font></h2>";
