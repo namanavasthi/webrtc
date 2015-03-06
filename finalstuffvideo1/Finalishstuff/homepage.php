@@ -252,7 +252,8 @@ function refresh1()
           	<?php
 				$cookie_name="logoutlink1";
 				if(!isset($_COOKIE[$cookie_name])) {
-				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
+					$name=$_COOKIE['userdata']['name']);
+				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?uname='.$name alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 				} else {
 					// $nameee="naman";
 				    $link=$_COOKIE[$cookie_name];
