@@ -151,8 +151,8 @@ function refresh()
 	<!--ADDDDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDD FOR DB PART!!!! -->
 	
 	<?php 
-						mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-						mysql_select_db("webrtc");
+						// mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+						// mysql_select_db("webrtc");
 					
 							if($_COOKIE['friendname']=='NULL' or $_COOKIE['friendname']=='')
 							{
@@ -161,6 +161,8 @@ function refresh()
 				
 							
 							else	{
+                                mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+                                mysql_select_db("webrtc");
 								
 								$a=$_COOKIE['userdata']['email'];
 								//echo $name;
