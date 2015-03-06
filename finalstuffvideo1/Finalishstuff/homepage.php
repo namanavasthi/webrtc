@@ -255,6 +255,7 @@ function refresh1()
 				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 				} else {
 				    $link=$_COOKIE[$cookie_name];
+				    $link = $link."&uname=".$cookie_name;
 				}
 				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 			?>
