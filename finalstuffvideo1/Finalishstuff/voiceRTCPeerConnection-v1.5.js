@@ -1,10 +1,3 @@
-// Last time updated at Dec 26, 2014, 08:32:23
-// Muaz Khan     - github.com/muaz-khan
-// MIT License   - www.WebRTC-Experiment.com/licence
-// Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/RTCPeerConnection
-
-// TODO: Fix: It creates multiple data channels. It MUST create merely single channel.
- 
 window.moz = !!navigator.mozGetUserMedia;
 var chromeVersion = !!navigator.mozGetUserMedia ? 0 : parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2]);
 
