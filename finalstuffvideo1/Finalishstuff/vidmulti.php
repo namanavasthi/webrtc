@@ -271,13 +271,13 @@ setcookie('friends', $json);
                 <font color='blue'>
                 <?php
                     $num=sizeof($name);
-                    if($num==0)
+                    if($num==1)
                     {
                         echo "<p>$num</p><br>";
                         echo "You haven't selected any participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
-                    else if($num>4)
+                    else if($num>5)
                     {
                         echo"
                 
