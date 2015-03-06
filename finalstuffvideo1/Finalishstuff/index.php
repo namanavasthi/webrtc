@@ -337,7 +337,7 @@
 
       // added today
       mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-mysql_select_db("webrtc");
+      mysql_select_db("webrtc");
       $uname=$_GET['uname'];
 
       echo $uname;
@@ -352,6 +352,7 @@ mysql_select_db("webrtc");
         if($status=='Online' or $status=='Busy')
         {
           $hasha = $_COOKIE['userdata']['email'];
+          $hasha=hash('md5',$hasha);
           $query=mysql_query("UPDATE users SET status='Offline' WHERE hashemail='$hasha'");
           echo "query ran";
         }
