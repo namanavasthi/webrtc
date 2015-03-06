@@ -339,8 +339,11 @@
 
       $uname=$_GET['uname'];
 
+      echo $uname;
 
       $query1=mysql_query("SELECT `status` FROM users WHERE fullname='$uname'");
+
+      echo "success";
 
       WHILE ($rows=mysql_fetch_array($query1)):
         $status=$rows['status'];
@@ -349,6 +352,7 @@
         {
           $hasha = $_COOKIE['userdata']['email'];
           $query=mysql_query("UPDATE users SET status='Offline' WHERE hashemail='$hasha'");
+          echo "query ran";
         }
 
       endwhile;
