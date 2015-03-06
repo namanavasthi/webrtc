@@ -280,15 +280,12 @@ setcookie('friends', $json);
                     }
                     if($num==0)
                     {
-                        echo "<p>$num  $name</p><br>";
                         echo "You haven't selected any participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
                     else if($num>4)
                     {
                         echo"
-                
-                        <p>$num</p><br>
                         Please select only 4 participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
@@ -309,21 +306,12 @@ setcookie('friends', $json);
                         
                         echo"
                           <h1>  <span>
-                                <p>$num $name</p><br>
                                 <a href='multiindex.php' target='_parent'><code>
                                 <strong id='unique-token'>Proceed to Video Call</strong></code></a>
                             </span> </h1>
                             
                          
-                         ";
-
-                         foreach($_POST['check_list'] as $x => $x_value)
-                            {
-                                $name[$i]=$x;
-                                echo $name[$i];
-                                $i++;
-                            }
-            
+                         ";            
                     }
                 ?>
             <script>
