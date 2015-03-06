@@ -181,8 +181,8 @@ Removed:  include('usercookie.php');
 		<div class="container">
 		<?php
 			//database connection
-			//mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-			mysql_connect("localhost","root","");
+			mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+			// mysql_connect("localhost","root","");
 			mysql_select_db("webrtc");
 			
 			$username= $_COOKIE['userdata']['email'];
