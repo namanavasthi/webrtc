@@ -333,6 +333,8 @@
       $params = array( 'scope' => 'public_profile, user_friends, email');
       // echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a></p>';
       echo "<p><a class='btn btn-lg btn-primary' href='".$helper->getLoginUrl($params)."' >Login with facebook</a></p>";
+
+      
     }
 
 
