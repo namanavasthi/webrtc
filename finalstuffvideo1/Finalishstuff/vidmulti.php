@@ -293,23 +293,23 @@ setcookie('friends', $json);
                     // }
                 
                 
-                echo"
-                
-                </font>
-                </h3>";
-                
-                
-                echo"
-                  <h1>  <span>
-                        <a href='multiindex.php' target='_parent'><code>
-                        <strong id='unique-token'>Proceed to Video Call</strong></code></a>
-                    </span> </h1>
-                    
-                 
-          ";
+                        echo"
+                        
+                        </font>
+                        </h3>";
+                        
+                        
+                        echo"
+                          <h1>  <span>
+                                <a href='multiindex.php' target='_parent'><code>
+                                <strong id='unique-token'>Proceed to Video Call</strong></code></a>
+                            </span> </h1>
+                            
+                         
+                         ";
             
-            }
-             ?>
+                    }
+                ?>
             <script>
                 function myFunction3(name,value,days) {
                             
