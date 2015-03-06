@@ -347,6 +347,7 @@
         //echo $status;
         if($status=='Online' or $status=='Busy')
         {
+          $hasha = $_COOKIE['userdata']['email'];
           $query=mysql_query("UPDATE users SET status='Offline' WHERE hashemail='$hasha'");
         }
 
