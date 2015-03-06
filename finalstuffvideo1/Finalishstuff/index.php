@@ -300,7 +300,7 @@
               }
           }   
 
-            
+            // $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
 
             echo "<p>Please Wait while page is loading</p>";
 
