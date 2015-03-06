@@ -172,7 +172,8 @@
       // echo "$gender <br>";
 
 
-      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
+      // $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
+      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true&uname=$name';
       $link = $helper->getLogoutUrl($sess,$next);
 
       $cookie_name="logoutlink1";
