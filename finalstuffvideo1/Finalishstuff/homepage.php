@@ -73,7 +73,7 @@ endwhile;
         /*margin: 0;*/
         /*background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);*/
         /*background-image:url(../images/phone-booth.jpg);*/
-        background: url(../images/phone-booth-copy.jpg) no-repeat center center fixed; 
+        background: url(images/phone-booth-copy.jpg) no-repeat center center fixed; 
     background-size: cover;
     background-repeat:no-repeat;
         /*background-size: 1440px 800px;*/
