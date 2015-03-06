@@ -273,6 +273,7 @@ setcookie('friends', $json);
                     $num=sizeof($name);
                     if($num==0)
                     {
+                        echo "<p>$num</p><br>";
                         echo "You haven't selected any participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
@@ -280,7 +281,7 @@ setcookie('friends', $json);
                     {
                         echo"
                 
-                
+                        <p>$num</p><br>
                         Please select only 4 participants<br><br>";
                         echo"<a href='multichat.php' target='_parent'>Click to select participants </a>";
                     }
@@ -301,8 +302,9 @@ setcookie('friends', $json);
                         
                         echo"
                           <h1>  <span>
+                                <p>$num</p><br>
                                 <a href='multiindex.php' target='_parent'><code>
-                                <strong id='unique-token'>Proceed to Video Call</strong></code></a>
+                                <strong id='unique-token'>$num Proceed to Video Call</strong></code></a>
                             </span> </h1>
                             
                          
