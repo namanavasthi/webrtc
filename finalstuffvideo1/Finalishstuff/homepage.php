@@ -71,7 +71,8 @@ endwhile;
 <style>
       div.container-fluid{
         /*margin: 0;*/
-        background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);
+        /*background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);*/
+        background-image:url(../images/phone-booth.jpg);
     background-size: cover;
     background-repeat:no-repeat;
         /*background-size: 1440px 800px;*/
