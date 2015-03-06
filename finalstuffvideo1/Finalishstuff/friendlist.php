@@ -32,10 +32,14 @@
 	//echo $name;
 	$a=hash("md5",$a);
 	//echo $name;
-	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge` FROM `users` WHERE `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+	
+	//THIS IS FOR ONLINE FRIENDS!!!
+	
+	
+	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge` FROM `users` WHERE (`status`='Online' OR `status`='Busy') AND `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
 	$num_rows=mysql_num_rows($query);
 	$count=$num_rows;
-	//echo $count;
+	//secho "online".$count;
 	$temp=$count-1;
 	//echo $temp;
 		$i=0;
@@ -55,13 +59,28 @@
 		}
 		$i++;
 	endwhile;
+	
+	
 	//var_dump($name);
 	//var_dump($image);
 	$p=0;
+	echo"<div class='container'>
+	<div class='grid'> 
+	ONLINE FRIENDS
+	</div>
+	</div>";
+	
+	//ADDDDDDDDDDEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDDDD
+	
+	if($count==0)
+	{
+		"No one seems to be online right now";
+	}
+	else{
 	for($j=0;$j<=$count;$j++)
 	{
 	
-		/*if ($count==1)
+		if ($count==1)
 		{
 			echo"<div class='container'>
 				<div class='grid'>
@@ -70,16 +89,14 @@
 						<figcaption>
 							<h2>$name[0]</h2>
 							<p>
-								<a href='#'><i class='fa fa-fw fa-star-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-comments-o'></i></a>
-								<a href='#'><i class='fa fa-fw fa-envelope-o'></i></a>
+								<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
 							</p>
 						</figcaption>			
 					</figure>
 				</div>
 			</div>";
 			break;
-		} */
+		} 
 		
 		if($count % 2!=0)
 		{
@@ -192,48 +209,187 @@
 		}
 		
 	}
-	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";	
+	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
+	if($count>0)
+		echo"<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";	
+	}
+	//TILL HERE!!!!!!!!!!!!!!!!!
 	
 	
 	
-	/*WHILE($rows = mysql_fetch_array($query)):
 	
-		$fullname = $rows['fullname'];
-		//print $fullname;
-		//$last_name = $rows['lastname'];
-		//$email = $rows['emailid'];
-		//while($num_rows>0):
-			if($num_rows & 1==0)
-			{
+	
+	
+	//THIS IS FOR OFFLINE FRIENDS!!!
+	
+	
+	$query = mysql_query("SELECT `fullname`,`imagename`,`imagelarge` FROM `users` WHERE `status`='Offline' AND `fullname` in (SELECT `friendname` FROM `friends` WHERE `userid`='$a')");
+	$num_rows=mysql_num_rows($query);
+	$count=$num_rows;
+	//echo "offline".$count;
+	$temp=$count-1;
+	//echo $temp;
+		$i=0;
+		$name=array();
+		$image=array();
+	WHILE($rows = mysql_fetch_array($query)):
 		
-				//for even
-				$num_rows=$num_rows/2;
-			//	include('searchresults1.php');
-				include('searchresults2.php');
-				break;
+		$fullname = $rows['fullname'];	
+		$name[$i]=$fullname;
+		if($rows['imagename'!=''])
+		{
+			$image[$i]='disim.php?id='.$name[$i];
+		}
+		else
+		{
+			$image[$i]=$rows['imagelarge'];
+		}
+		$i++;
+	endwhile;
+	
+	
+	//var_dump($name);
+	//var_dump($image);
+	$p=0;
+	if($count>0) {
+	echo"<div class='container'>
+	<div class='grid'> 
+	OFFLINE FRIENDS
+	</div>
+	</div>";
+	
+	for($j=0;$j<=$count;$j++)
+	{
+	
+		if ($count==1)
+		{
+			echo"<div class='container'>
+				<div class='grid'>
+					<figure class='effect-winston'>
+						<img src='img/30.jpg' alt='img30'/>
+						<figcaption>
+							<h2>$name[0]</h2>
+							<p>
+								<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+							</p>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>";
+			break;
+		} 
+		
+		if($count % 2!=0)
+		{
 			
-			}
-			else
+			for ($k=0;$k<=$count-1;$k++)
 			{
-				//for odd
-				if($num_rows & 1)
+			//echo $temp; 
+				//echo"<br>";
+				if($p!=0)
 				{
-					//print 'odd';
-					$num_rows=$num_rows/2;
-					include('searchresults2.php');
+					$p=$p+1;
 				}
-				else
-				{
-					//print 'even';
-					include('searchresults2.php');
-				}
+				$m=$p+1;
+				//echo "This izzzs!!".$m;
+				//echo $name[$p]." ".$name[$m]."<br>";
+				$count=$count-2;
+			//	$temp=$temp-2;
+				//echo $count; 
+				
+				echo"<div class='container'>
+		<br><br><br><br><br><br><br><br><br><br>
+				<div class='grid'>
+					<figure class='effect-winston'>
+						<img src='$image[$p]' alt='img30'/>
+						<figcaption>
+							<h2>$name[$p]</h2>
+							<p>
+							<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>	
+							</p>
+						</figcaption>			
+					</figure>
+					<figure class='effect-winston'>
+						<img src='$image[$m]' alt='img01'/>
+						<figcaption>
+							<h2>$name[$m]</h2>
+							<p>
+								<a href='profile.php?firstname=$name[$m]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+							</p>
+						</figcaption>			
+					</figure>
+				</div> 
+				
+		
+		</div><!-- /container -->";
+					$p++;
 			}
-			$num_rows-=1;
-		//endwhile;
-	endwhile;			//for outer while	
-	*/
-
+			
+			//echo $count; 
+			//echo"<br>";
+			//echo $name[$m+1]."<br>";
+			$q=$p+1;
+			$count--;
+		//	$temp--;
+			//echo $count; 
+			echo"<div class='container'>
+				<div class='grid'>
+					<figure class='effect-winston'>
+						<img src='$image[$q]' alt='img30'/>
+						<figcaption>
+							<h2>$name[$q]</h2>
+							<p>
+								<a href='profile.php?firstname=$name[$q]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+							</p>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>"; 
+			break; 
+		}
+		else
+		{
+			//echo $count; 
+			//echo"<br>";
+			if($p!=0)
+				{
+					$p=$p+1;
+				}
+			$l=$p+1;
+			
+			//echo $name[$j]." ".$name[$j+1]."<br>";
+			$count=$count-2;
+			//echo $count; 
+			
+			echo"<div class='container'>
+		<br><br><br><br><br><br><br><br><br><br>
+				<div class='grid'>
+					<figure class='effect-winston'>
+						<img src='$image[$p]' alt='img30'/>
+						<figcaption>
+							<h2>$name[$p]</h2>
+							<p>
+								<a href='profile.php?firstname=$name[$p]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+							</p>
+						</figcaption>	 	
+					</figure> 
+					<figure class='effect-winston'>
+						<img src='$image[$l]' alt='img01'/>
+						<figcaption>
+							<h2>$name[$l]</h2>
+							<p>
+								<a href='profile.php?firstname=$name[$l]'><i class='fa fa-fw fa-user' title='VIEW PROFILE'></i></a>
+							</p>
+						</figcaption>			
+					</figure>
+				</div> 
+				
+		
+		</div><!-- /container -->";
+			$p++;
+		}
+		
+	}
 	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br>";
     if($count>0)
         echo"<h2><a href=presearchresults2.php?count=$count>NEXT</a></h2>";  
