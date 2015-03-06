@@ -36,7 +36,7 @@ $query1=mysql_query("SELECT `status` FROM users WHERE hashemail='$hasha'");
 WHILE ($rows=mysql_fetch_array($query1)):
     $status=$rows['status'];
     //echo $status;
-    if($status=='Offline' or $status=='Busy')
+    if($status=='Busy')
     {
         $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
     }
@@ -71,9 +71,7 @@ endwhile;
 <style>
       div.container-fluid{
         /*margin: 0;*/
-        /*background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);*/
-        /*background-image:url(../images/phone-booth.jpg);*/
-        background: url(images/phone-booth-copy.jpg) no-repeat center center fixed; 
+        background: url(http://img854.imageshack.us/img854/303/jlf5w.jpg);
     background-size: cover;
     background-repeat:no-repeat;
         /*background-size: 1440px 800px;*/
@@ -254,9 +252,7 @@ function refresh1()
 				if(!isset($_COOKIE[$cookie_name])) {
 				    echo "<li><a href='http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/' alt='Logout'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 				} else {
-					// $nameee="naman";
 				    $link=$_COOKIE[$cookie_name];
-				    // $link = $link."&uname=".$nameee;
 				}
 				echo "<li><a href='".$link."' alt='Logout from Facebook'><span class='glyphicon glyphicon-off' aria-hidden='true'></span>Logout&nbsp;&nbsp;</a></li>";
 			?>
@@ -361,7 +357,7 @@ function refresh1()
 	//for($j=0;$j<=$count;$j++)
 	
 	if ($count==0) {
-		//echo "To add new friends, use the search bar above";
+		echo "To add new friends, use the search bar above";
 	}
 		
 	else if($count==1)
@@ -371,8 +367,7 @@ function refresh1()
 			<div class='col-md-3 col-sm-3 col-xs-3 pull-right'>
 				<div class='grid-wrap col-xs-push-5 col-sm-push-7 col-md-push-8 col-lg-push-8'>
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
-					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a>  
-					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
+					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a>   
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -389,7 +384,6 @@ function refresh1()
 					<div class='grid col-sm-4 col-md-3 col-lg-3'> 
 					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
 					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
-					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -408,7 +402,6 @@ function refresh1()
 					<figure><a href='profile.php?firstname=$name[0]'><img src='$image[0]' alt='img04'/><p>$name[0]</p></figure></a> 
 					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
 					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
-					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->
@@ -428,7 +421,6 @@ function refresh1()
 					<figure><a href='profile.php?firstname=$name[1]'><img src='$image[1]' alt='img04'/><p>$name[1]</p></figure></a> 
 					<figure><a href='profile.php?firstname=$name[2]'><img src='$image[2]' alt='img04'/><p>$name[2]</p></figure></a> 
 					<figure><a href='profile.php?firstname=$name[3]'><img src='$image[3]' alt='img04'/><p>$name[3]</p></figure></a>   
-					<a href='friendlist.php'><h3><b>SHOW ALL</b></h3></a>
 					</div>
 				</div><!-- /grid-wrap -->
 			</div> <!-- div for right column -->

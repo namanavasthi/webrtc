@@ -172,8 +172,7 @@
       // echo "$gender <br>";
 
 
-      // $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
-      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true&uname='.$name;
+      $next = 'http://webrtc-fypgroup11.rhcloud.com/finalstuffvideo1/Finalishstuff/?&logout=true';
       $link = $helper->getLogoutUrl($sess,$next);
 
       $cookie_name="logoutlink1";
@@ -207,7 +206,7 @@
       if (!$connect) {
         die("Connection failed: " .mysql_error());
       } 
-      // echo 'Connected successfully';
+      echo 'Connected successfully';
 
       //connect to the datatbase
       mysql_select_db("webrtc");
@@ -300,7 +299,7 @@
               }
           }   
 
-            // $query=mysql_query("UPDATE users SET status='Online' WHERE hashemail='$hasha'");
+            
 
             echo "<p>Please Wait while page is loading</p>";
 
@@ -333,31 +332,6 @@
       $params = array( 'scope' => 'public_profile, user_friends, email');
       // echo '<p><a href="'.$helper->getLoginUrl(array('email')).'" >Login with facebook</a></p>';
       echo "<p><a class='btn btn-lg btn-primary' href='".$helper->getLoginUrl($params)."' >Login with facebook</a></p>";
-
-
-      // added today
-      mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
-      mysql_select_db("webrtc");
-      $uname=$_GET['uname'];
-
-      // echo $uname;
-
-      $query1=mysql_query("SELECT `status` FROM users WHERE fullname='$uname'");
-
-      // echo "success";
-
-      WHILE ($rows=mysql_fetch_array($query1)):
-        $status=$rows['status'];
-        // echo $status;
-        if($status=='Online' or $status=='Busy')
-        {
-          $hasha = $_COOKIE['userdata']['email'];
-          $hasha=hash('md5',$hasha);
-          $query=mysql_query("UPDATE users SET status='Offline' WHERE hashemail='$hasha'");
-          // echo "query ran";
-        }
-
-      endwhile;
     }
 
 

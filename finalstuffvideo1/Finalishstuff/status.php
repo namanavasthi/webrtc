@@ -1,6 +1,6 @@
 <?php
 
-		mysql_connect("127.2.139.130","adminPfy2zVu","BXXbBfmR7fWS");
+		mysql_connect("127.0.0.1","root","");
 		mysql_select_db("webrtc");
 		$name=$_COOKIE['userdata']['name'];
 		$hashem=$_COOKIE['userdata']['email'];

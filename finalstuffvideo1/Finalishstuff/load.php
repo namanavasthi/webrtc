@@ -28,7 +28,6 @@ $query = mysql_query("SELECT userid,username,webrtcid,type FROM friends WHERE fr
 $count=mysql_num_rows($query);
 //echo $count;
 $type='NULL';
-$val='rejected'
 if($count!=0) {
 WHILE ($rows=mysql_fetch_array($query)):
 		$webrtcid=$rows['webrtcid'];
@@ -43,12 +42,10 @@ setcookie("userid",$userid);
 }
 
 $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendname='$name' and webrtcid<>''");
-//$val='rejected';
+$val='rejected';
 
 	if($type=='video') {
 		if(mysql_fetch_array($query) != 0) {
-			$expire=time()+60*60*24;
-			setcookie('sender',$username,$expire,'','','',TRUE);
 			echo "<script>
 			var r=confirm('Click here to accept the video call from $username');
 			if(r==true) {
@@ -65,8 +62,6 @@ $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendnam
 	}
 	else if($type=='audio') {
 		if(mysql_fetch_array($query) != 0) {
-		$expire=time()+60*60*24;
-		setcookie('sender',$username,$expire,'','','',TRUE);
 		echo "<script>
 		var r=confirm('Click here to accept the audio call from $username');
 		if(r==true) {
@@ -83,8 +78,6 @@ $query = mysql_query("SELECT username,webrtcid,type FROM friends WHERE friendnam
 
 	else if($type=='multichat') {
 		if(mysql_fetch_array($query) != 0) {
-		$expire=time()+60*60*24;
-		setcookie('sender',$username,$expire,'','','',TRUE);
 		echo "<script>
 		var r=confirm('Click here to join the conference initiated by $username');
 		if(r==true) {

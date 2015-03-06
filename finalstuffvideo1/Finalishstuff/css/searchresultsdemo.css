@@ -17,10 +17,6 @@ body {
 	background: #2f3238;
 	color: #fff;
 	font-weight: 400;
-	background-image:url(../images/phone-booth.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
 }
