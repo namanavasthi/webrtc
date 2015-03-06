@@ -139,6 +139,17 @@ setcookie('friends', $json);
 
 
 
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+
+
+
+
+
+
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -309,9 +320,14 @@ setcookie('friends', $json);
                                 <a href='multiindex.php' target='_parent'><code>
                                 <strong id='unique-token'>Proceed to Video Call</strong></code></a>
                             </span> </h1>
+
+
                             
                          
-                         ";            
+                         ";     
+                         echo"<button onclick='goBack()'>Click to select participants </button>   "; 
+
+
                     }
                 ?>
             <script>
