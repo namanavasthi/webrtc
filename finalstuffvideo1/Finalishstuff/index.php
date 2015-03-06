@@ -347,7 +347,7 @@
 
       WHILE ($rows=mysql_fetch_array($query1)):
         $status=$rows['status'];
-        //echo $status;
+        echo $status;
         if($status=='Online' or $status=='Busy')
         {
           $hasha = $_COOKIE['userdata']['email'];
